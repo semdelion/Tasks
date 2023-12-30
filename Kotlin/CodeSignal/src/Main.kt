@@ -26,5 +26,8 @@ fun edgeOfTheOcean() {
 }
 
 fun smoothSailing() {
-    //println("9 adjacentElementsProduct: ${_3_SmoothSailing.solution9(mutableListOf(3, 6, -2, -5, 7, 3))}")
+    println("9 All Longest Strings: ${_3_SmoothSailing.solution9(mutableListOf("aba", "aa", "ad", "vcd", "aba"))}")
+    println("10 commonCharacterCounts: ${_3_SmoothSailing.solution10("aabcc","adcaa")}")
+
+
 }

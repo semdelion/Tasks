@@ -107,7 +107,7 @@ object _2_EdgeOfTheOcean {
      */
     fun solution8(matrix: MutableList<MutableList<Int>>): Int {
         var sum = 0
-        for (j in 0..matrix[0].count() - 1 ) {
+        for (j in 0 until matrix[0].count()) {
             if(matrix[0][j] != 0) {
                 var i = 0
                 while ((i < matrix.count()) && matrix[i][j]>0) {
