@@ -58,24 +58,69 @@ object _3_SmoothSailing {
         return count
     }
 
-
-
     /**
-     * commonCharacterCount
-     * @see "https://app.codesignal.com/arcade/intro/level-3/JKKuHJknZNj4YGL32"
-     * @return commonCharacterCount
-     * * @sample Given two strings, find the number of common characters between them.
+     * isLucky
+     * @see "https://app.codesignal.com/arcade/intro/level-3/3AdBC97QNuhF6RwsQ"
+     * @return isLucky ticket
+     * * @sample Ticket numbers usually consist of an even number of digits. A ticket number is considered lucky if the sum of the first half of the digits is equal to the sum of the second half.
+
+    Given a ticket number n, determine if it's lucky or not.
 
     Example
 
-    For s1 = "aabcc" and s2 = "adcaa", the output should be
-    solution(s1, s2) = 3.
-
-    Strings have 3 common characters - 2 "a"s and 1 "c".
+    For n = 1230, the output should be
+    solution(n) = true;
+    For n = 239017, the output should be
+    solution(n) = false.
      */
-    fun solution(n: Int): Boolean {
-TODO()
+    fun solution11(n: Int): Boolean {
+        var number = n
+        var left = 0
+        var right = 0
+        val length = n.toString().length
+        for (i in 0 until length/2) {
+            right += number%10
+            number /= 10
+        }
+        for (i in 0 until length/2) {
+            left += number%10
+            number /= 10
+        }
+
+        return left==right
     }
 
+    /**
+     * Sort by Height
+     * @see "https://app.codesignal.com/arcade/intro/level-3/D6qmdBL2NYz49XHwM"
+     * @return Sort by Height
+     * * @sample Some people are standing in a row in a park. There are trees between them which cannot be moved. Your task is to rearrange the people by their heights in a non-descending order without moving the trees. People can be very tall!
 
+    Example
+
+    For a = [-1, 150, 190, 170, -1, -1, 160, 180], the output should be
+    solution(a) = [-1, 150, 160, 170, -1, -1, 180, 190].
+     */
+    fun solution12(a: MutableList<Int>): MutableList<Int> {
+        for (i in 0 until a.count())
+        {
+            if (a[i] != -1)
+            {
+                var min = a[i];
+                var index = i;
+                for (j in i + 1 until a.count())
+                {
+                    if (min > a[j] && a[j] != -1)
+                    {
+                        min = a[j];
+                        index = j;
+                    }
+                }
+                val tmp = a[i];
+                a[i] = min;
+                a[index] = tmp;
+            }
+        }
+        return a;
+    }
 }
