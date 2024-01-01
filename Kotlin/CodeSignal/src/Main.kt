@@ -31,6 +31,7 @@ fun smoothSailing() {
     println("11 isLucky: ${_3_SmoothSailing.solution11(112301)}")
     println("12 Sort by Height: ${_3_SmoothSailing.solution12(mutableListOf(-1, 150, 190, 170, -1, -1, 160, 180))}")
 
+    println("13 Sort by Height: ${_3_SmoothSailing.solution13("(abc)")}")
 
 
 }

@@ -123,4 +123,27 @@ object _3_SmoothSailing {
         }
         return a;
     }
+
+    fun solution13(inputString: String): String {
+        var data = inputString
+
+        var i = data.length - 1
+        var rBracket = -1
+        while ( i >= 0 ) {
+            if(data[i]==')') {
+                rBracket = i
+            } else if(data[i]=='(') {
+                data = revert(data, i, rBracket)
+                i = data.length
+            }
+            i--
+        }
+        return data
+    }
+
+    private fun revert(inputString : String, l: Int, r: Int) : String {
+        val data = inputString.substring(l+1, r).reversed()
+        return inputString.replaceRange(l, r+1, data)
+    }
+
 }
