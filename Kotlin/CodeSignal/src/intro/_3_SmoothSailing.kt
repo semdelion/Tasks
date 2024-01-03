@@ -123,7 +123,19 @@ object _3_SmoothSailing {
         }
         return a;
     }
+    /**
+     * reverseInParentheses
+     * @see "https://app.codesignal.com/arcade/intro/level-3/9DgaPsE2a7M6M2Hu6"
+     * @return reverseInParentheses
+     * * @sample Write a function that reverses characters in (possibly nested) parentheses in the input string.
 
+    Input strings will always be well-formed with matching ()s.
+
+    Example
+    For inputString = "foo(bar(baz))blim", the output should be
+    solution(inputString) = "foobazrabblim".
+    Because "foo(bar(baz))blim" becomes "foo(barzab)blim" and then "foobazrabblim".
+     */
     fun solution13(inputString: String): String {
         var data = inputString
 
