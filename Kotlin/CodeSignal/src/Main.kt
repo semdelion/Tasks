@@ -1,13 +1,11 @@
-import intro._2_EdgeOfTheOcean
-import intro._1_TheJourneyBegins
-import intro._3_SmoothSailing
-import intro._4_ExploringTheWaters
+import intro.*
 
 fun main(args: Array<String>) {
     theJourneyBegins()
     edgeOfTheOcean()
     smoothSailing()
     exploringTheWaters()
+    islandOfKnowledge()
 }
 
 fun theJourneyBegins() {
@@ -42,5 +40,12 @@ fun exploringTheWaters() {
     println("16 Are Similar: ${_4_ExploringTheWaters.solution16(
         mutableListOf(1, 2, 3),
         mutableListOf(2, 1, 3))}")
+    println("17 ArrayChange: ${_4_ExploringTheWaters.solution17(mutableListOf(1, 1, 1))}")
+    println("18 PalindromeRearranging: ${_4_ExploringTheWaters.solution18("abbaaaca")}")
+
+}
+
+fun islandOfKnowledge() {
+
 
 }

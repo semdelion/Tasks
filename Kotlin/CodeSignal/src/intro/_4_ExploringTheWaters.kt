@@ -24,7 +24,6 @@ object _4_ExploringTheWaters {
     }
 
 
-
     /**
      * Add Border
      * @see "https://app.codesignal.com/arcade/intro/level-4/ZCD7NQnED724bJtjN"
@@ -34,15 +33,15 @@ object _4_ExploringTheWaters {
     Example
     For
     picture = ["abc",
-               "ded"]
+    "ded"]
     the output should be
     solution(picture) = ["*****",
-                         "*abc*",
-                         "*ded*",
-                         "*****"]
+    "*abc*",
+    "*ded*",
+    "*****"]
      */
     fun solution15(picture: MutableList<String>): MutableList<String> {
-        for(i in 0 until picture.count()) {
+        for (i in 0 until picture.count()) {
             picture[i] = "*${picture[i]}*"
         }
         picture.add(0, "*".repeat(picture[0].length))
@@ -80,23 +79,67 @@ object _4_ExploringTheWaters {
         var index = -1
         var countOfSwap = 0
 
-        for(i in 0 until a.count()) {
-            if(a[i]!=b[i]) {
-                if(countOfSwap > 0)
+        for (i in 0 until a.count()) {
+            if (a[i] != b[i]) {
+                if (countOfSwap > 0)
                     return false
-                if(index==-1) {
+                if (index == -1) {
                     index = i
                 } else {
-                    if(a[index]!=b[i] || b[index]!=a[i]) {
+                    if (a[index] != b[i] || b[index] != a[i]) {
                         return false
                     } else {
                         countOfSwap++
-                        index=-1
+                        index = -1
                     }
                 }
             }
         }
-        return index==-1
+        return index == -1
     }
 
+
+    /**
+     * arrayChange
+     * @see "https://app.codesignal.com/arcade/intro/level-4/xvkRbxYkdHdHNCKjg"
+     * @return arrayChange
+     * * @sample You are given an array of integers. On each move you are allowed to increase exactly one of its element by one. Find the minimal number of moves required to obtain a strictly increasing sequence from the input.
+
+    Example
+
+    For inputArray = [1, 1, 1], the output should be
+    solution(inputArray) = 3.
+     */
+    fun solution17(inputArray: MutableList<Int>): Int {
+        var countOfChange = 0
+        for (i in 1 until inputArray.count()) {
+            if (inputArray[i - 1] >= inputArray[i]) {
+                val tmp = inputArray[i - 1] - inputArray[i]  + 1
+                inputArray[i] += tmp
+                countOfChange += tmp
+            }
+        }
+        return countOfChange
+    }
+
+    /**
+     * palindromeRearranging
+     * @see "https://app.codesignal.com/arcade/intro/level-4/Xfeo7r9SBSpo3Wico"
+     * @return palindromeRearranging
+     * * @sample Given a string, find out if its characters can be rearranged to form a palindrome.
+
+    Example
+
+    For inputString = "aabb", the output should be
+    solution(inputString) = true.
+
+    We can rearrange "aabb" to make "abba", which is a palindrome.
+     */
+    fun solution18(inputString: String): Boolean {
+        val mapItems = MutableList(256){0}
+        for(item in inputString)
+            mapItems[item.code] += 1
+        val count = mapItems.count { char -> char % 2 == 1  }
+        return count <= (inputString.length%2)
+    }
 }
