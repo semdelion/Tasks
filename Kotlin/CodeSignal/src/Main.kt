@@ -46,6 +46,7 @@ fun exploringTheWaters() {
 }
 
 fun islandOfKnowledge() {
-
-
+    println("19 AreEquallyStrong: ${_5_IslandOfKnowledge.solution19(10, 15,15, 10)}")
+    println("20 ArrayMaximalAdjacentDifference: ${_5_IslandOfKnowledge.solution20(mutableListOf(2, 4, 1, 0))}")
+    println("21 IsIPv4Address: ${_5_IslandOfKnowledge.solution21("121.121.321.01")}")
 }
