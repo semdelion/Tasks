@@ -77,4 +77,53 @@ object _5_IslandOfKnowledge {
         }
         return true
     }
+
+    /**
+     * avoidObstacles
+     * @see "https://app.codesignal.com/arcade/intro/level-5/XC9Q2DhRRKQrfLhb5"
+     * @return avoidObstacles
+     * * @sample You are given an array of integers representing coordinates of obstacles situated on a straight line.
+
+    Assume that you are jumping from the point with coordinate 0 to the right. You are allowed only to make jumps of the same length represented by some integer.
+
+    Find the minimal length of the jump enough to avoid all the obstacles.
+
+    Example
+
+    For inputArray = [5, 3, 6, 7, 9], the output should be
+    solution(inputArray) = 4.
+
+    Check out the image below for better understanding:
+     */
+    fun solution22(inputArray: MutableList<Int>): Int {
+        for(i in 2 until Int.MAX_VALUE) {
+            if(inputArray.all { it % i != 0 })
+                return i
+        }
+        return Int.MAX_VALUE;
+    }
+
+    /**
+     * Box Blur
+     * @see "https://app.codesignal.com/arcade/intro/level-5/XC9Q2DhRRKQrfLhb5"
+     * @return Box Blur
+     * * @sample Last night you partied a little too hard. Now there's a black and white photo of you that's about to go viral! You can't let this ruin your reputation, so you want to apply the box blur algorithm to the photo to hide its content.
+
+    The pixels in the input image are represented as integers. The algorithm distorts the input image in the following way: Every pixel x in the output image has a value equal to the average value of the pixel values from the 3 × 3 square that has its center at x, including x itself. All the pixels on the border of x are then removed.
+
+    Return the blurred image as an integer, with the fractions rounded down.
+     */
+    fun solution23(image: MutableList<MutableList<Int>>): MutableList<MutableList<Int>> {
+        val blurImage = MutableList(image.count() - 2) { MutableList(image[0].count() - 2) { 0 } }
+        for(i in 0..image.count() - 3) {
+            for(j in 0..image[i].count() - 3) {
+                blurImage[i][j] = (
+                        (image[i][j] + image[i][j + 1] + image[i][j + 2] +
+                                image[i + 1][j] + image[i + 1][j + 1] + image[i + 1][j + 2] +
+                                image[i + 2][j] + image[i + 2][j + 1] + image[i + 2][j + 2]) / 9)
+            }
+        }
+        return blurImage
+    }
+
 }
