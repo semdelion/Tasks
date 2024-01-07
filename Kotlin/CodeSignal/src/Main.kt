@@ -6,6 +6,7 @@ fun main(args: Array<String>) {
     smoothSailing()
     exploringTheWaters()
     islandOfKnowledge()
+    rainsOfReason()
 }
 
 fun theJourneyBegins() {
@@ -55,4 +56,14 @@ fun islandOfKnowledge() {
         mutableListOf(5, 6, 2, 2),
         mutableListOf(6, 10, 7, 8),
         mutableListOf(1, 4, 2, 0)))}")
+    println("24 Minesweeper: ${_5_IslandOfKnowledge.solution24(mutableListOf(
+        mutableListOf(true, false, false),
+        mutableListOf(false, true, false),
+        mutableListOf(false, false, false)))}")
+}
+
+fun rainsOfReason() {
+
+    
+
 }
