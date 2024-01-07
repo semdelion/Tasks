@@ -2,6 +2,16 @@ package intro
 
 object _4_ExploringTheWaters {
 
+    fun run() {
+        println("14 AlternatingSums: ${_4_ExploringTheWaters.solution14(mutableListOf(50, 60, 60, 45, 70))}")
+        println("15 Add Border: ${_4_ExploringTheWaters.solution15(mutableListOf("abc", "ded"))}")
+        println("16 Are Similar: ${_4_ExploringTheWaters.solution16(
+            mutableListOf(1, 2, 3),
+            mutableListOf(2, 1, 3))}")
+        println("17 ArrayChange: ${_4_ExploringTheWaters.solution17(mutableListOf(1, 1, 1))}")
+        println("18 PalindromeRearranging: ${_4_ExploringTheWaters.solution18("abbaaaca")}")
+    }
+
     /**
      * alternatingSums
      * @see "https://app.codesignal.com/arcade/intro/level-4/cC5QuL9fqvZjXJsW9"

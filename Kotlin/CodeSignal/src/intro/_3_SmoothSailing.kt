@@ -1,6 +1,15 @@
 package intro
 
 object _3_SmoothSailing {
+
+    fun run() {
+        println("9 All Longest Strings: ${_3_SmoothSailing.solution9(mutableListOf("aba", "aa", "ad", "vcd", "aba"))}")
+        println("10 CommonCharacterCounts: ${_3_SmoothSailing.solution10("aabcc","adcaa")}")
+        println("11 IsLucky: ${_3_SmoothSailing.solution11(112301)}")
+        println("12 Sort by Height: ${_3_SmoothSailing.solution12(mutableListOf(-1, 150, 190, 170, -1, -1, 160, 180))}")
+        println("13 ReverseInParentheses: ${_3_SmoothSailing.solution13("foo(bar(baz))blim")}")
+    }
+
     /**
      * All Longest Strings
      * @see "https://app.codesignal.com/arcade/intro/level-3/fzsCQGYbxaEcTr2bL"

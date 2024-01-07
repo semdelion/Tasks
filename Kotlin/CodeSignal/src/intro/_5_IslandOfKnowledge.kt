@@ -1,9 +1,25 @@
 package intro
 
 import kotlin.math.abs
-import kotlin.test.todo
 
 object _5_IslandOfKnowledge {
+
+    fun run() {
+        println("19 AreEquallyStrong: ${_5_IslandOfKnowledge.solution19(10, 15,15, 10)}")
+        println("20 ArrayMaximalAdjacentDifference: ${_5_IslandOfKnowledge.solution20(mutableListOf(2, 4, 1, 0))}")
+        println("21 IsIPv4Address: ${_5_IslandOfKnowledge.solution21("121.121.321.01")}")
+        println("22 AvoidObstacles: ${_5_IslandOfKnowledge.solution22(mutableListOf(5, 3, 6, 7, 9))}")
+        println("23 Box Blur: ${_5_IslandOfKnowledge.solution23(mutableListOf(
+            mutableListOf(7, 4, 0, 1),
+            mutableListOf(5, 6, 2, 2),
+            mutableListOf(6, 10, 7, 8),
+            mutableListOf(1, 4, 2, 0)))}")
+        println("24 Minesweeper: ${_5_IslandOfKnowledge.solution24(mutableListOf(
+            mutableListOf(true, false, false),
+            mutableListOf(false, true, false),
+            mutableListOf(false, false, false)))}")
+    }
+
     /**
      * areEquallyStrong
      * @see "https://app.codesignal.com/arcade/intro/level-5/g6dc9KJyxmFjB98dL"

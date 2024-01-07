@@ -2,6 +2,17 @@ package intro
 
 object _2_EdgeOfTheOcean {
 
+    fun run() {
+        println("4 AdjacentElementsProduct: ${_2_EdgeOfTheOcean.solution4(mutableListOf(3, 6, -2, -5, 7, 3))}")
+        println("5 ShapeArea: ${_2_EdgeOfTheOcean.solution5(5)}")
+        println("6 Make Array Consecutive 2: ${_2_EdgeOfTheOcean.solution6(mutableListOf(6, 2, 3, 8))}")
+        println("7 AlmostIncreasingSequence: ${_2_EdgeOfTheOcean.solution7(mutableListOf(1, 3, 2, 1))}")
+        println("8 MatrixElementsSum: ${_2_EdgeOfTheOcean.solution8(mutableListOf(
+            mutableListOf(0, 1, 1, 2),
+            mutableListOf(0, 5, 0, 0),
+            mutableListOf(2, 0, 3, 3)))}")
+    }
+
     /**
      * adjacentElementsProduct
      * Given an array of integers, find the pair of adjacent elements that has the largest product and return that product.
