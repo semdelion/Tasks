@@ -1,5 +1,7 @@
 package intro
 
+import kotlin.math.pow
+
 object _12_LandOfLogic {
     fun run() {
         println("52 LongestWord: ${_12_LandOfLogic.solution52("Ready, steady, go!")}")
@@ -33,6 +35,23 @@ object _12_LandOfLogic {
             }"
         )
         println("58 MessageFromBinaryCode: ${_12_LandOfLogic.solution58("010010000110010101101100011011000110111100100001")}")
+        println("59 SpiralNumbers: ${_12_LandOfLogic.solution59(5)}")
+        println("60 Sudoku: ${
+                _12_LandOfLogic.solution60(
+                    mutableListOf(
+                        mutableListOf(1,3,2,5,4,6,9,8,7),
+                        mutableListOf(4,6,5,8,7,9,3,2,1),
+                        mutableListOf(7,9,8,2,1,3,6,5,4),
+                        mutableListOf(9,2,1,4,3,5,8,7,6),
+                        mutableListOf(3,5,4,7,6,8,2,1,9),
+                        mutableListOf(6,8,7,1,9,2,5,4,3),
+                        mutableListOf(5,7,6,9,8,1,4,3,2),
+                        mutableListOf(2,4,3,6,5,7,1,9,8),
+                        mutableListOf(8,1,9,3,2,4,7,6,5),
+                    )
+                )
+            }"
+        )
 
     }
 
@@ -235,5 +254,78 @@ object _12_LandOfLogic {
         return cryptoMessage
     }
 
+    /**
+     * spiralNumbers
+     * @see "https://app.codesignal.com/arcade/intro/level-12/uRWu6K8E7uLi3Qtvx"
+     * @return spiralNumbers
+     * * @sample Construct a square matrix with a size N × N containing integers from 1 to N * N in a spiral order, starting from top-left and in clockwise direction.
 
+    Example
+
+    For n = 3, the output should be
+
+    solution(n) = [[1, 2, 3],
+    [8, 9, 4],
+    [7, 6, 5]] */
+    fun solution59(n: Int): MutableList<MutableList<Int>> {
+        val matrix = MutableList(n){MutableList(n){0}}
+        var index =1
+        var l = 0
+        var r = n - 1
+        var t = 0
+        var b = n - 1
+        while (index <= n*n) {
+            for (i in l..r)
+                matrix[t][i] = index++
+            t++
+            for (i in t..b)
+                matrix[i][r] = index++
+            r--
+            for (i in r downTo l )
+                matrix[b][i] = index++
+            b--
+            for (i in b downTo t)
+                matrix[i][l] = index++
+            l++
+        }
+        return matrix
+    }
+
+    /**
+     * Sudoku
+     * @see "https://app.codesignal.com/arcade/intro/level-12/tQgasP8b62JBeirMS"
+     * @return Sudoku
+     * * @sample Sudoku is a number-placement puzzle. The objective is to fill a 9 × 9 grid with digits so that each column, each row, and each of the nine 3 × 3 sub-grids that compose the grid contains all of the digits from 1 to 9.
+
+    This algorithm should check if the given grid of numbers represents a correct solution to Sudoku.
+
+    Example
+
+    For
+    grid = [[1, 3, 2, 5, 4, 6, 9, 8, 7],
+    [4, 6, 5, 8, 7, 9, 3, 2, 1],
+    [7, 9, 8, 2, 1, 3, 6, 5, 4],
+    [9, 2, 1, 4, 3, 5, 8, 7, 6],
+    [3, 5, 4, 7, 6, 8, 2, 1, 9],
+    [6, 8, 7, 1, 9, 2, 5, 4, 3],
+    [5, 7, 6, 9, 8, 1, 4, 3, 2],
+    [2, 4, 3, 6, 5, 7, 1, 9, 8],
+    [8, 1, 9, 3, 2, 4, 7, 6, 5]]
+    the output should be
+    solution(grid) = true;*/
+    fun solution60(grid: MutableList<MutableList<Int>>): Boolean {
+        for (i in 0..8) {
+            val lineSet = mutableSetOf<Int>()
+            val rowSet = mutableSetOf<Int>()
+            val squareSet = mutableSetOf<Int>()
+            for (j in 0..8) {
+                lineSet.add(grid[i][j])
+                rowSet.add(grid[j][i])
+                squareSet.add(grid[((i/3) * 3) + j/3][((i*3) % 9) + j%3])
+            }
+            if(lineSet.count()!=9 || rowSet.count()!=9 || squareSet.count()!=9)
+                return false
+        }
+        return true
+    }
 }
