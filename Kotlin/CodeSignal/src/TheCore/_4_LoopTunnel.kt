@@ -8,8 +8,8 @@ object _4_LoopTunnel {
         println("26 Count Sum of Two Representations 2: ${_4_LoopTunnel.solution26(n = 6, l = 2, r = 4)}")
         println("27 Magical Well: ${_4_LoopTunnel.solution27(a = 1, b = 2, n = 2)}")
         println("28 Lineup: ${_4_LoopTunnel.solution28("LLARL")}")
-        println("29 Lineup: ${_4_LoopTunnel.solution29(456, 1734)}")
-
+        println("29 Addition Without Carrying: ${_4_LoopTunnel.solution29(456, 1734)}")
+        println("30 Apple Boxes: ${_4_LoopTunnel.solution30(5)}")
     }
 
     /**
@@ -142,6 +142,56 @@ object _4_LoopTunnel {
         }
         return result
     }
+
+
+    /**
+     * Apple Boxes
+     * @see "https://app.codesignal.com/arcade/code-arcade/loop-tunnel/scG8AFsPuqQGx8Qjf"
+     * @return Apple Boxes
+     * * @sample You have k apple boxes full of apples. Each square box of size m contains m × m apples. You just noticed two interesting properties about the boxes:
+
+    The smallest box is size 1, the next one is size 2,..., all the way up to size k.
+    Boxes that have an odd size contain only yellow apples. Boxes that have an even size contain only red apples.
+    Your task is to calculate the difference between the number of red apples and the number of yellow apples.
+
+    Example
+
+    For k = 5, the output should be
+    solution(k) = -15.
+
+    There are 1 + 3 * 3 + 5 * 5 = 35 yellow apples and 2 * 2 + 4 * 4 = 20 red apples, making the answer 20 - 35 = -15.*/
+    fun solution30(k: Int): Int {
+        val result = (1..k).sum()
+        return if (k % 2 == 1) result * -1 else result
+    }
+
+
+
+    /**
+     * Increase Number Roundness
+     * @see "https://app.codesignal.com/arcade/code-arcade/loop-tunnel/KLbRMcWhaZi3dvYH5"
+     * @return Increase Number Roundness
+     * * @sample Define an integer's roundness as the number of trailing zeroes in it.
+
+    Given an integer n, check if it's possible to increase n's roundness by swapping some pair of its digits.
+
+    Example
+
+    For n = 902200100, the output should be
+    solution(n) = true.
+
+    One of the possible ways to increase roundness of n is to swap digit 1 with digit 0 preceding it: roundness of 902201000 is 3, and roundness of n is 2.
+
+    For instance, one may swap the leftmost 0 with 1.
+
+    For n = 11000, the output should be
+    solution(n) = false.
+
+    Roundness of n is 3, and there is no way to increase it.*/
+    fun solution31(n: Int): Boolean {
+
+    }
+
 
 
 }
