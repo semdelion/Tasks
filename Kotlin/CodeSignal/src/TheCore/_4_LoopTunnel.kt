@@ -10,6 +10,8 @@ object _4_LoopTunnel {
         println("28 Lineup: ${_4_LoopTunnel.solution28("LLARL")}")
         println("29 Addition Without Carrying: ${_4_LoopTunnel.solution29(456, 1734)}")
         println("30 Apple Boxes: ${_4_LoopTunnel.solution30(5)}")
+        println("31 Increase Number Roundness: ${_4_LoopTunnel.solution31(902200100)}")
+
     }
 
     /**
@@ -189,7 +191,16 @@ object _4_LoopTunnel {
 
     Roundness of n is 3, and there is no way to increase it.*/
     fun solution31(n: Int): Boolean {
-
+        var digitNotNull = false
+        var i = 1
+        while(n/i != 0){
+            if((n/i)%10 != 0)
+                digitNotNull = true
+            else if(digitNotNull)
+                return true
+            i*=10
+        }
+        return false
     }
 
 
