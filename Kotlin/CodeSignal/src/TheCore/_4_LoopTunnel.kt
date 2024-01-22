@@ -11,6 +11,10 @@ object _4_LoopTunnel {
         println("29 Addition Without Carrying: ${_4_LoopTunnel.solution29(456, 1734)}")
         println("30 Apple Boxes: ${_4_LoopTunnel.solution30(5)}")
         println("31 Increase Number Roundness: ${_4_LoopTunnel.solution31(902200100)}")
+        println("32 Rounders: ${_4_LoopTunnel.solution32(1445)}")
+        println("33 Candles: ${_4_LoopTunnel.solution33(5, 2)}")
+        println("34 Count Black Cells: ${_4_LoopTunnel.solution34(3, 4)}")
+
 
     }
 
@@ -168,7 +172,6 @@ object _4_LoopTunnel {
     }
 
 
-
     /**
      * Increase Number Roundness
      * @see "https://app.codesignal.com/arcade/code-arcade/loop-tunnel/KLbRMcWhaZi3dvYH5"
@@ -193,16 +196,106 @@ object _4_LoopTunnel {
     fun solution31(n: Int): Boolean {
         var digitNotNull = false
         var i = 1
-        while(n/i != 0){
-            if((n/i)%10 != 0)
+        while (n / i != 0) {
+            if ((n / i) % 10 != 0)
                 digitNotNull = true
-            else if(digitNotNull)
+            else if (digitNotNull)
                 return true
-            i*=10
+            i *= 10
         }
         return false
     }
 
+    /**
+     * Rounders
+     * @see "https://app.codesignal.com/arcade/code-arcade/loop-tunnel/H5PP5MXvYvWXxTytH"
+     * @return Rounders
+     * * @sample We want to turn the given integer into a number that has only one non-zero digit using a tail rounding approach. This means that at each step we take the last non 0 digit of the number and round it to 0 or to 10. If it's less than 5 we round it to 0 if it's larger than or equal to 5 we round it to 10 (rounding to 10 means increasing the next significant digit by 1). The process stops immediately once there is only one non-zero digit left.
+
+    Example
+
+    For n = 15, the output should be
+    solution(n) = 20;
+
+    For n = 1234, the output should be
+    solution(n) = 1000.
+
+    1234 -> 1230 -> 1200 -> 1000.
+
+    For n = 1445, the output should be
+    solution(n) = 2000.
+
+    1445 -> 1450 -> 1500 -> 2000.*/
+    fun solution32(n: Int): Int {
+        var result = n
+        var i = 1
+        while (n / i > 9) {
+            if ((result / i) % 10 > 4) {
+                result += i * 10
+            }
+            i *= 10
+        }
+        return (result / i) * i
+    }
+
+    /**
+     * Candles
+     * @see "https://app.codesignal.com/arcade/code-arcade/loop-tunnel/LAKReA3CR9EwkZGSz"
+     * @return Candles
+     * * @sample When a candle finishes burning it leaves a leftover. makeNew leftovers can be combined to make a new candle, which, when burning down, will in turn leave another leftover.
+
+    You have candlesNumber candles in your possession. What's the total number of candles you can burn, assuming that you create new candles as soon as you have enough leftovers?
+
+    Example
+
+    For candlesNumber = 5 and makeNew = 2, the output should be
+    solution(candlesNumber, makeNew) = 9.
+
+    Here is what you can do to burn 9 candles:
+
+    burn 5 candles, obtain 5 leftovers;
+    create 2 more candles, using 4 leftovers (1 leftover remains);
+    burn 2 candles, end up with 3 leftovers;
+    create another candle using 2 leftovers (1 leftover remains);
+    burn the created candle, which gives another leftover (2 leftovers in total);
+    create a candle from the remaining leftovers;
+    burn the last candle.
+    Thus, you can burn 5 + 2 + 1 + 1 = 9 candles, which is the answer.*/
+    fun solution33(candlesNumber: Int, makeNew: Int): Int = candlesNumber + (candlesNumber - 1) / (makeNew - 1)
+
+    /**
+     * Count Black Cells
+     * @see "https://app.codesignal.com/arcade/code-arcade/loop-tunnel/RcK4vupi8sFhakjnh"
+     * @return Count Black Cells
+     * * @sample Imagine a white rectangular grid of n rows and m columns divided into two parts by a diagonal line running from the upper left to the lower right corner. Now let's paint the grid in two colors according to the following rules:
+
+    A cell is painted black if it has at least one point in common with the diagonal;
+    Otherwise, a cell is painted white.
+    Count the number of cells painted black.
+
+    Example
+
+    For n = 3 and m = 4, the output should be
+    solution(n, m) = 6.
+
+    There are 6 cells that have at least one common point with the diagonal and therefore are painted black.
 
 
+
+    For n = 3 and m = 3, the output should be
+    solution(n, m) = 7.
+
+    7 cells have at least one common point with the diagonal and are painted black.*/
+    fun solution34(n: Int, m: Int): Int = n + m - 2 + gcd(n, m)
+
+    private fun gcd(a1: Int, b1: Int): Int {
+        var a = a1
+        var b = b1
+        while (b != 0) {
+            val tmp = b
+            b = a % b
+            a = tmp
+        }
+        return a
+    }
 }
