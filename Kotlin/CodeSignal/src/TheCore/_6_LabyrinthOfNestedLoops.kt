@@ -4,6 +4,8 @@ object _6_LabyrinthOfNestedLoops {
     fun run() {
         println("43 Is Power?: ${_6_LabyrinthOfNestedLoops.solution43(29)}")
         println("44 Is Sum of Consecutive 2: ${_6_LabyrinthOfNestedLoops.solution44(9)}")
+        println("45 Square Digits Sequence: ${_6_LabyrinthOfNestedLoops.solution45(16)}")
+        println("46 Pages Numbering With Ink: ${_6_LabyrinthOfNestedLoops.solution46(16,2)}")
     }
 
     /**
@@ -46,6 +48,7 @@ object _6_LabyrinthOfNestedLoops {
 
         return count
     }
+
     /**
      * Square Digits Sequence
      * @see "https://app.codesignal.com/arcade/code-arcade/labyrinth-of-nested-loops/MvX84CA5HN6GKqv7R"
@@ -77,9 +80,42 @@ object _6_LabyrinthOfNestedLoops {
 
     The sequence goes as follows: 103 -> 10 -> 1 -> 1, 4 elements altogether.*/
     fun solution45(a0: Int): Int {
-
+        var ma0 = a0
+        val map = mutableMapOf<Int,Int>()
+        while(!map.containsKey(ma0)) {
+            map.put(ma0,0)
+            ma0 = ma0.toString().map { it.toString().toInt() }.sumOf { it * it }
+        }
+        return map.count() + 1
     }
 
+    /**
+     * Pages Numbering With Ink
+     * @see "https://app.codesignal.com/arcade/code-arcade/labyrinth-of-nested-loops/pdw3izd7SpMTBJqSy"
+     * @return Pages Numbering With Ink
+     * * @sample You work in a company that prints and publishes books. You are responsible for designing the page numbering mechanism in the printer. You know how many digits a printer can print with the leftover ink. Now you want to write a function to determine what the last page of the book is that you can number given the current page and numberOfDigits left. A page is considered numbered if it has the full number printed on it (e.g. if we are working with page 102 but have ink only for two digits then this page will not be considered numbered).
+
+    It's guaranteed that you can number the current page, and that you can't number the last one in the book.
+
+    Example
+
+    For current = 1 and numberOfDigits = 5, the output should be
+    solution(current, numberOfDigits) = 5.
+
+    The following numbers will be printed: 1, 2, 3, 4, 5.
+
+    For current = 21 and numberOfDigits = 5, the output should be
+    solution(current, numberOfDigits) = 22.
+
+    The following numbers will be printed: 21, 22.
+
+    For current = 8 and numberOfDigits = 4, the output should be
+    solution(current, numberOfDigits) = 10.
+
+    The following numbers will be printed: 8, 9, 10.*/
+    fun solution46(current: Int, numberOfDigits: Int): Int {
+        return 0
+    }
 
 
 }
