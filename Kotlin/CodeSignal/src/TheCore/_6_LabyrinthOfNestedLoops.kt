@@ -5,7 +5,7 @@ object _6_LabyrinthOfNestedLoops {
         println("43 Is Power?: ${_6_LabyrinthOfNestedLoops.solution43(29)}")
         println("44 Is Sum of Consecutive 2: ${_6_LabyrinthOfNestedLoops.solution44(9)}")
         println("45 Square Digits Sequence: ${_6_LabyrinthOfNestedLoops.solution45(16)}")
-        println("46 Pages Numbering With Ink: ${_6_LabyrinthOfNestedLoops.solution46(16,2)}")
+        println("46 Pages Numbering With Ink: ${_6_LabyrinthOfNestedLoops.solution46(21, 5)}")
     }
 
     /**
@@ -21,9 +21,9 @@ object _6_LabyrinthOfNestedLoops {
     For n = 72, the output should be
     solution(n) = false.*/
     fun solution43(n: Int): Boolean {
-        for(i  in 1..20)
-            for(j in 2..8 )
-                if(n == Math.pow(i.toDouble(), j.toDouble()).toInt())
+        for (i in 1..20)
+            for (j in 2..8)
+                if (n == Math.pow(i.toDouble(), j.toDouble()).toInt())
                     return true
         return false
     }
@@ -43,8 +43,8 @@ object _6_LabyrinthOfNestedLoops {
     solution(n) = false.*/
     fun solution44(n: Int): Int {
         var count = 0
-        for (i in 3 .. n step 2)
-            if (n%i == 0) count++
+        for (i in 3..n step 2)
+            if (n % i == 0) count++
 
         return count
     }
@@ -81,9 +81,9 @@ object _6_LabyrinthOfNestedLoops {
     The sequence goes as follows: 103 -> 10 -> 1 -> 1, 4 elements altogether.*/
     fun solution45(a0: Int): Int {
         var ma0 = a0
-        val map = mutableMapOf<Int,Int>()
-        while(!map.containsKey(ma0)) {
-            map.put(ma0,0)
+        val map = mutableMapOf<Int, Int>()
+        while (!map.containsKey(ma0)) {
+            map.put(ma0, 0)
             ma0 = ma0.toString().map { it.toString().toInt() }.sumOf { it * it }
         }
         return map.count() + 1
@@ -114,8 +114,12 @@ object _6_LabyrinthOfNestedLoops {
 
     The following numbers will be printed: 8, 9, 10.*/
     fun solution46(current: Int, numberOfDigits: Int): Int {
-        return 0
+        var printCount = numberOfDigits
+        var page = current
+        while (printCount >= page.toString().length) {
+            printCount -= page.toString().length
+            page++
+        }
+        return --page
     }
-
-
 }
