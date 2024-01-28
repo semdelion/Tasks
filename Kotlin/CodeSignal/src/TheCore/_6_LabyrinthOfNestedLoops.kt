@@ -8,7 +8,7 @@ object _6_LabyrinthOfNestedLoops {
         println("46 Pages Numbering With Ink: ${_6_LabyrinthOfNestedLoops.solution46(21, 5)}")
         println("47 Comfortable Numbers: ${_6_LabyrinthOfNestedLoops.solution47(10, 12)}")
         println("48 Weak Numbers: ${_6_LabyrinthOfNestedLoops.solution48(9)}")
-        // println("49 Weak Numbers: ${_6_LabyrinthOfNestedLoops.solution47(10,12)}")
+         println("49 Weak Numbers: ${_6_LabyrinthOfNestedLoops.solution49( 6, 4)}")
     }
 
     /**
@@ -227,9 +227,12 @@ object _6_LabyrinthOfNestedLoops {
     solution(a, b) = 23.
 
     The following picture illustrates the example, and the 23 points are marked green.*/
-    /*fun solution49(a: Int, b: Int): Int {
-
-    }*/
+    fun solution49(a: Int, b: Int): Int {
+        val aa = (a / Math.sqrt(2.0)).toInt()
+        val bb = (b / Math.sqrt(2.0)).toInt()
+        val correct = if ((aa + bb) % 2 == 1) -1 else 0
+        return (aa + 1) * (bb + 1) + (aa) * (bb) + correct
+    }
 
     /**
      * Crossword Formation
