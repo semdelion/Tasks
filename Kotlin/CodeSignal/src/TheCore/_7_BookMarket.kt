@@ -4,6 +4,7 @@ object _7_BookMarket {
     fun run() {
         println("51 Enclose In Brackets: ${_7_BookMarket.solution51("abacaba")}")
         println("52 Proper Noun Correction: ${_7_BookMarket.solution52("pARiS")}")
+        println("53 Is Tandem Repeat?: ${_7_BookMarket.solution53("tandemtandem")}")
 
 
     }
@@ -36,6 +37,24 @@ object _7_BookMarket {
     For noun = "John", the output should be
     solution(noun) = "John".*/
     fun solution52(noun: String): String = noun.first().uppercaseChar() + noun.substring(1).lowercase()
+
+    /**
+     * Is Tandem Repeat?
+     * @see "https://app.codesignal.com/arcade/code-arcade/book-market/2SDWWyHY9Xw5CpphY"
+     * @return Is Tandem Repeat?
+     * * @sample Determine whether the given string can be obtained by one concatenation of some string to itself.
+
+    Example
+
+    For inputString = "tandemtandem", the output should be
+    solution(inputString) = true;
+    For inputString = "qqq", the output should be
+    solution(inputString) = false;
+    For inputString = "2w2ww", the output should be
+    solution(inputString) = false.*/
+    fun solution53(inputString: String): Boolean {
+        return inputString.substring(0, inputString.length/2) == inputString.substring(inputString.length/2)
+    }
 
 
 
