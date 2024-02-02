@@ -7,6 +7,9 @@ object _7_BookMarket {
         println("53 Is Tandem Repeat?: ${_7_BookMarket.solution53("tandemtandem")}")
         println("54 Is Case-Insensitive Palindrome?: ${_7_BookMarket.solution54("AaBaa")}")
         println("55 Find Email Domain: ${_7_BookMarket.solution55("fully-qualified-domain@codesignal.com")}")
+        println("56 HTML End Tag By Start Tag: ${_7_BookMarket.solution56("<button type='button' disabled>")}")
+        println("57 Is MAC48 Address?: ${_7_BookMarket.solution57("00-1B-63-84-45-E6")}")
+        println("58 Is Unstable Pair?: ${_7_BookMarket.solution58(filename1 = "aa", filename2 = "AAB")}")
 
     }
 
@@ -20,7 +23,7 @@ object _7_BookMarket {
 
     For inputString = "abacaba", the output should be
     solution(inputString) = "(abacaba)".*/
-    fun solution51(inputString: String): String  = "($inputString)"
+    fun solution51(inputString: String): String = "($inputString)"
 
 
     /**
@@ -54,7 +57,7 @@ object _7_BookMarket {
     For inputString = "2w2ww", the output should be
     solution(inputString) = false.*/
     fun solution53(inputString: String): Boolean {
-        return inputString.substring(0, inputString.length/2) == inputString.substring(inputString.length/2)
+        return inputString.substring(0, inputString.length / 2) == inputString.substring(inputString.length / 2)
     }
 
 
@@ -102,8 +105,75 @@ object _7_BookMarket {
     solution(address) = "example.com";
     For address = "fully-qualified-domain@codesignal.com", the output should be
     solution(address) = "codesignal.com".*/
-    fun solution55(address: String): String  = address.substring(address.lastIndexOf('@') + 1)
+    fun solution55(address: String): String = address.substring(address.lastIndexOf('@') + 1)
 
+
+
+    /**
+     * HTML End Tag By Start Tag
+     * @see "https://app.codesignal.com/arcade/code-arcade/book-market/MX94DWTrwQw2gLrTi"
+     * @return HTML End Tag By Start Tag
+     * * @sample You are implementing your own HTML editor. To make it more comfortable for developers you would like to add an auto-completion feature to it.
+
+    Given the starting HTML tag, find the appropriate end tag which your editor should propose.
+
+    If you are not familiar with HTML, consult with this note.
+
+    Example
+
+    For startTag = "<button type='button' disabled>", the output should be
+    solution(startTag) = "</button>";
+    For startTag = "<i>", the output should be
+    solution(startTag) = "</i>".*/
+
+    fun solution56(startTag: String): String {
+        val index = startTag.indexOfFirst { x -> x == ' ' || x == '>' }
+        return "</${startTag.substring(1, index)}>"
+
+    }
+
+
+    /**
+     *  Is Unstable Pair?
+     * @see "https://app.codesignal.com/arcade/intro/level-10/HJ2thsvjL25iCvvdm"
+     * @return  Is Unstable Pair?
+     * * @sample Some file managers sort filenames taking into account case of the letters, others compare strings as if all of the letters are of the same case. That may lead to different ways of filename ordering.
+
+    Call two filenames an unstable pair if their ordering depends on the case.
+
+    To compare two filenames a and b, find the first position i at which a[i] ≠ b[i]. If a[i] < b[i], then a < b. Otherwise a > b. If such position doesn't exist, the shorter string goes first.
+
+    Given two filenames, check whether they form an unstable pair.
+
+    Example
+
+    For filename1 = "aa" and filename2 = "AAB", the output should be
+    solution(filename1, filename2) = true.
+
+    Because "AAB" < "aa", but "AAB" > "AA".
+
+    For filename1 = "A" and filename2 = "z", the output should be
+    solution(filename1, filename2) = false.
+
+    Both "A" < "z" and "a" < "z".*/
+    fun solution57(inputString: String): Boolean {
+        val regex = Regex("^(([\\dA-F]{2}-){5}[\\dA-F]{2})$")
+        val matches = regex.findAll(inputString)
+        return matches.count() == 1
+    }
+
+
+    fun solution58(filename1: String, filename2: String): Boolean {
+        println("a:"+filename1[0].code)
+        println("A:"+filename2[0].code)
+        println("O:"+'O'.code)
+        println("o:"+'o'.code)
+        println("a:"+'a'.code)
+
+
+
+                return false
+    }
 
 
 }
