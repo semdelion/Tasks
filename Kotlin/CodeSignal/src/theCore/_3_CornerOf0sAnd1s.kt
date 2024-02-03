@@ -1,4 +1,4 @@
-package TheCore
+package theCore
 
 object _3_CornerOf0sAnd1s {
     fun run() {

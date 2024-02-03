@@ -1,4 +1,4 @@
-package TheCore
+package theCore
 
 object _6_LabyrinthOfNestedLoops {
     fun run() {
@@ -8,7 +8,9 @@ object _6_LabyrinthOfNestedLoops {
         println("46 Pages Numbering With Ink: ${_6_LabyrinthOfNestedLoops.solution46(21, 5)}")
         println("47 Comfortable Numbers: ${_6_LabyrinthOfNestedLoops.solution47(10, 12)}")
         println("48 Weak Numbers: ${_6_LabyrinthOfNestedLoops.solution48(9)}")
-         println("49 Weak Numbers: ${_6_LabyrinthOfNestedLoops.solution49( 6, 4)}")
+        println("49 Rectangle Rotation: ${_6_LabyrinthOfNestedLoops.solution49( 6, 4)}")
+        println("50 Crossword Formation: ${_6_LabyrinthOfNestedLoops.solution50(mutableListOf("crossword", "square", "formation", "something"))}")
+
     }
 
     /**
@@ -23,14 +25,13 @@ object _6_LabyrinthOfNestedLoops {
     solution(n) = true;
     For n = 72, the output should be
     solution(n) = false.*/
-    fun solution43(n: Int): Boolean {
+    private fun solution43(n: Int): Boolean {
         for (i in 1..20)
             for (j in 2..8)
                 if (n == Math.pow(i.toDouble(), j.toDouble()).toInt())
                     return true
         return false
     }
-
 
     /**
      * Is Sum of Consecutive 2
@@ -44,7 +45,7 @@ object _6_LabyrinthOfNestedLoops {
     solution(n) = true;
     For n = 72, the output should be
     solution(n) = false.*/
-    fun solution44(n: Int): Int {
+    private fun solution44(n: Int): Int {
         var count = 0
         for (i in 3..n step 2)
             if (n % i == 0) count++
@@ -82,7 +83,7 @@ object _6_LabyrinthOfNestedLoops {
     solution(a0) = 4.
 
     The sequence goes as follows: 103 -> 10 -> 1 -> 1, 4 elements altogether.*/
-    fun solution45(a0: Int): Int {
+    private fun solution45(a0: Int): Int {
         var ma0 = a0
         val map = mutableMapOf<Int, Int>()
         while (!map.containsKey(ma0)) {
@@ -116,7 +117,7 @@ object _6_LabyrinthOfNestedLoops {
     solution(current, numberOfDigits) = 10.
 
     The following numbers will be printed: 8, 9, 10.*/
-    fun solution46(current: Int, numberOfDigits: Int): Int {
+    private fun solution46(current: Int, numberOfDigits: Int): Int {
         var printCount = numberOfDigits
         var page = current
         while (printCount >= page.toString().length) {
@@ -145,7 +146,7 @@ object _6_LabyrinthOfNestedLoops {
     s(11) = 2, so 11 is comfortable with 9, 10, 12 and 13;
     s(12) = 3, so 12 is comfortable with 9, 10, 11, 13, 14 and 15.
     Thus, there are 2 pairs of numbers comfortable with each other within the segment [10; 12]: (10, 11) and (11, 12).*/
-    fun solution47(l: Int, r: Int): Int {
+    private fun solution47(l: Int, r: Int): Int {
         var count = 0
         for (a in l until r) {
             for (b in a + 1..r) {
@@ -190,7 +191,7 @@ object _6_LabyrinthOfNestedLoops {
     8: d(8) = 4, weakness(8) = 0;
     9: d(9) = 3, weakness(9) = 2.
     As you can see, the maximal weakness is 2, and there are 2 numbers with that weakness level.*/
-    fun solution48(n: Int): MutableList<Int> {
+    private fun solution48(n: Int): MutableList<Int> {
         val listOfDiv = mutableListOf<Int>()
         val weakness = mutableListOf<Int>()
         for (i in 1..n) {
@@ -252,9 +253,46 @@ object _6_LabyrinthOfNestedLoops {
     solution(words) = 6.
 
     The six crosswords can be formed as shown below:*/
-    /*  fun solution50(words: MutableList<String>): Int {
+    fun solution50(words: MutableList<String>): Int {
+        var count = 0
+        for(item in getPermutations(words, words.count())) {
+            for(a1d1 in getIntersections(item[0], item[2], 0, 0)){
+                for(a1d2 in getIntersections(item[0], item[3], a1d1[0] + 2, 0)){
+                    for(a2d1 in getIntersections(item[1], item[2], 0, a1d1[1] + 2)){
+                        val a2d2 = mutableListOf( a1d2[0] - a1d1[0] + a2d1[0], a2d1[1] - a1d1[1] + a1d2[1])
+                        if (a2d2[0] < item[1].length && a2d2[1] < item[3].length && item[1][a2d2[0]] == item[3][a2d2[1]])
+                            count++
+                    }
+                }
+            }
+        }
 
-      }*/
+        return count
+    }
+
+    private fun <T> getPermutations(rootList: Iterable<T>, length: Int): List<List<T>> {
+        if (length == 1) {
+            return rootList.map { listOf(it) }.toList()
+        }
+
+        return getPermutations(rootList, length - 1).flatMap { listItem ->
+            rootList.filter { e -> !listItem.contains(e) }.map { t1 -> listItem + listOf(t1) }
+        }.toList()
+    }
+
+    private fun getIntersections(w1: String, w2: String, w1Start: Int, w2Start: Int): Sequence<Array<Int>> {
+        return sequence {
+            for (i in w1Start until w1.length) {
+                for (j in w2Start until w2.length) {
+                    if (w1[i] == w2[j]) {
+                        yield(arrayOf(i, j))
+                    }
+                }
+            }
+        }
+    }
+
+
 
 
 }

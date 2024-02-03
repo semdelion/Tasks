@@ -1,4 +1,4 @@
-package TheCore
+package theCore
 
 
 object _1_IntroGates {

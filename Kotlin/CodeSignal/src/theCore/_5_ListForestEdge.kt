@@ -1,6 +1,4 @@
-package TheCore
-
-import intro._2_EdgeOfTheOcean
+package theCore
 
 object _5_ListForestEdge {
     fun run() {

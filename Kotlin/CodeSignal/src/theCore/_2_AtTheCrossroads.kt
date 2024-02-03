@@ -1,4 +1,4 @@
-package TheCore
+package theCore
 
 
 object _2_AtTheCrossroads {

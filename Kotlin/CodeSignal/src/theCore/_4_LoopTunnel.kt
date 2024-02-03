@@ -1,6 +1,4 @@
-package TheCore
-
-import kotlin.math.pow
+package theCore
 
 object _4_LoopTunnel {
     fun run() {
