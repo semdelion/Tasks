@@ -1,4 +1,4 @@
-import TheCore.*
+import theCore.*
 import intro.*
 
 fun main(args: Array<String>) {
