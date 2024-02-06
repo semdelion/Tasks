@@ -3,7 +3,7 @@ package theCore
 object _8_MirrorLake {
     fun run() {
         println("59 Strings Construction: ${_8_MirrorLake.solution59(a = "abc", b = "abccbac")}")
-
+        println("60 Strings Construction: ${_8_MirrorLake.solution60("aacb", "aabc")}")
 
     }
 
@@ -36,19 +36,38 @@ object _8_MirrorLake {
         return min
     }
 
-    fun solution60(a: String, b: String): Boolean {
-//TODO
-       /* string1: "dccd"
-        string2: "zzxx"*/
-  /*      val mapA = a.groupingBy { it }.eachCount().toList().sortedBy {x -> x.second}
-        val mapB = b.groupingBy { it }.eachCount().toList().sortedBy {x -> x.second}
-        if(mapA.count()!=mapB.count())
-            return false
+    /**
+     * Is Substitution Cipher?
+     * @see "https://app.codesignal.com/arcade/code-arcade/mirror-lake/rNrF4v5etMdFNKD3s"
+     * @return Is Substitution Cipher?
+     * * @sample A ciphertext alphabet is obtained from the plaintext alphabet by means of rearranging some characters. For example "bacdef...xyz" will be a simple ciphertext alphabet where a and b are rearranged.
 
-        for (i in 0 until  mapA.count()) {
-            if(mapA[i].second != mapB[i].second)
-                return false
+    A substitution cipher is a method of encoding where each letter of the plaintext alphabet is replaced with the corresponding (i.e. having the same index) letter of some ciphertext alphabet.
+
+    Given two strings, check whether it is possible to obtain them from each other using some (possibly, different) substitution ciphers.
+
+    Example
+
+    For string1 = "aacb" and string2 = "aabc", the output should be
+    solution(string1, string2) = true.
+
+    Any ciphertext alphabet that starts with acb... would make this transformation possible.
+
+    For string1 = "aa" and string2 = "bc", the output should be
+    solution(string1, string2) = false.*/
+    fun solution60(a: String, b: String): Boolean {
+        val map = mutableMapOf<Int, Int>()
+        for (i in 0 until a.count()) {
+            if (map.containsKey(a[i].code)) {
+                if (map[a[i].code] != b[i].code)
+                    return false
+            } else {
+                if (map.containsValue(b[i].code))
+                    return false
+                else
+                    map[a[i].code] = b[i].code
+            }
         }
-        return true*/
+        return true
     }
 }
