@@ -3,7 +3,8 @@ package theCore
 object _8_MirrorLake {
     fun run() {
         println("59 Strings Construction: ${_8_MirrorLake.solution59(a = "abc", b = "abccbac")}")
-        println("60 Strings Construction: ${_8_MirrorLake.solution60("aacb", "aabc")}")
+        println("60 Is Substitution Cipher?: ${_8_MirrorLake.solution60("aacb", "aabc")}")
+        println("61 Create Anagram: ${_8_MirrorLake.solution61("OVGHK", "RPGUC")}")
 
     }
 
@@ -70,4 +71,29 @@ object _8_MirrorLake {
         }
         return true
     }
+
+    /**
+     * Create Anagram
+     * @see "https://app.codesignal.com/arcade/code-arcade/mirror-lake/BsShkFDfbkWxozmMN"
+     * @return Create Anagram
+     * * @sample You are given two strings s and t of the same length, consisting of uppercase English letters. Your task is to find the minimum number of "replacement operations" needed to get some anagram of the string t from the string s. A replacement operation is performed by picking exactly one character from the string s and replacing it by some other character.
+
+    Example
+
+    For s = "AABAA" and t = "BBAAA", the output should be
+    solution(s, t) = 1;
+    For s = "OVGHK" and t = "RPGUC", the output should be
+    solution(s, t) = 4.*/
+    fun solution61(s: String, test: String): Int {
+        var number: Int = 0
+        var t = test
+        for(ch in s) {
+            if(t.contains(ch))
+                t = t.replaceFirst(ch, '-')
+            else
+                number++
+        }
+        return number
+    }
+
 }
