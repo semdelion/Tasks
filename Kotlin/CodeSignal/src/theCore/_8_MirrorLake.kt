@@ -5,6 +5,7 @@ object _8_MirrorLake {
         println("59 Strings Construction: ${_8_MirrorLake.solution59(a = "abc", b = "abccbac")}")
         println("60 Is Substitution Cipher?: ${_8_MirrorLake.solution60("aacb", "aabc")}")
         println("61 Create Anagram: ${_8_MirrorLake.solution61("OVGHK", "RPGUC")}")
+        println("62 Construct Square: ${_8_MirrorLake.solution62("ab")}")
 
     }
 
@@ -39,7 +40,7 @@ object _8_MirrorLake {
 
     /**
      * Is Substitution Cipher?
-     * @see "https://app.codesignal.com/arcade/code-arcade/mirror-lake/rNrF4v5etMdFNKD3s"
+     * @see "https://app.codesignal.com/arcade/code-arcade/mirror-lake/EeKpdMQXpBkgWjcvt"
      * @return Is Substitution Cipher?
      * * @sample A ciphertext alphabet is obtained from the plaintext alphabet by means of rearranging some characters. For example "bacdef...xyz" will be a simple ciphertext alphabet where a and b are rearranged.
 
@@ -94,6 +95,59 @@ object _8_MirrorLake {
                 number++
         }
         return number
+    }
+
+    /**
+     * Construct Square
+     * @see "https://app.codesignal.com/arcade/code-arcade/mirror-lake/BsShkFDfbkWxozmMN"
+     * @return Construct Square
+     * * @sample Given a string consisting of lowercase English letters, find the largest square number which can be obtained by reordering the string's characters and replacing them with any digits you need (leading zeros are not allowed) where same characters always map to the same digits and different characters always map to different digits.
+
+    If there is no solution, return -1.
+
+    Example
+
+    For s = "ab", the output should be
+    solution(s) = 81.
+    The largest 2-digit square number with different digits is 81.
+    For s = "zzz", the output should be
+    solution(s) = -1.
+    There are no 3-digit square numbers with identical digits.
+    For s = "aba", the output should be
+    solution(s) = 900.
+    It can be obtained after reordering the initial string into "baa" and replacing "a" with 0 and "b" with 9.*/
+    fun solution62(s: String): Int {
+        val code = convert(s)
+
+        val maxNumber = Math.pow(10.0, s.length.toDouble()) - 1
+        val minNumber = Math.pow(10.0, (s.length.toDouble() - 1) - 1)
+
+        var sqrtN = Math.sqrt(maxNumber).toInt()
+        var result = maxNumber.toInt()
+        while(result > minNumber)
+        {
+            result = sqrtN*sqrtN
+            if(convert(result.toString()) == code)
+                return result
+            else
+                sqrtN--
+        }
+        return -1
+    }
+
+    private fun convert(s: String) : String
+    {
+        var numb = mutableMapOf<Char,Int>()
+
+        for(ch in s)
+            numb[ch] = (numb[ch] ?: 0) + 1
+
+        val sorted = numb.values.sorted()
+        var result: String = ""
+        for (count in sorted)
+            result += count
+
+        return result
     }
 
 }
