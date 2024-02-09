@@ -6,7 +6,7 @@ object _8_MirrorLake {
         println("60 Is Substitution Cipher?: ${_8_MirrorLake.solution60("aacb", "aabc")}")
         println("61 Create Anagram: ${_8_MirrorLake.solution61("OVGHK", "RPGUC")}")
         println("62 Construct Square: ${_8_MirrorLake.solution62("ab")}")
-
+        println("63 Numbers Grouping: ${_8_MirrorLake.solution63(mutableListOf(20000, 239, 10001, 999999, 10000, 20566, 29999))}")
     }
 
     /**
@@ -135,19 +135,45 @@ object _8_MirrorLake {
         return -1
     }
 
-    private fun convert(s: String) : String
-    {
-        var numb = mutableMapOf<Char,Int>()
+    private fun convert(s: String) : String {
+        val numb = s.groupingBy { it }.eachCount()
+        return numb.values.sorted().joinToString("")
+    }
 
-        for(ch in s)
-            numb[ch] = (numb[ch] ?: 0) + 1
+    /**
+     * Numbers Grouping
+     * @see "https://app.codesignal.com/arcade/code-arcade/mirror-lake/kGeuCkJNbqczCCqgg"
+     * @return Numbers Grouping
+     * * @sample You are given an array of integers that you want distribute between several groups. The first group should contain numbers from 1 to 104, the second should contain those from 104 + 1 to 2 * 104, ..., the 100th one should contain numbers from 99 * 104 + 1 to 106 and so on.
 
-        val sorted = numb.values.sorted()
-        var result: String = ""
-        for (count in sorted)
-            result += count
+    All the numbers will then be written down in groups to the text file in such a way that:
 
-        return result
+    the groups go one after another;
+    each non-empty group has a header which occupies one line;
+    each number in a group occupies one line.
+    Calculate how many lines the resulting text file will have.
+    Example
+
+    For a = [20000, 239, 10001, 999999, 10000, 20566, 29999], the output should be
+    solution(a) = 11.
+
+    The numbers can be divided into 4 groups:
+
+    239 and 10000 go to the 1st group (1 ... 104);
+    10001 and 20000 go to the second 2nd (104 + 1 ... 2 * 104);
+    20566 and 29999 go to the 3rd group (2 * 104 + 1 ... 3 * 104);
+    groups from 4 to 99 are empty;
+    999999 goes to the 100th group (99 * 104 + 1 ... 106).
+    Thus, there will be 4 groups (i.e. four headers) and 7 numbers, so the file will occupy 4 + 7 = 11 lines.*/
+    fun solution63(a: MutableList<Int>): Int {
+        var countGroup = 0
+        val groups = BooleanArray(100001)
+        for(el in a)
+            groups[((el - 1) / 10000)] = true
+
+        countGroup = groups.count { c -> c }
+
+        return countGroup + a.count()
     }
 
 }
