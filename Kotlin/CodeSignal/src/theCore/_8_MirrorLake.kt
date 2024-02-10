@@ -6,7 +6,34 @@ object _8_MirrorLake {
         println("60 Is Substitution Cipher?: ${_8_MirrorLake.solution60("aacb", "aabc")}")
         println("61 Create Anagram: ${_8_MirrorLake.solution61("OVGHK", "RPGUC")}")
         println("62 Construct Square: ${_8_MirrorLake.solution62("ab")}")
-        println("63 Numbers Grouping: ${_8_MirrorLake.solution63(mutableListOf(20000, 239, 10001, 999999, 10000, 20566, 29999))}")
+        println(
+            "63 Numbers Grouping: ${
+                _8_MirrorLake.solution63(
+                    mutableListOf(
+                        20000,
+                        239,
+                        10001,
+                        999999,
+                        10000,
+                        20566,
+                        29999
+                    )
+                )
+            }"
+        )
+        println(
+            "64 Different Squares: ${
+                _8_MirrorLake.solution64(
+                    mutableListOf(
+                        mutableListOf(1, 2, 1),
+                        mutableListOf(2, 2, 2),
+                        mutableListOf(2, 2, 2),
+                        mutableListOf(1, 2, 3),
+                        mutableListOf(2, 2, 1),
+                    )
+                )
+            }"
+        )
     }
 
     /**
@@ -88,8 +115,8 @@ object _8_MirrorLake {
     fun solution61(s: String, test: String): Int {
         var number: Int = 0
         var t = test
-        for(ch in s) {
-            if(t.contains(ch))
+        for (ch in s) {
+            if (t.contains(ch))
                 t = t.replaceFirst(ch, '-')
             else
                 number++
@@ -124,10 +151,9 @@ object _8_MirrorLake {
 
         var sqrtN = Math.sqrt(maxNumber).toInt()
         var result = maxNumber.toInt()
-        while(result > minNumber)
-        {
-            result = sqrtN*sqrtN
-            if(convert(result.toString()) == code)
+        while (result > minNumber) {
+            result = sqrtN * sqrtN
+            if (convert(result.toString()) == code)
                 return result
             else
                 sqrtN--
@@ -135,7 +161,7 @@ object _8_MirrorLake {
         return -1
     }
 
-    private fun convert(s: String) : String {
+    private fun convert(s: String): String {
         val numb = s.groupingBy { it }.eachCount()
         return numb.values.sorted().joinToString("")
     }
@@ -168,7 +194,7 @@ object _8_MirrorLake {
     fun solution63(a: MutableList<Int>): Int {
         var countGroup = 0
         val groups = BooleanArray(100001)
-        for(el in a)
+        for (el in a)
             groups[((el - 1) / 10000)] = true
 
         countGroup = groups.count { c -> c }
@@ -176,4 +202,38 @@ object _8_MirrorLake {
         return countGroup + a.count()
     }
 
+    /**
+     * Different Squares
+     * @see "https://app.codesignal.com/arcade/code-arcade/mirror-lake/fQpfgxiY6aGiGHLtv"
+     * @return Different Squares
+     * * @sample Given a rectangular matrix containing only digits, calculate the number of different 2 × 2 squares in it.
+
+    Example
+
+    For
+
+    matrix = [[1, 2, 1],
+    [2, 2, 2],
+    [2, 2, 2],
+    [1, 2, 3],
+    [2, 2, 1]]
+    the output should be
+    solution(matrix) = 6.
+
+    Here are all 6 different 2 × 2 squares:
+
+    1 2    2 1    2 2    2 2    2 2    2 3
+    2 2    2 2    2 2    1 2    2 3    2 1
+     */
+    fun solution64(matrix: MutableList<MutableList<Int>>): Int {
+        if (matrix.size <= 1 || matrix.first().size <= 1)
+            return 0
+
+        val codes = hashMapOf<String, Boolean>()
+        for (i in 0 until (matrix.size - 1))
+            for (j in 0 until (matrix[i].size - 1))
+                codes["${matrix[i][j]},${matrix[i][j + 1]},${matrix[i + 1][j]},${matrix[i + 1][j + 1]}"] = true
+
+        return codes.keys.count();
+    }
 }
