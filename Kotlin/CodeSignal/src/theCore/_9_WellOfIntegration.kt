@@ -3,8 +3,19 @@ package theCore
 object _9_WellOfIntegration {
     fun run() {
         println("67 House Numbers Sum: ${_9_WellOfIntegration.solution67(mutableListOf(5, 1, 2, 3, 0, 1, 5, 0, 2))}")
-
-
+        println(
+            "68 All Longest Strings: ${
+                _9_WellOfIntegration.solution68(
+                    mutableListOf(
+                        "aba",
+                        "aa",
+                        "ad",
+                        "vcd",
+                        "aba"
+                    )
+                )
+            }"
+        )
     }
 
     /**
@@ -25,6 +36,18 @@ object _9_WellOfIntegration {
     The answer was obtained as 5 + 1 + 2 + 3 = 11.*/
     fun solution67(inputArray: MutableList<Int>): Int = inputArray.takeWhile { it != 0 }.sum()
 
+    /**
+     * All Longest Strings
+     * @see "https://app.codesignal.com/arcade/code-arcade/well-of-integration/fzsCQGYbxaEcTr2bL"
+     * @return All Longest Strings
+     * * @sample Given an array of strings, return another array containing all of its longest strings.
 
+    Example
 
+    For inputArray = ["aba", "aa", "ad", "vcd", "aba"], the output should be
+    solution(inputArray) = ["aba", "vcd", "aba"].*/
+    fun solution68(inputArray: MutableList<String>): MutableList<String> {
+        val max = inputArray.maxOf { it.length }
+        return inputArray.filter { it.length == max }.toMutableList()
+    }
 }
