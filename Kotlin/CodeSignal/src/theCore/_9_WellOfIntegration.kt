@@ -16,6 +16,10 @@ object _9_WellOfIntegration {
                 )
             }"
         )
+        println("69 House of Cats: ${_9_WellOfIntegration.solution69(6)}")
+        println("70 Alphabet Subsequence: ${_9_WellOfIntegration.solution70("bxz")}")
+
+
     }
 
     /**
@@ -49,5 +53,31 @@ object _9_WellOfIntegration {
     fun solution68(inputArray: MutableList<String>): MutableList<String> {
         val max = inputArray.maxOf { it.length }
         return inputArray.filter { it.length == max }.toMutableList()
+    }
+
+    /**
+     * House of Cats
+     * @see "https://app.codesignal.com/arcade/code-arcade/well-of-integration/RaWLwT2eb96hp4N5Z"
+     * @return House of Cats
+     * * @sample There are some people and cats in a house. You are given the number of legs they have all together. Your task is to return an array containing every possible number of people that could be in the house sorted in ascending order. It's guaranteed that each person has 2 legs and each cat has 4 legs.
+
+    Example
+
+    For legs = 6, the output should be
+    solution(legs) = [1, 3].
+
+    There could be either 1 cat and 1 person (4 + 2 = 6) or 3 people (2 * 3 = 6).
+
+    For legs = 2, the output should be
+    solution(legs) = [1].
+
+    There can be only 1 person.*/
+    fun solution69(legs: Int): MutableList<Int> {
+        val even = if (legs % 4 == 0) 0 else 1
+        val humans = mutableListOf<Int>()
+        for (i in even until (legs / 2 + 1) step 2) {
+            humans.add(i)
+        }
+        return humans
     }
 }
