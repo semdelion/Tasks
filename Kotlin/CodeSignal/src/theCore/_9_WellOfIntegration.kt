@@ -80,4 +80,28 @@ object _9_WellOfIntegration {
         }
         return humans
     }
+
+    /**
+     * Alphabet Subsequence
+     * @see "https://app.codesignal.com/arcade/code-arcade/well-of-integration/Z9opBsx5fX6XfQJdt"
+     * @return Alphabet Subsequence
+     * * @sample Check whether the given string is a subsequence of the plaintext alphabet.
+
+    Example
+
+    For s = "effg", the output should be
+    solution(s) = false;
+    For s = "cdce", the output should be
+    solution(s) = false;
+    For s = "ace", the output should be
+    solution(s) = true;
+    For s = "bxz", the output should be
+    solution(s) = true.*/
+    fun solution70(s: String): Boolean {
+        for(i in 1 until s.length){
+            if(s[i - 1].code >= s[i].code)
+                return false
+        }
+        return true
+    }
 }
