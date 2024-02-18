@@ -18,6 +18,10 @@ object _9_WellOfIntegration {
         )
         println("69 House of Cats: ${_9_WellOfIntegration.solution69(6)}")
         println("70 Alphabet Subsequence: ${_9_WellOfIntegration.solution70("bxz")}")
+        println("71 Minimal Number of Coins: ${_9_WellOfIntegration.solution71(mutableListOf(1, 2, 10), 28)}")
+
+
+       // println("79 Alphabet Subsequence: ${_9_WellOfIntegration.solution79(mutableListOf(0, -1, 0, -1, 0, -1))}")
 
 
     }
@@ -103,5 +107,50 @@ object _9_WellOfIntegration {
                 return false
         }
         return true
+    }
+
+    /**
+     * Minimal Number of Coins
+     * @see "https://app.codesignal.com/arcade/code-arcade/well-of-integration/sGwCfM5FzX7LhLcdk"
+     * @return Minimal Number of Coins
+     * * @sample You find yourself in Bananaland trying to buy a banana. You are super rich so you have an unlimited supply of banana-coins, but you are trying to use as few coins as possible.
+
+    The coin values available in Bananaland are stored in a sorted array coins. coins[0] = 1, and for each i (0 < i < coins.length) coins[i] is divisible by coins[i - 1]. Find the minimal number of banana-coins you'll have to spend to buy a banana given the banana's price.
+
+    Example
+
+    For coins = [1, 2, 10] and price = 28, the output should be
+    solution(coins, price) = 6.
+
+    You have to use 10 twice, and 2 four times.*/
+    var count = 0
+    fun solution71(coins: MutableList<Int>, price: Int): Int {
+        coins.reverse()
+
+        for(coin in coins) {
+            if(price > coin) {
+                if(getCoin(coins, price - coin))
+                    return count
+            } else if(price == coin)
+                return ++count
+        }
+
+        return count
+    }
+
+    private fun getCoin(coins: MutableList<Int>, price: Int): Boolean {
+        count++
+        for(coin in coins) {
+            if(price == coin) {
+                count++
+                return true
+            }
+            else if(price > coin) {
+                if(getCoin(coins, price - coin))
+                    return true
+            }
+        }
+        count--
+        return false
     }
 }
