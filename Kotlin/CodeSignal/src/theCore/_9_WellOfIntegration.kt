@@ -19,8 +19,7 @@ object _9_WellOfIntegration {
         println("69 House of Cats: ${_9_WellOfIntegration.solution69(6)}")
         println("70 Alphabet Subsequence: ${_9_WellOfIntegration.solution70("bxz")}")
         println("71 Minimal Number of Coins: ${_9_WellOfIntegration.solution71(mutableListOf(1, 2, 10), 28)}")
-
-
+        println("72 Add Border: ${_9_WellOfIntegration.solution72(mutableListOf("abc", "ded"))}")
        // println("79 Alphabet Subsequence: ${_9_WellOfIntegration.solution79(mutableListOf(0, -1, 0, -1, 0, -1))}")
 
 
@@ -153,4 +152,31 @@ object _9_WellOfIntegration {
         count--
         return false
     }
+
+    /**
+     * Add Border
+     * @see "https://app.codesignal.com/arcade/intro/level-4/ZCD7NQnED724bJtjN"
+     * @return Add Border
+     * * @sample Given a rectangular matrix of characters, add a border of asterisks(*) to it.
+
+    Example
+    For
+    picture = ["abc",
+    "ded"]
+    the output should be
+    solution(picture) = ["*****",
+    "*abc*",
+    "*ded*",
+    "*****"]
+     */
+    fun solution72(picture: MutableList<String>): MutableList<String> {
+        for (i in 0 until picture.count()) {
+            picture[i] = "*${picture[i]}*"
+        }
+        picture.add(0, "*".repeat(picture[0].length))
+        picture.add("*".repeat(picture[0].length))
+
+        return picture
+    }
+
 }
