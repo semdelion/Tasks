@@ -20,6 +20,8 @@ object _9_WellOfIntegration {
         println("70 Alphabet Subsequence: ${_9_WellOfIntegration.solution70("bxz")}")
         println("71 Minimal Number of Coins: ${_9_WellOfIntegration.solution71(mutableListOf(1, 2, 10), 28)}")
         println("72 Add Border: ${_9_WellOfIntegration.solution72(mutableListOf("abc", "ded"))}")
+        println("73 Switch Lights: ${_9_WellOfIntegration.solution73(mutableListOf(1, 1, 1, 1, 1))}")
+
        // println("79 Alphabet Subsequence: ${_9_WellOfIntegration.solution79(mutableListOf(0, -1, 0, -1, 0, -1))}")
 
 
@@ -178,5 +180,35 @@ object _9_WellOfIntegration {
 
         return picture
     }
+
+    /**
+     * Switch Lights
+     * @see "https://app.codesignal.com/arcade/code-arcade/well-of-integration/x3ix7CY93z2bwKDtG"
+     * @return Switch Lights
+     * * @sample N candles are placed in a row, some of them are initially lit. For each candle from the 1st to the Nth the following algorithm is applied: if the observed candle is lit then states of this candle and all candles before it are changed to the opposite. Which candles will remain lit after applying the algorithm to all candles in the order they are placed in the line?
+
+    Example
+
+    For a = [1, 1, 1, 1, 1], the output should be
+    solution(a) = [0, 1, 0, 1, 0].
+
+    Check out the image below for better understanding:
+
+    For a = [0, 0], the output should be
+    solution(a) = [0, 0].
+
+    The candles are not initially lit, so their states are not altered by the algorithm.
+     */
+    fun solution73(a: MutableList<Int>): MutableList<Int> {
+        var invert = false
+        for (index in a.indices) {
+            val result = if(invert) 1 else 0
+            if(a[a.size-1 - index] == 1)
+                invert =! invert
+            a[a.size-1 - index] = result
+        }
+        return a
+    }
+
 
 }
