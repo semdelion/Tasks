@@ -21,6 +21,7 @@ object _9_WellOfIntegration {
         println("71 Minimal Number of Coins: ${_9_WellOfIntegration.solution71(mutableListOf(1, 2, 10), 28)}")
         println("72 Add Border: ${_9_WellOfIntegration.solution72(mutableListOf("abc", "ded"))}")
         println("73 Switch Lights: ${_9_WellOfIntegration.solution73(mutableListOf(1, 1, 1, 1, 1))}")
+        println("74 Timed Reading: ${_9_WellOfIntegration.solution74(4, "The Fox asked the stork, 'How is the soup?'")}")
 
        // println("79 Alphabet Subsequence: ${_9_WellOfIntegration.solution79(mutableListOf(0, -1, 0, -1, 0, -1))}")
 
@@ -208,6 +209,35 @@ object _9_WellOfIntegration {
             a[a.size-1 - index] = result
         }
         return a
+    }
+
+    /**
+     * Timed Reading
+     * @see "https://app.codesignal.com/arcade/code-arcade/well-of-integration/mJr7vgtN4X4ecL7ZA"
+     * @return Timed Reading
+     * * @sample Timed Reading is an educational tool used in many schools to improve and advance reading skills. A young elementary student has just finished his very first timed reading exercise. Unfortunately he's not a very good reader yet, so whenever he encountered a word longer than maxLength, he simply skipped it and read on.
+
+    Help the teacher figure out how many words the boy has read by calculating the number of words in the text he has read, no longer than maxLength.
+    Formally, a word is a substring consisting of English letters, such that characters to the left of the leftmost letter and to the right of the rightmost letter are not letters.
+
+    Example
+
+    For maxLength = 4 and
+    text = "The Fox asked the stork, 'How is the soup?'",
+    the output should be
+    solution(maxLength, text) = 7.
+
+    The boy has read the following words: "The", "Fox", "the", "How", "is", "the", "soup".
+     */
+    fun solution74(maxLength: Int, text: String): Int {
+        val words = text.split(" ").toTypedArray()
+        var count = 0
+        for (word in words) {
+            val len = word.filter { it in 'A'..'Z' || it in 'a'..'z'}.length
+            if(len <= maxLength && len != 0)
+                count++
+        }
+        return count
     }
 
 
