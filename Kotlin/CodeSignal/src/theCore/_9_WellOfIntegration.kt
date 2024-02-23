@@ -21,11 +21,17 @@ object _9_WellOfIntegration {
         println("71 Minimal Number of Coins: ${_9_WellOfIntegration.solution71(mutableListOf(1, 2, 10), 28)}")
         println("72 Add Border: ${_9_WellOfIntegration.solution72(mutableListOf("abc", "ded"))}")
         println("73 Switch Lights: ${_9_WellOfIntegration.solution73(mutableListOf(1, 1, 1, 1, 1))}")
-        println("74 Timed Reading: ${_9_WellOfIntegration.solution74(4, "The Fox asked the stork, 'How is the soup?'")}")
+        println(
+            "74 Timed Reading: ${
+                _9_WellOfIntegration.solution74(
+                    4,
+                    "The Fox asked the stork, 'How is the soup?'"
+                )
+            }"
+        )
+        println("75 Elections Winners: ${_9_WellOfIntegration.solution75(mutableListOf(2, 3, 5, 2), 3)}")
 
-       // println("79 Alphabet Subsequence: ${_9_WellOfIntegration.solution79(mutableListOf(0, -1, 0, -1, 0, -1))}")
-
-
+        // println("79 Alphabet Subsequence: ${_9_WellOfIntegration.solution79(mutableListOf(0, -1, 0, -1, 0, -1))}")
     }
 
     /**
@@ -104,8 +110,8 @@ object _9_WellOfIntegration {
     For s = "bxz", the output should be
     solution(s) = true.*/
     fun solution70(s: String): Boolean {
-        for(i in 1 until s.length){
-            if(s[i - 1].code >= s[i].code)
+        for (i in 1 until s.length) {
+            if (s[i - 1].code >= s[i].code)
                 return false
         }
         return true
@@ -129,11 +135,11 @@ object _9_WellOfIntegration {
     fun solution71(coins: MutableList<Int>, price: Int): Int {
         coins.reverse()
 
-        for(coin in coins) {
-            if(price > coin) {
-                if(getCoin(coins, price - coin))
+        for (coin in coins) {
+            if (price > coin) {
+                if (getCoin(coins, price - coin))
                     return count
-            } else if(price == coin)
+            } else if (price == coin)
                 return ++count
         }
 
@@ -142,13 +148,12 @@ object _9_WellOfIntegration {
 
     private fun getCoin(coins: MutableList<Int>, price: Int): Boolean {
         count++
-        for(coin in coins) {
-            if(price == coin) {
+        for (coin in coins) {
+            if (price == coin) {
                 count++
                 return true
-            }
-            else if(price > coin) {
-                if(getCoin(coins, price - coin))
+            } else if (price > coin) {
+                if (getCoin(coins, price - coin))
                     return true
             }
         }
@@ -203,10 +208,10 @@ object _9_WellOfIntegration {
     fun solution73(a: MutableList<Int>): MutableList<Int> {
         var invert = false
         for (index in a.indices) {
-            val result = if(invert) 1 else 0
-            if(a[a.size-1 - index] == 1)
-                invert =! invert
-            a[a.size-1 - index] = result
+            val result = if (invert) 1 else 0
+            if (a[a.size - 1 - index] == 1)
+                invert = !invert
+            a[a.size - 1 - index] = result
         }
         return a
     }
@@ -233,11 +238,47 @@ object _9_WellOfIntegration {
         val words = text.split(" ").toTypedArray()
         var count = 0
         for (word in words) {
-            val len = word.filter { it in 'A'..'Z' || it in 'a'..'z'}.length
-            if(len <= maxLength && len != 0)
+            val len = word.filter { it in 'A'..'Z' || it in 'a'..'z' }.length
+            if (len <= maxLength && len != 0)
                 count++
         }
         return count
+    }
+
+    /**
+     * Elections Winners
+     * @see "https://app.codesignal.com/arcade/code-arcade/well-of-integration/8RiRRM3yvbuAd3MNg"
+     * @return Elections Winners
+     * * @sample Elections are in progress!
+
+    Given an array of the numbers of votes given to each of the candidates so far, and an integer k equal to the number of voters who haven't cast their vote yet, find the number of candidates who still have a chance to win the election.
+
+    The winner of the election must secure strictly more votes than any other candidate. If two or more candidates receive the same (maximum) number of votes, assume there is no winner at all.
+
+    Example
+
+    For votes = [2, 3, 5, 2] and k = 3, the output should be
+    solution(votes, k) = 2.
+
+    The first candidate got 2 votes. Even if all of the remaining 3 candidates vote for him, he will still have only 5 votes, i.e. the same number as the third candidate, so there will be no winner.
+    The second candidate can win if all the remaining candidates vote for him (3 + 3 = 6 > 5).
+    The third candidate can win even if none of the remaining candidates vote for him. For example, if each of the remaining voters cast their votes for each of his opponents, he will still be the winner (the votes array will thus be [3, 4, 5, 3]).
+    The last candidate can't win no matter what (for the same reason as the first candidate).
+    Thus, only 2 candidates can win (the second and the third), which is the answer.
+     */
+    fun solution75(votes: MutableList<Int>, k: Int): Int {
+        var countOfWinner = 0
+        val curMax = votes.maxOrNull() ?: 0
+        if (k == 0) {
+            return if (votes.filter { it == curMax }.size == 1) 1 else 0
+        }
+
+        for (vote in votes) {
+            if ((vote + k) > curMax)
+                countOfWinner++
+        }
+
+        return countOfWinner
     }
 
 
