@@ -30,7 +30,7 @@ object _9_WellOfIntegration {
             }"
         )
         println("75 Elections Winners: ${_9_WellOfIntegration.solution75(mutableListOf(2, 3, 5, 2), 3)}")
-
+        println("76 Add Two Digits: ${solution76(1234, 2)}")
         // println("79 Alphabet Subsequence: ${_9_WellOfIntegration.solution79(mutableListOf(0, -1, 0, -1, 0, -1))}")
     }
 
@@ -281,5 +281,26 @@ object _9_WellOfIntegration {
         return countOfWinner
     }
 
+    /**
+     * Integer to String of Fixed Width
+     * @see "https://app.codesignal.com/arcade/code-arcade/well-of-integration/kvGfZZxGyjNbD7yxv"
+     * @return Integer to String of Fixed Width
+     * * @sample Given a positive integer number and a certain length, we need to modify the given number to have a specified length. We are allowed to do that either by cutting out leading digits (if the number needs to be shortened) or by adding 0s in front of the original number.
 
+    Example
+
+    For number = 1234 and width = 2, the output should be
+    solution(number, width) = "34";
+    For number = 1234 and width = 4, the output should be
+    solution(number, width) = "1234";
+    For number = 1234 and width = 5, the output should be
+    solution(number, width) = "01234".*/
+    fun solution76(number: Int, width: Int): String {
+        val stNumber = number.toString()
+        if (stNumber.length < width)
+            return "0".repeat(width - stNumber.length) + stNumber
+        if (stNumber.length > width)
+            return stNumber.substring(stNumber.length - width);
+        return stNumber
+    }
 }
