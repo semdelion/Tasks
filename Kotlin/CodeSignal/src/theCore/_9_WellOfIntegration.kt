@@ -30,8 +30,9 @@ object _9_WellOfIntegration {
             }"
         )
         println("75 Elections Winners: ${_9_WellOfIntegration.solution75(mutableListOf(2, 3, 5, 2), 3)}")
-        println("76 Add Two Digits: ${solution76(1234, 2)}")
-        println("77 Are Similar?: ${solution77(mutableListOf(1, 2, 3), mutableListOf(2, 1, 3))}")
+        println("76 Add Two Digits: ${_9_WellOfIntegration.solution76(1234, 2)}")
+        println("77 Are Similar?: ${_9_WellOfIntegration.solution77(mutableListOf(1, 2, 3), mutableListOf(2, 1, 3))}")
+        println("78 Ada Number: ${_9_WellOfIntegration.solution78("123_456_789")}")
         // println("79 Alphabet Subsequence: ${_9_WellOfIntegration.solution79(mutableListOf(0, -1, 0, -1, 0, -1))}")
     }
 
@@ -348,5 +349,79 @@ object _9_WellOfIntegration {
             return false
 
         return true
+    }
+
+
+    /**
+     * Ada Number
+     * @see "https://app.codesignal.com/arcade/code-arcade/well-of-integration/Ghe6HWhFft8h6fR49"
+     * @return Ada Number
+     * * @sample Consider two following representations of a non-negative integer:
+
+    A simple decimal integer, constructed of a non-empty sequence of digits from 0 to 9;
+    An integer with at least one digit in a base from 2 to 16 (inclusive), enclosed between # characters, and preceded by the base, which can only be a number between 2 and 16 in the first representation. For digits from 10 to 15 characters a, b, ..., f and A, B, ..., F are used.
+    Additionally, both representations may contain underscore (_) characters; they are used only as separators for improving legibility of numbers and can be ignored while processing a number.
+
+    Your task is to determine whether the given string is a valid integer representation.
+
+    Note: this is how integer numbers are represented in the programming language Ada.*/
+    fun solution78(line: String): Boolean {
+        var number = 0
+        var notation = 0
+        var stringNumber = ""
+        if (line.substring(0,2) == "__")
+            return false
+
+        for((index, char) in line.withIndex()) {
+            when(char) {
+                '_' -> continue
+                '#' -> {
+                    if(notation == 0) {
+                        if(number in 2..16)
+                            notation = number
+                        else
+                            return false
+                    }
+                    else {
+                        if(stringNumber.isEmpty())
+                            return false
+                        return index + 1 == line.length
+                    }
+                }
+                else -> {
+                    if (notation > 0) {
+                        stringNumber += char
+
+                        if(char.isDigit()) {
+                            if(char.digitToInt() >= notation)
+                                return false
+                        }
+                        else {
+                            when (char.uppercaseChar()) {
+                                in 'A'..'F' -> {
+                                    if (notation < char.uppercaseChar() - 'A' + 10 + 1)
+                                        return false
+                                }
+                                else -> return false
+                            }
+                        }
+                    } else {
+                        if(char.isDigit()) {
+                            number = number * 10 + char.digitToInt()
+                        }
+                        else
+                            return false
+                    }
+                }
+            }
+        }
+
+        if (notation == 0)
+            return true
+
+        if(line[line.length-1]!='#')
+            return false
+
+        return false
     }
 }
