@@ -33,7 +33,7 @@ object _9_WellOfIntegration {
         println("76 Add Two Digits: ${_9_WellOfIntegration.solution76(1234, 2)}")
         println("77 Are Similar?: ${_9_WellOfIntegration.solution77(mutableListOf(1, 2, 3), mutableListOf(2, 1, 3))}")
         println("78 Ada Number: ${_9_WellOfIntegration.solution78("123_456_789")}")
-        // println("79 Alphabet Subsequence: ${_9_WellOfIntegration.solution79(mutableListOf(0, -1, 0, -1, 0, -1))}")
+        println("79 Three Split: ${_9_WellOfIntegration.solution79(mutableListOf(0, -1, 0, -1, 0, -1))}")
     }
 
     /**
@@ -423,5 +423,58 @@ object _9_WellOfIntegration {
             return false
 
         return false
+    }
+
+    /**
+     * Three Split
+     * @see "https://app.codesignal.com/arcade/code-arcade/well-of-integration/Ghe6HWhFft8h6fR49"
+     * @return Three Split
+     * * @sample You have a long strip of paper with integers written on it in a single line from left to right. You wish to cut the paper into exactly three pieces such that each piece contains at least one integer and the sum of the integers in each piece is the same. You cannot cut through a number, i.e. each initial number will unambiguously belong to one of the pieces after cutting. How many ways can you do it?
+
+    It is guaranteed that the sum of all elements in the array is divisible by 3.
+
+    Example
+
+    For a = [0, -1, 0, -1, 0, -1], the output should be
+    solution(a) = 4.
+
+    Here are all possible ways:
+
+    [0, -1] [0, -1] [0, -1]
+    [0, -1] [0, -1, 0] [-1]
+    [0, -1, 0] [-1, 0] [-1]
+    [0, -1, 0] [-1] [0, -1]*/
+    fun solution79(a: MutableList<Int>): Int {
+        val third = a.sumOf { it.toLong() } / 3
+        var count = 0
+        var firstIndex = -1
+        var secondIndex = -1
+        var sum = 0L
+        for (i in a.count() -1 downTo  0  ) {
+            sum += a[i]
+            if(sum == third) {
+                if(firstIndex == -1)
+                    firstIndex= i
+                else {
+                    secondIndex = i
+                    break
+                }
+                sum = 0
+            }
+        }
+        var left = 0L
+        for(i in 0 until secondIndex ) {
+            left+=a[i]
+            if(left == third) {
+                var center = 0L
+                for (j in i + 1 until firstIndex) {
+                    center += a[j]
+                    if(center == third) {
+                        count ++
+                    }
+                }
+            }
+        }
+        return count
     }
 }
