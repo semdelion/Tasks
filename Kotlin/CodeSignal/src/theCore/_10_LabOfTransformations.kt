@@ -6,6 +6,7 @@ object _10_LabOfTransformations {
         println("81 Reflect String: ${_10_LabOfTransformations.solution81("abcdefghijklmnopqrstuvwxyz")}")
         println("82 New Numeral System: ${_10_LabOfTransformations.solution82('G')}")
         println("83 Cipher 26: ${_10_LabOfTransformations.solution83("taiaiaertkixquxjnfxxdh")}")
+        println("84 Stolen Lunch: ${_10_LabOfTransformations.solution84("you'll n4v4r 6u4ss 8t: cdja")}")
     }
 
     /**
@@ -100,5 +101,27 @@ object _10_LabOfTransformations {
             sum += dif
             (dif + 97).toChar()
         }.joinToString("")
+    }
+
+    /**s
+     * Stolen Lunch
+     * @see "https://app.codesignal.com/arcade/code-arcade/lab-of-transformations/M97sbwRp3tGy8uAb8"
+     * @return Stolen Lunch
+     * * @sample When you recently visited your little nephew, he told you a sad story: there's a bully at school who steals his lunch every day, and locks it away in his locker. He also leaves a note with a strange, coded message. Your nephew gave you one of the notes in hope that you can decipher it for him. And you did: it looks like all the digits in it are replaced with letters and vice versa. Digit 0 is replaced with 'a', 1 is replaced with 'b' and so on, with digit 9 replaced by 'j'.
+
+    The note is different every day, so you decide to write a function that will decipher it for your nephew on an ongoing basis.*/
+    fun solution84(note: String): String {
+        var result = ""
+        for (item in note) {
+            result += when (item.code) {
+                in 48..57 ->
+                    ('a'.code + item.code - 48).toChar()
+                in 97..106 ->
+                    ('0'.code + item.code - 97).toChar()
+                else ->
+                    item
+            }
+        }
+        return result
     }
 }
