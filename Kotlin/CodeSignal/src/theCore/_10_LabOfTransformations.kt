@@ -7,6 +7,7 @@ object _10_LabOfTransformations {
         println("82 New Numeral System: ${_10_LabOfTransformations.solution82('G')}")
         println("83 Cipher 26: ${_10_LabOfTransformations.solution83("taiaiaertkixquxjnfxxdh")}")
         println("84 Stolen Lunch: ${_10_LabOfTransformations.solution84("you'll n4v4r 6u4ss 8t: cdja")}")
+        println("85 Higher Version: ${_10_LabOfTransformations.solution85("1.2.2", "1.2.0")}")
     }
 
     /**
@@ -123,5 +124,38 @@ object _10_LabOfTransformations {
             }
         }
         return result
+    }
+
+    /**
+     * Higher Version
+     * @see "https://app.codesignal.com/arcade/code-arcade/lab-of-transformations/vsKRjYKv4SCjzJc8r"
+     * @return Higher Version
+     * * @sample Given two version strings composed of several non-negative decimal fields separated by periods ("."), both strings contain equal number of numeric fields. Return true if the first version is higher than the second version and false otherwise.
+
+    The syntax follows the regular semver ordering rules:
+
+    1.0.5 < 1.1.0 < 1.1.5 < 1.1.10 < 1.2.0 < 1.2.2
+    < 1.2.10 < 1.10.2 < 2.0.0 < 10.0.0
+    There are no leading zeros in any of the numeric fields, i.e. you do not have to handle inputs like 100.020.003 (it would instead be given as 100.20.3).
+
+    Example
+
+    For ver1 = "1.2.2" and ver2 = "1.2.0", the output should be
+    solution(ver1, ver2) = true;
+    For ver1 = "1.0.5" and ver2 = "1.1.0", the output should be
+    solution(ver1, ver2) = false.*/
+    fun solution85(ver1: String, ver2: String): Boolean {
+        val var1S = ver1.split('.')
+        val var2S = ver2.split('.')
+        if(var1S.count() != var2S.count())
+            throw NumberFormatException()
+        for (i in 0 until  var1S.count()) {
+            if(var1S[i].toInt() > var2S[i].toInt())
+                return true
+            if (var1S[i].toInt() < var2S[i].toInt())
+                return false
+        }
+
+        return false
     }
 }
