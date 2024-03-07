@@ -8,6 +8,7 @@ object _10_LabOfTransformations {
         println("83 Cipher 26: ${_10_LabOfTransformations.solution83("taiaiaertkixquxjnfxxdh")}")
         println("84 Stolen Lunch: ${_10_LabOfTransformations.solution84("you'll n4v4r 6u4ss 8t: cdja")}")
         println("85 Higher Version: ${_10_LabOfTransformations.solution85("1.2.2", "1.2.0")}")
+        println("86 Decipher: ${_10_LabOfTransformations.solution86("10197115121")}")
     }
 
     /**
@@ -157,5 +158,37 @@ object _10_LabOfTransformations {
         }
 
         return false
+    }
+
+
+    /**
+     * Decipher
+     * @see "https://app.codesignal.com/arcade/code-arcade/lab-of-transformations/dB9drnfWzpiWznESA"
+     * @return Decipher
+     * * @sample Consider the following ciphering algorithm:
+
+    For each character replace it with its code.
+    Concatenate all of the obtained numbers.
+    Given a ciphered string, return the initial one if it is known that it consists only of lowercase letters.
+
+    Note: here the character's code means its decimal ASCII code, the numerical representation of a character used by most modern programming languages.
+
+    Example
+
+    For cipher = "10197115121", the output should be
+    solution(cipher) = "easy".
+
+    Explanation: charCode('e') = 101, charCode('a') = 97, charCode('s') = 115 and charCode('y') = 121.*/
+    fun solution86(cipher: String): String {
+        var result = ""
+        var symbol = ""
+        for (item  in cipher) {
+            symbol += item
+            if(symbol.length > 1 && symbol.toInt() > 96) {
+                result += symbol.toInt().toChar()
+                symbol = ""
+            }
+        }
+        return result
     }
 }
