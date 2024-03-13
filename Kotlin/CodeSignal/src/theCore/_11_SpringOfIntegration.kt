@@ -4,6 +4,12 @@ object _11_SpringOfIntegration {
     fun run() {
         println("88 Array Conversion: ${_11_SpringOfIntegration.solution88(mutableListOf(1, 2, 3, 4, 5, 6, 7, 8))}")
         println("89 Array Previous Less: ${_11_SpringOfIntegration.solution89(mutableListOf(3, 5, 2, 4, 5))}")
+        println("90 Pair of Shoes: ${_11_SpringOfIntegration.solution90(mutableListOf(
+            mutableListOf(0, 21),
+            mutableListOf(1, 23),
+            mutableListOf(1, 21),
+            mutableListOf(0, 23)
+        ))}")
     }
 
     /**
@@ -62,5 +68,51 @@ object _11_SpringOfIntegration {
         }
         items[0] = -1
         return items
+    }
+
+    /**
+     * Pair of Shoes
+     * @see "https://app.codesignal.com/arcade/code-arcade/spring-of-integration/picP24ieQnuqR4kxJ"
+     * @return Pair of Shoes
+     * * @sample     Yesterday you found some shoes in the back of your closet. Each shoe is described by two values:
+
+    type indicates if it's a left or a right shoe;
+    size is the size of the shoe.
+    Your task is to check whether it is possible to pair the shoes you found in such a way that each pair consists of a right and a left shoe of an equal size.
+
+    Example
+
+    For
+
+    shoes = [[0, 21],
+    [1, 23],
+    [1, 21],
+    [0, 23]]
+    the output should be
+    solution(shoes) = true;
+
+    For
+
+    shoes = [[0, 21],
+    [1, 23],
+    [1, 21],
+    [1, 23]]
+    the output should be
+    solution(shoes) = false*/
+    fun solution90(shoes: MutableList<MutableList<Int>>): Boolean {
+        while (shoes.size > 0) {
+            var shoeIndex: Int? = null
+            for (i in 1 until shoes.size) {
+                if(shoes[i][0] == (shoes[0][0]+1) % 2 && shoes[i][1] == shoes[0][1]) {
+                    shoeIndex = i
+                    break
+                }
+            }
+            if (shoeIndex == null)
+                return false
+            shoes.removeAt(shoeIndex)
+            shoes.removeAt(0)
+        }
+        return true
     }
 }
