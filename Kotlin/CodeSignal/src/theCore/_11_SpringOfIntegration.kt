@@ -10,6 +10,7 @@ object _11_SpringOfIntegration {
             mutableListOf(1, 21),
             mutableListOf(0, 23)
         ))}")
+        println("91 Combs: ${_11_SpringOfIntegration.solution91("*..*.*", "*.***")}")
     }
 
     /**
@@ -114,5 +115,40 @@ object _11_SpringOfIntegration {
             shoes.removeAt(0)
         }
         return true
+    }
+
+    /**
+     * Combs
+     * @see "https://app.codesignal.com/arcade/code-arcade/spring-of-integration/6ceKutpnCs4LzBKgf"
+     * @return Combs
+     * * @sample     Miss X has only two combs in her possession, both of which are old and miss a tooth or two. She also has many purses of different length, in which she carries the combs. The only way they fit is horizontally and without overlapping. Given teeth' positions on both combs, find the minimum length of the purse she needs to take them with her.
+
+    It is guaranteed that there is at least one tooth at each end of the comb.
+    It is also guaranteed that the total length of two strings is smaller than 32.
+    Note, that the combs can not be rotated/reversed.
+
+    Example
+
+    For comb1 = "*..*" and comb2 = "*.*", the output should be
+    solution(comb1, comb2) = 5.
+
+    Although it is possible to place the combs like on the first picture, the best way to do this is either picture 2 or picture 3.*/
+    fun solution91(comb1: String, comb2: String): Int {
+        var minLength = comb1.length + comb2.length
+        for (i in 0 until comb1.length + comb2.length - 1) {
+            val from = if(i >= comb2.length) (i - comb2.length  + 1) else 0
+            val to = if(i < comb1.length) i else comb1.length - 1
+            var flag = true
+            for (j in from ..to ) {
+                if(comb1[j] == '*' && comb2[comb2.length - 1 - i + j]=='*') {
+                    flag = false
+                    break
+                }
+            }
+            if (flag && minLength > comb1.length + comb2.length - (to - from + 1))
+                minLength = comb1.length + comb2.length - (to - from + 1)
+
+        }
+        return minLength
     }
 }
