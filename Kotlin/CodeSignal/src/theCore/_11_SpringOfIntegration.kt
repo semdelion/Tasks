@@ -11,6 +11,7 @@ object _11_SpringOfIntegration {
             mutableListOf(0, 23)
         ))}")
         println("91 Combs: ${_11_SpringOfIntegration.solution91("*..*.*", "*.***")}")
+        println("92 Strings Crossover: ${_11_SpringOfIntegration.solution92(mutableListOf("abc", "aaa", "aba", "bab"),"bbb")}")
     }
 
     /**
@@ -151,4 +152,42 @@ object _11_SpringOfIntegration {
         }
         return minLength
     }
+
+    /**
+     * Strings Crossover
+     * @see "https://app.codesignal.com/arcade/code-arcade/spring-of-integration/6ceKutpnCs4LzBKgf"
+     * @return Strings Crossover
+     * * @sample  Define crossover operation over two equal-length strings A and B as follows:
+
+    the result of that operation is a string of the same length as the input strings
+    result[i] is either A[i] or B[i], chosen at random
+    Given array of strings inputArray and a string result, find for how many pairs of strings from inputArray the result of the crossover operation over them may be equal to result.
+
+    Note that (A, B) and (B, A) are the same pair. Also note that the pair cannot include the same element of the array twice (however, if there are two equal elements in the array, they can form a pair).
+
+    Example
+
+    For inputArray = ["abc", "aaa", "aba", "bab"] and result = "bbb", the output should be
+    solution(inputArray, result) = 2.*/
+    fun solution92(inputArray: MutableList<String>, result: String): Int {
+        var pairs = 0
+        for (i in 0 until inputArray.size - 1) {
+            for (j in i + 1 until inputArray.size) {
+                if (possibleCrossover(inputArray[i], inputArray[j], result)) {
+                    pairs++
+                }
+            }
+        }
+        return pairs
+    }
+
+    private fun possibleCrossover(A: String, B: String, result: String): Boolean {
+        for (i in A.indices) {
+            if (A[i] != result[i] && B[i] != result[i]) {
+                return false
+            }
+        }
+        return true
+    }
+
 }
