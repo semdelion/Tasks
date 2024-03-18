@@ -4,9 +4,9 @@ package theCore
 object _2_AtTheCrossroads {
 
     fun run() {
-        println("9 Reach Next Level: ${_2_AtTheCrossroads.solution9(experience = 10, threshold = 15, reward = 5)}")
+        println("9) Reach Next Level: ${_2_AtTheCrossroads.solution9(experience = 10, threshold = 15, reward = 5)}")
         println(
-            "10 Knapsack Light: ${
+            "10) Knapsack Light: ${
                 _2_AtTheCrossroads.solution10(
                     value1 = 10,
                     weight1 = 5,
@@ -16,12 +16,12 @@ object _2_AtTheCrossroads {
                 )
             }"
         )
-        println("11 Extra Number: ${_2_AtTheCrossroads.solution11(a = 2, b = 7, c = 2)}")
-        println("12 Is Infinite Process?: ${_2_AtTheCrossroads.solution12(a = 2, b = 6)}")
-        println("13 Arithmetic Expression: ${_2_AtTheCrossroads.solution13(2, 3, 5)}")
-        println("14 Tennis Set: ${_2_AtTheCrossroads.solution14(7, 5)}")
-        println("15 Will you?: ${_2_AtTheCrossroads.solution15( young = true, beautiful = true, loved = true)}")
-        println("16 Metro Card: ${_2_AtTheCrossroads.solution16( 31)}")
+        println("11) Extra Number: ${_2_AtTheCrossroads.solution11(a = 2, b = 7, c = 2)}")
+        println("12) Is Infinite Process?: ${_2_AtTheCrossroads.solution12(a = 2, b = 6)}")
+        println("13) Arithmetic Expression: ${_2_AtTheCrossroads.solution13(2, 3, 5)}")
+        println("14) Tennis Set: ${_2_AtTheCrossroads.solution14(7, 5)}")
+        println("15) Will you?: ${_2_AtTheCrossroads.solution15( young = true, beautiful = true, loved = true)}")
+        println("16) Metro Card: ${_2_AtTheCrossroads.solution16( 31)}")
 
     }
 

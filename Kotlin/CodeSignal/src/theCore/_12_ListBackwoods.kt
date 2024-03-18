@@ -2,7 +2,7 @@ package theCore
 
 object _12_ListBackwoods {
     fun run() {
-        println("98 Add Two Digits: ${_12_ListBackwoods.solution98(29)}")
+        println("98) Add Two Digits: ${_12_ListBackwoods.solution98(29)}")
 
 
     }

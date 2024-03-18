@@ -2,14 +2,14 @@ package theCore
 
 object _10_LabOfTransformations {
     fun run() {
-        println("80 Character Parity: ${_10_LabOfTransformations.solution80('5')}")
-        println("81 Reflect String: ${_10_LabOfTransformations.solution81("abcdefghijklmnopqrstuvwxyz")}")
-        println("82 New Numeral System: ${_10_LabOfTransformations.solution82('G')}")
-        println("83 Cipher 26: ${_10_LabOfTransformations.solution83("taiaiaertkixquxjnfxxdh")}")
-        println("84 Stolen Lunch: ${_10_LabOfTransformations.solution84("you'll n4v4r 6u4ss 8t: cdja")}")
-        println("85 Higher Version: ${_10_LabOfTransformations.solution85("1.2.2", "1.2.0")}")
-        println("86 Decipher: ${_10_LabOfTransformations.solution86("10197115121")}")
-        println("87 Alphanumeric Less: ${_10_LabOfTransformations.solution87("x11y012", "x011y13")}")
+        println("80) Character Parity: ${_10_LabOfTransformations.solution80('5')}")
+        println("81) Reflect String: ${_10_LabOfTransformations.solution81("abcdefghijklmnopqrstuvwxyz")}")
+        println("82) New Numeral System: ${_10_LabOfTransformations.solution82('G')}")
+        println("83) Cipher 26: ${_10_LabOfTransformations.solution83("taiaiaertkixquxjnfxxdh")}")
+        println("84) Stolen Lunch: ${_10_LabOfTransformations.solution84("you'll n4v4r 6u4ss 8t: cdja")}")
+        println("85) Higher Version: ${_10_LabOfTransformations.solution85("1.2.2", "1.2.0")}")
+        println("86) Decipher: ${_10_LabOfTransformations.solution86("10197115121")}")
+        println("87) Alphanumeric Less: ${_10_LabOfTransformations.solution87("x11y012", "x011y13")}")
     }
 
     /**

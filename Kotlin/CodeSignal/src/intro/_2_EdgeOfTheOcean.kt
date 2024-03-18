@@ -3,14 +3,14 @@ package intro
 object _2_EdgeOfTheOcean {
 
     fun run() {
-        println("4 AdjacentElementsProduct  --> inputArray ${mutableListOf(3, 6, -2, -5, 7, 3)}; result: ${_2_EdgeOfTheOcean.solution4(mutableListOf(3, 6, -2, -5, 7, 3))}")
-        println("5 ShapeArea  --> n = 5 ; result: ${_2_EdgeOfTheOcean.solution5(5)}")
-        println("6 Make Array Consecutive 2  --> statues = ${mutableListOf(6, 2, 3, 8)}; result: ${_2_EdgeOfTheOcean.solution6(mutableListOf(6, 2, 3, 8))}")
-        println("7 AlmostIncreasingSequence  --> sequence = ${mutableListOf(1, 3, 2, 1)}; result: ${_2_EdgeOfTheOcean.solution7(mutableListOf(1, 3, 2, 1))}")
-        println("8 MatrixElementsSum  --> matrixElementsSum = \n            ${mutableListOf(0, 1, 1, 2)}\n" +
+        println("4) AdjacentElementsProduct  --> inputArray ${mutableListOf(3, 6, -2, -5, 7, 3)}; result: ${_2_EdgeOfTheOcean.solution4(mutableListOf(3, 6, -2, -5, 7, 3))}")
+        println("5) ShapeArea  --> n = 5 ; result: ${_2_EdgeOfTheOcean.solution5(5)}")
+        println("6) Make Array Consecutive 2  --> statues = ${mutableListOf(6, 2, 3, 8)}; result: ${_2_EdgeOfTheOcean.solution6(mutableListOf(6, 2, 3, 8))}")
+        println("7) AlmostIncreasingSequence  --> sequence = ${mutableListOf(1, 3, 2, 1)}; result: ${_2_EdgeOfTheOcean.solution7(mutableListOf(1, 3, 2, 1))}")
+        println("8) MatrixElementsSum  --> matrixElementsSum = \n            ${mutableListOf(0, 1, 1, 2)}\n" +
                 "            ${mutableListOf(0, 5, 0, 0)}\n" +
                 "            ${mutableListOf(2, 0, 3, 3)}\n" +
-                "                        ; result: ${_2_EdgeOfTheOcean.solution8(mutableListOf(
+                "    result: ${_2_EdgeOfTheOcean.solution8(mutableListOf(
             mutableListOf(0, 1, 1, 2),
             mutableListOf(0, 5, 0, 0),
             mutableListOf(2, 0, 3, 3)))}")

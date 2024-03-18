@@ -2,15 +2,14 @@ package theCore
 
 object _7_BookMarket {
     fun run() {
-        println("51 Enclose In Brackets: ${_7_BookMarket.solution51("abacaba")}")
-        println("52 Proper Noun Correction: ${_7_BookMarket.solution52("pARiS")}")
-        println("53 Is Tandem Repeat?: ${_7_BookMarket.solution53("tandemtandem")}")
-        println("54 Is Case-Insensitive Palindrome?: ${_7_BookMarket.solution54("AaBaa")}")
-        println("55 Find Email Domain: ${_7_BookMarket.solution55("fully-qualified-domain@codesignal.com")}")
-        println("56 HTML End Tag By Start Tag: ${_7_BookMarket.solution56("<button type='button' disabled>")}")
-        println("57 Is MAC48 Address?: ${_7_BookMarket.solution57("00-1B-63-84-45-E6")}")
-        println("58 Is Unstable Pair?: ${_7_BookMarket.solution58(filename1 = "aa", filename2 = "AAB")}")
-
+        println("51) Enclose In Brackets: ${_7_BookMarket.solution51("abacaba")}")
+        println("52) Proper Noun Correction: ${_7_BookMarket.solution52("pARiS")}")
+        println("53) Is Tandem Repeat?: ${_7_BookMarket.solution53("tandemtandem")}")
+        println("54) Is Case-Insensitive Palindrome?: ${_7_BookMarket.solution54("AaBaa")}")
+        println("55) Find Email Domain: ${_7_BookMarket.solution55("fully-qualified-domain@codesignal.com")}")
+        println("56) HTML End Tag By Start Tag: ${_7_BookMarket.solution56("<button type='button' disabled>")}")
+        println("57) Is MAC48 Address?: ${_7_BookMarket.solution57("00-1B-63-84-45-E6")}")
+        println("58) Is Unstable Pair?: ${_7_BookMarket.solution58(filename1 = "aa", filename2 = "AAB")}")
     }
 
     /**

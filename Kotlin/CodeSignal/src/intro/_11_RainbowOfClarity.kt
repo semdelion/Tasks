@@ -4,10 +4,10 @@ import kotlin.math.pow
 
 object _11_RainbowOfClarity {
     fun run() {
-        println("48 Circle of Numbers: ${_11_RainbowOfClarity.solution48('8')}")
-        println("49 LineEncoding: ${_11_RainbowOfClarity.solution49("aabbbc")}")
-        println("50 ChessKnight: ${_11_RainbowOfClarity.solution50("a1")}")
-        println("51 DeleteDigit: ${_11_RainbowOfClarity.solution51(152)}")
+        println("48) Circle of Numbers: ${_11_RainbowOfClarity.solution48('8')}")
+        println("49) LineEncoding: ${_11_RainbowOfClarity.solution49("aabbbc")}")
+        println("50) ChessKnight: ${_11_RainbowOfClarity.solution50("a1")}")
+        println("51) DeleteDigit: ${_11_RainbowOfClarity.solution51(152)}")
     }
 
      /**

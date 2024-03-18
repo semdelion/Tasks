@@ -3,11 +3,11 @@ package intro
 object _10_EruptionOfLight {
 
     fun run() {
-        println("43 IsBeautifulString: ${_10_EruptionOfLight.solution43("bbbaacdafe")}")
-        println("44 Find Email Domain: ${_10_EruptionOfLight.solution44("prettyandsimple@example.com")}")
-        println("45 BuildPalindrome: ${_10_EruptionOfLight.solution45("abcdc")}")
-        println("46 Elections Winners: ${_10_EruptionOfLight.solution46(mutableListOf(2, 3, 5, 2), 3)}")
-        println("47 Is MAC48 Address?: ${_10_EruptionOfLight.solution47("00-1B-63-84-45-E6")}")
+        println("43) IsBeautifulString: ${_10_EruptionOfLight.solution43("bbbaacdafe")}")
+        println("44) Find Email Domain: ${_10_EruptionOfLight.solution44("prettyandsimple@example.com")}")
+        println("45) BuildPalindrome: ${_10_EruptionOfLight.solution45("abcdc")}")
+        println("46) Elections Winners: ${_10_EruptionOfLight.solution46(mutableListOf(2, 3, 5, 2), 3)}")
+        println("47) Is MAC48 Address?: ${_10_EruptionOfLight.solution47("00-1B-63-84-45-E6")}")
     }
 
     /**

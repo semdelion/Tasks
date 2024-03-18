@@ -2,14 +2,14 @@ package theCore
 
 object _3_CornerOf0sAnd1s {
     fun run() {
-        println("17 Not support kotlin, solved by C#")
-        println("18 Array Packing: ${_3_CornerOf0sAnd1s.solution18(mutableListOf(24, 85, 0))}")
-        println("19 Range Bit Count: ${_3_CornerOf0sAnd1s.solution19(2,7)}")
-        println("20 Mirror Bits: ${_3_CornerOf0sAnd1s.solution20(97)}")
-        println("21 Not support kotlin, solved by C#")
-        println("22 Not support kotlin, solved by C#")
-        println("23 Not support kotlin, solved by C#")
-        println("24 Not support kotlin, solved by C#")
+        println("17) Not support kotlin, solved by C#")
+        println("18) Array Packing: ${_3_CornerOf0sAnd1s.solution18(mutableListOf(24, 85, 0))}")
+        println("19) Range Bit Count: ${_3_CornerOf0sAnd1s.solution19(2,7)}")
+        println("20) Mirror Bits: ${_3_CornerOf0sAnd1s.solution20(97)}")
+        println("21) Not support kotlin, solved by C#")
+        println("22) Not support kotlin, solved by C#")
+        println("23) Not support kotlin, solved by C#")
+        println("24) Not support kotlin, solved by C#")
     }
 
     /**

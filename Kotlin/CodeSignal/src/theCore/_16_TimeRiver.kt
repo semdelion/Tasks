@@ -2,7 +2,7 @@ package theCore
 
 object _16_TimeRiver {
     fun run() {
-        println("130 Add Two Digits: ${_16_TimeRiver.solution130(29)}")
+        println("130) Add Two Digits: ${_16_TimeRiver.solution130(29)}")
 
 
     }

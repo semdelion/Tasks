@@ -2,11 +2,11 @@ package intro
 
 object _9_DarkWilderness {
     fun run() {
-        println("38 Circle of Numbers: ${_9_DarkWilderness.solution38(100, 10, 910)}")
-        println("39 Knapsack Light: ${_9_DarkWilderness.solution39(value1 = 10, weight1 = 5, value2 = 6, weight2 = 4,  maxW = 8)}")
-        println("40 LongestDigitsPrefix: ${_9_DarkWilderness.solution40("123aa1fdsfs13145")}")
-        println("41 DigitDegree: ${_9_DarkWilderness.solution41(1239)}")
-        println("42 Bishop and Pawn: ${_9_DarkWilderness.solution42(bishop = "a1", pawn = "c3")}")
+        println("38) Circle of Numbers: ${_9_DarkWilderness.solution38(100, 10, 910)}")
+        println("39) Knapsack Light: ${_9_DarkWilderness.solution39(value1 = 10, weight1 = 5, value2 = 6, weight2 = 4,  maxW = 8)}")
+        println("40) LongestDigitsPrefix: ${_9_DarkWilderness.solution40("123aa1fdsfs13145")}")
+        println("41) DigitDegree: ${_9_DarkWilderness.solution41(1239)}")
+        println("42) Bishop and Pawn: ${_9_DarkWilderness.solution42(bishop = "a1", pawn = "c3")}")
     }
 
      /**

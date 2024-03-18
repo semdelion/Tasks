@@ -2,7 +2,7 @@ package theCore
 
 object _15_ChessTavern {
     fun run() {
-        println("122 Add Two Digits: ${_15_ChessTavern.solution122(29)}")
+        println("122) Add Two Digits: ${_15_ChessTavern.solution122(29)}")
 
 
     }

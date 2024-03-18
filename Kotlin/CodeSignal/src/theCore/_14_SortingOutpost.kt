@@ -2,7 +2,7 @@ package theCore
 
 object _14_SortingOutpost {
     fun run() {
-        println("114 Add Two Digits: ${_14_SortingOutpost.solution114(29)}")
+        println("114) Add Two Digits: ${_14_SortingOutpost.solution114(29)}")
 
 
     }

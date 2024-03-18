@@ -2,9 +2,9 @@ package theCore
 
 object _9_WellOfIntegration {
     fun run() {
-        println("67 House Numbers Sum: ${_9_WellOfIntegration.solution67(mutableListOf(5, 1, 2, 3, 0, 1, 5, 0, 2))}")
+        println("67) House Numbers Sum: ${_9_WellOfIntegration.solution67(mutableListOf(5, 1, 2, 3, 0, 1, 5, 0, 2))}")
         println(
-            "68 All Longest Strings: ${
+            "68) All Longest Strings: ${
                 _9_WellOfIntegration.solution68(
                     mutableListOf(
                         "aba",
@@ -16,24 +16,24 @@ object _9_WellOfIntegration {
                 )
             }"
         )
-        println("69 House of Cats: ${_9_WellOfIntegration.solution69(6)}")
-        println("70 Alphabet Subsequence: ${_9_WellOfIntegration.solution70("bxz")}")
-        println("71 Minimal Number of Coins: ${_9_WellOfIntegration.solution71(mutableListOf(1, 2, 10), 28)}")
-        println("72 Add Border: ${_9_WellOfIntegration.solution72(mutableListOf("abc", "ded"))}")
-        println("73 Switch Lights: ${_9_WellOfIntegration.solution73(mutableListOf(1, 1, 1, 1, 1))}")
+        println("69) House of Cats: ${_9_WellOfIntegration.solution69(6)}")
+        println("70) Alphabet Subsequence: ${_9_WellOfIntegration.solution70("bxz")}")
+        println("71) Minimal Number of Coins: ${_9_WellOfIntegration.solution71(mutableListOf(1, 2, 10), 28)}")
+        println("72) Add Border: ${_9_WellOfIntegration.solution72(mutableListOf("abc", "ded"))}")
+        println("73) Switch Lights: ${_9_WellOfIntegration.solution73(mutableListOf(1, 1, 1, 1, 1))}")
         println(
-            "74 Timed Reading: ${
+            "74) Timed Reading: ${
                 _9_WellOfIntegration.solution74(
                     4,
                     "The Fox asked the stork, 'How is the soup?'"
                 )
             }"
         )
-        println("75 Elections Winners: ${_9_WellOfIntegration.solution75(mutableListOf(2, 3, 5, 2), 3)}")
-        println("76 Add Two Digits: ${_9_WellOfIntegration.solution76(1234, 2)}")
-        println("77 Are Similar?: ${_9_WellOfIntegration.solution77(mutableListOf(1, 2, 3), mutableListOf(2, 1, 3))}")
-        println("78 Ada Number: ${_9_WellOfIntegration.solution78("123_456_789")}")
-        println("79 Three Split: ${_9_WellOfIntegration.solution79(mutableListOf(0, -1, 0, -1, 0, -1))}")
+        println("75) Elections Winners: ${_9_WellOfIntegration.solution75(mutableListOf(2, 3, 5, 2), 3)}")
+        println("76) Add Two Digits: ${_9_WellOfIntegration.solution76(1234, 2)}")
+        println("77) Are Similar?: ${_9_WellOfIntegration.solution77(mutableListOf(1, 2, 3), mutableListOf(2, 1, 3))}")
+        println("78) Ada Number: ${_9_WellOfIntegration.solution78("123_456_789")}")
+        println("79) Three Split: ${_9_WellOfIntegration.solution79(mutableListOf(0, -1, 0, -1, 0, -1))}")
     }
 
     /**

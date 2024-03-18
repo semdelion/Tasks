@@ -2,10 +2,10 @@ package intro
 
 object _8_DivingDeeper {
     fun run() {
-        println("34 ExtractEachKth: ${_8_DivingDeeper.solution34(mutableListOf(1, 2, 3, 4, 5, 6, 7, 8, 9, 10), 2)}")
-        println("35 FirstDigit: ${_8_DivingDeeper.solution35("var_1__Int")}")
-        println("36 DifferentSymbolsNaive: ${_8_DivingDeeper.solution36("cabca")}")
-        println("37 ArrayMaxConsecutiveSum: ${_8_DivingDeeper.solution37(mutableListOf(2, 3, 5, 1, 6), 2)}")
+        println("34) ExtractEachKth: ${_8_DivingDeeper.solution34(mutableListOf(1, 2, 3, 4, 5, 6, 7, 8, 9, 10), 2)}")
+        println("35) FirstDigit: ${_8_DivingDeeper.solution35("var_1__Int")}")
+        println("36) DifferentSymbolsNaive: ${_8_DivingDeeper.solution36("cabca")}")
+        println("37) ArrayMaxConsecutiveSum: ${_8_DivingDeeper.solution37(mutableListOf(2, 3, 5, 1, 6), 2)}")
     }
 
     /**

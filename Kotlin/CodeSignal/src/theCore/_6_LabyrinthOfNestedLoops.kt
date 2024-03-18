@@ -2,15 +2,14 @@ package theCore
 
 object _6_LabyrinthOfNestedLoops {
     fun run() {
-        println("43 Is Power?: ${_6_LabyrinthOfNestedLoops.solution43(29)}")
-        println("44 Is Sum of Consecutive 2: ${_6_LabyrinthOfNestedLoops.solution44(9)}")
-        println("45 Square Digits Sequence: ${_6_LabyrinthOfNestedLoops.solution45(16)}")
-        println("46 Pages Numbering With Ink: ${_6_LabyrinthOfNestedLoops.solution46(21, 5)}")
-        println("47 Comfortable Numbers: ${_6_LabyrinthOfNestedLoops.solution47(10, 12)}")
-        println("48 Weak Numbers: ${_6_LabyrinthOfNestedLoops.solution48(9)}")
-        println("49 Rectangle Rotation: ${_6_LabyrinthOfNestedLoops.solution49( 6, 4)}")
-        println("50 Crossword Formation: ${_6_LabyrinthOfNestedLoops.solution50(mutableListOf("crossword", "square", "formation", "something"))}")
-
+        println("43) Is Power?: ${_6_LabyrinthOfNestedLoops.solution43(29)}")
+        println("44) Is Sum of Consecutive 2: ${_6_LabyrinthOfNestedLoops.solution44(9)}")
+        println("45) Square Digits Sequence: ${_6_LabyrinthOfNestedLoops.solution45(16)}")
+        println("46) Pages Numbering With Ink: ${_6_LabyrinthOfNestedLoops.solution46(21, 5)}")
+        println("47) Comfortable Numbers: ${_6_LabyrinthOfNestedLoops.solution47(10, 12)}")
+        println("48) Weak Numbers: ${_6_LabyrinthOfNestedLoops.solution48(9)}")
+        println("49) Rectangle Rotation: ${_6_LabyrinthOfNestedLoops.solution49( 6, 4)}")
+        println("50) Crossword Formation: ${_6_LabyrinthOfNestedLoops.solution50(mutableListOf("crossword", "square", "formation", "something"))}")
     }
 
     /**

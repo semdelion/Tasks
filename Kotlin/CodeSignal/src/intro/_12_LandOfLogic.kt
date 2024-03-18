@@ -4,11 +4,11 @@ import kotlin.math.pow
 
 object _12_LandOfLogic {
     fun run() {
-        println("52 LongestWord: ${_12_LandOfLogic.solution52("Ready, steady, go!")}")
-        println("53 Valid Time: ${_12_LandOfLogic.solution53("25:51")}")
-        println("54 SumUpNumbers: ${_12_LandOfLogic.solution54("2 apples, 12 oranges")}")
+        println("52) LongestWord: ${_12_LandOfLogic.solution52("Ready, steady, go!")}")
+        println("53) Valid Time: ${_12_LandOfLogic.solution53("25:51")}")
+        println("54) SumUpNumbers: ${_12_LandOfLogic.solution54("2 apples, 12 oranges")}")
         println(
-            "55 Different Squares: ${
+            "55) Different Squares: ${
                 _12_LandOfLogic.solution55(
                     mutableListOf(
                         mutableListOf(1, 2, 1),
@@ -20,9 +20,9 @@ object _12_LandOfLogic {
                 )
             }"
         )
-        println("56 DigitsProduct: ${_12_LandOfLogic.solution56(19)}")
+        println("56) DigitsProduct: ${_12_LandOfLogic.solution56(19)}")
         println(
-            "57 File Naming: ${
+            "57) File Naming: ${
                 _12_LandOfLogic.solution57(
                     mutableListOf(
                         "doc",
@@ -34,9 +34,9 @@ object _12_LandOfLogic {
                 )
             }"
         )
-        println("58 MessageFromBinaryCode: ${_12_LandOfLogic.solution58("010010000110010101101100011011000110111100100001")}")
-        println("59 SpiralNumbers: ${_12_LandOfLogic.solution59(5)}")
-        println("60 Sudoku: ${
+        println("58) MessageFromBinaryCode: ${_12_LandOfLogic.solution58("010010000110010101101100011011000110111100100001")}")
+        println("59) SpiralNumbers: ${_12_LandOfLogic.solution59(5)}")
+        println("60) Sudoku: ${
                 _12_LandOfLogic.solution60(
                     mutableListOf(
                         mutableListOf(1,3,2,5,4,6,9,8,7),

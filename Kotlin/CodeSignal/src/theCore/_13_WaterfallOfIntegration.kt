@@ -2,7 +2,7 @@ package theCore
 
 object _13_WaterfallOfIntegration {
     fun run() {
-        println("106 Add Two Digits: ${_13_WaterfallOfIntegration.solution106(29)}")
+        println("106) Add Two Digits: ${_13_WaterfallOfIntegration.solution106(29)}")
 
 
     }

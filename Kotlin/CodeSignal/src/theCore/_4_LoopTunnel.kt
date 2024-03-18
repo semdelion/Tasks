@@ -2,18 +2,16 @@ package theCore
 
 object _4_LoopTunnel {
     fun run() {
-        println("25 Least Factorial: ${_4_LoopTunnel.solution25(29)}")
-        println("26 Count Sum of Two Representations 2: ${_4_LoopTunnel.solution26(n = 6, l = 2, r = 4)}")
-        println("27 Magical Well: ${_4_LoopTunnel.solution27(a = 1, b = 2, n = 2)}")
-        println("28 Lineup: ${_4_LoopTunnel.solution28("LLARL")}")
-        println("29 Addition Without Carrying: ${_4_LoopTunnel.solution29(456, 1734)}")
-        println("30 Apple Boxes: ${_4_LoopTunnel.solution30(5)}")
-        println("31 Increase Number Roundness: ${_4_LoopTunnel.solution31(902200100)}")
-        println("32 Rounders: ${_4_LoopTunnel.solution32(1445)}")
-        println("33 Candles: ${_4_LoopTunnel.solution33(5, 2)}")
-        println("34 Count Black Cells: ${_4_LoopTunnel.solution34(3, 4)}")
-
-
+        println("25) Least Factorial: ${_4_LoopTunnel.solution25(29)}")
+        println("26) Count Sum of Two Representations 2: ${_4_LoopTunnel.solution26(n = 6, l = 2, r = 4)}")
+        println("27) Magical Well: ${_4_LoopTunnel.solution27(a = 1, b = 2, n = 2)}")
+        println("28) Lineup: ${_4_LoopTunnel.solution28("LLARL")}")
+        println("29) Addition Without Carrying: ${_4_LoopTunnel.solution29(456, 1734)}")
+        println("30) Apple Boxes: ${_4_LoopTunnel.solution30(5)}")
+        println("31) Increase Number Roundness: ${_4_LoopTunnel.solution31(902200100)}")
+        println("32) Rounders: ${_4_LoopTunnel.solution32(1445)}")
+        println("33) Candles: ${_4_LoopTunnel.solution33(5, 2)}")
+        println("34) Count Black Cells: ${_4_LoopTunnel.solution34(3, 4)}")
     }
 
     /**

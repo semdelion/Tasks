@@ -2,12 +2,12 @@ package theCore
 
 object _8_MirrorLake {
     fun run() {
-        println("59 Strings Construction: ${_8_MirrorLake.solution59(a = "abc", b = "abccbac")}")
-        println("60 Is Substitution Cipher?: ${_8_MirrorLake.solution60("aacb", "aabc")}")
-        println("61 Create Anagram: ${_8_MirrorLake.solution61("OVGHK", "RPGUC")}")
-        println("62 Construct Square: ${_8_MirrorLake.solution62("ab")}")
+        println("59) Strings Construction: ${_8_MirrorLake.solution59(a = "abc", b = "abccbac")}")
+        println("60) Is Substitution Cipher?: ${_8_MirrorLake.solution60("aacb", "aabc")}")
+        println("61) Create Anagram: ${_8_MirrorLake.solution61("OVGHK", "RPGUC")}")
+        println("62) Construct Square: ${_8_MirrorLake.solution62("ab")}")
         println(
-            "63 Numbers Grouping: ${
+            "63) Numbers Grouping: ${
                 _8_MirrorLake.solution63(
                     mutableListOf(
                         20000,
@@ -22,7 +22,7 @@ object _8_MirrorLake {
             }"
         )
         println(
-            "64 Different Squares: ${
+            "64) Different Squares: ${
                 _8_MirrorLake.solution64(
                     mutableListOf(
                         mutableListOf(1, 2, 1),
@@ -35,8 +35,8 @@ object _8_MirrorLake {
             }"
         )
 
-        println("65 Construct Square: ${_8_MirrorLake.solution65(88)}")
-        println("66 Number of Clans: ${_8_MirrorLake.solution66(mutableListOf(2,3), 6)}")
+        println("65) Construct Square: ${_8_MirrorLake.solution65(88)}")
+        println("66) Number of Clans: ${_8_MirrorLake.solution66(mutableListOf(2,3), 6)}")
     }
 
     /**

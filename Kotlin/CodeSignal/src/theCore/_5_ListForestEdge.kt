@@ -2,12 +2,12 @@ package theCore
 
 object _5_ListForestEdge {
     fun run() {
-        println("35 Add Two Digits: ${_5_ListForestEdge.solution35(9)}")
-        println("36 AvoidObstacles: ${_5_ListForestEdge.solution36(mutableListOf(1, 2, 1), 1, 3)}")
-        println("37 First Reverse Try: ${_5_ListForestEdge.solution37(mutableListOf(1, 2, 3, 4, 5))}")
-        println("38 Concatenate Arrays: ${_5_ListForestEdge.solution38(mutableListOf(2, 2, 1), mutableListOf(10, 11))}")
+        println("35) Add Two Digits: ${_5_ListForestEdge.solution35(9)}")
+        println("36) AvoidObstacles: ${_5_ListForestEdge.solution36(mutableListOf(1, 2, 1), 1, 3)}")
+        println("37) First Reverse Try: ${_5_ListForestEdge.solution37(mutableListOf(1, 2, 3, 4, 5))}")
+        println("38) Concatenate Arrays: ${_5_ListForestEdge.solution38(mutableListOf(2, 2, 1), mutableListOf(10, 11))}")
         println(
-            "39 Remove Array Part: ${
+            "39) Remove Array Part: ${
                 _5_ListForestEdge.solution39(
                     inputArray = mutableListOf(2, 3, 2, 3, 4, 5),
                     l = 2,
@@ -15,9 +15,9 @@ object _5_ListForestEdge {
                 )
             }"
         )
-        println("40 Is Smooth?: ${_5_ListForestEdge.solution40(mutableListOf(-12, 34, 40, -5, -12, 4, 0, 0, -12))}")
-        println("41 Replace Middle: ${_5_ListForestEdge.solution41(mutableListOf(7, 2, 2, 5, 10, 7))}")
-        println("42 Make Array Consecutive 2: ${_5_ListForestEdge.solution42(mutableListOf(6, 2, 3, 8))}")
+        println("40) Is Smooth?: ${_5_ListForestEdge.solution40(mutableListOf(-12, 34, 40, -5, -12, 4, 0, 0, -12))}")
+        println("41) Replace Middle: ${_5_ListForestEdge.solution41(mutableListOf(7, 2, 2, 5, 10, 7))}")
+        println("42) Make Array Consecutive 2: ${_5_ListForestEdge.solution42(mutableListOf(6, 2, 3, 8))}")
     }
 
     /**

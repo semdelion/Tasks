@@ -3,14 +3,14 @@ package theCore
 
 object _1_IntroGates {
     fun run() {
-        println("1 Add Two Digits: ${_1_IntroGates.solution1(29)}")
-        println("2 Largest Number: ${_1_IntroGates.solution2(2)}")
-        println("3 Candies: ${_1_IntroGates.solution3(3,10)}")
-        println("4 Seats in Theater: ${_1_IntroGates.solution4(nCols = 16, nRows = 11, col = 5, row = 3)}")
-        println("5 Max Multiple: ${_1_IntroGates.solution5(3,10)}")
-        println("6 Circle of Numbers: ${_1_IntroGates.solution6(10, 2)}")
-        println("7 Late Ride: ${_1_IntroGates.solution7(808)}")
-        println("8 Phone Call: ${_1_IntroGates.solution8(min1 = 3, min2_10 = 1, min11 = 2, s = 20)}")
+        println("1) Add Two Digits: ${_1_IntroGates.solution1(29)}")
+        println("2) Largest Number: ${_1_IntroGates.solution2(2)}")
+        println("3) Candies: ${_1_IntroGates.solution3(3,10)}")
+        println("4) Seats in Theater: ${_1_IntroGates.solution4(nCols = 16, nRows = 11, col = 5, row = 3)}")
+        println("5) Max Multiple: ${_1_IntroGates.solution5(3,10)}")
+        println("6) Circle of Numbers: ${_1_IntroGates.solution6(10, 2)}")
+        println("7) Late Ride: ${_1_IntroGates.solution7(808)}")
+        println("8) Phone Call: ${_1_IntroGates.solution8(min1 = 3, min2_10 = 1, min11 = 2, s = 20)}")
 
     }
 
