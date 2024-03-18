@@ -3,13 +3,13 @@ package intro
 object _4_ExploringTheWaters {
 
     fun run() {
-        println("14 AlternatingSums: ${_4_ExploringTheWaters.solution14(mutableListOf(50, 60, 60, 45, 70))}")
-        println("15 Add Border: ${_4_ExploringTheWaters.solution15(mutableListOf("abc", "ded"))}")
-        println("16 Are Similar: ${_4_ExploringTheWaters.solution16(
+        println("14 AlternatingSums  --> a = [50, 60, 60, 45, 70]; result: ${_4_ExploringTheWaters.solution14(mutableListOf(50, 60, 60, 45, 70))}")
+        println("15 Add Border  --> picture = [\"abc\", \"ded\"]; result: ${_4_ExploringTheWaters.solution15(mutableListOf("abc", "ded"))}")
+        println("16 Are Similar  --> a = [1, 2, 3] b = [2, 1, 3]; result: ${_4_ExploringTheWaters.solution16(
             mutableListOf(1, 2, 3),
             mutableListOf(2, 1, 3))}")
-        println("17 ArrayChange: ${_4_ExploringTheWaters.solution17(mutableListOf(1, 1, 1))}")
-        println("18 PalindromeRearranging: ${_4_ExploringTheWaters.solution18("abbaaaca")}")
+        println("17 ArrayChange  --> inputArray = [1, 1, 1]; result: ${_4_ExploringTheWaters.solution17(mutableListOf(1, 1, 1))}")
+        println("18 PalindromeRearranging  --> inputString = \"abbaaaca\"; result: ${_4_ExploringTheWaters.solution18("abbaaaca")}")
     }
 
     /**
@@ -32,7 +32,6 @@ object _4_ExploringTheWaters {
         }
         return result
     }
-
 
     /**
      * Add Border
@@ -107,7 +106,6 @@ object _4_ExploringTheWaters {
         }
         return index == -1
     }
-
 
     /**
      * arrayChange

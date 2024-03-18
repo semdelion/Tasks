@@ -4,6 +4,7 @@ import intro.*
 fun main(args: Array<String>) {
     intro()
     theCore()
+    TMP.run()
 }
 
 

@@ -5,16 +5,25 @@ import kotlin.math.abs
 object _5_IslandOfKnowledge {
 
     fun run() {
-        println("19 AreEquallyStrong: ${_5_IslandOfKnowledge.solution19(10, 15,15, 10)}")
-        println("20 ArrayMaximalAdjacentDifference: ${_5_IslandOfKnowledge.solution20(mutableListOf(2, 4, 1, 0))}")
-        println("21 IsIPv4Address: ${_5_IslandOfKnowledge.solution21("121.121.321.01")}")
-        println("22 AvoidObstacles: ${_5_IslandOfKnowledge.solution22(mutableListOf(5, 3, 6, 7, 9))}")
-        println("23 Box Blur: ${_5_IslandOfKnowledge.solution23(mutableListOf(
+        println("19 AreEquallyStrong  --> yourLeft=10, yourRight=15, friendsLeft=15, friendsRight=10; result: ${_5_IslandOfKnowledge.solution19(10, 15,15, 10)}")
+        println("20 ArrayMaximalAdjacentDifference  --> inputArray = [2, 4, 1, 0]; result: ${_5_IslandOfKnowledge.solution20(mutableListOf(2, 4, 1, 0))}")
+        println("21 IsIPv4Address  --> inputString = \"121.121.321.01\"; result: ${_5_IslandOfKnowledge.solution21("121.121.321.01")}")
+        println("22 AvoidObstacles  --> inputArray = [5, 3, 6, 7, 9]; result: ${_5_IslandOfKnowledge.solution22(mutableListOf(5, 3, 6, 7, 9))}")
+        println("23 Box Blur  --> image = \n" +
+                "            ${mutableListOf(7, 4, 0, 1)} \n" +
+                "            ${mutableListOf(5, 6, 2, 2)} \n" +
+                "            ${mutableListOf(6, 10, 7, 8)} \n" +
+                "            ${mutableListOf(1, 4, 2, 0)} \n" +
+                "                        ; result: ${_5_IslandOfKnowledge.solution23(mutableListOf(
             mutableListOf(7, 4, 0, 1),
             mutableListOf(5, 6, 2, 2),
             mutableListOf(6, 10, 7, 8),
             mutableListOf(1, 4, 2, 0)))}")
-        println("24 Minesweeper: ${_5_IslandOfKnowledge.solution24(mutableListOf(
+        println("24 Minesweeper  --> matrix = \n" +
+                "            ${mutableListOf(true, false, false)} \n" +
+                "            ${mutableListOf(false, true, false)} \n" +
+                "            ${mutableListOf(false, false, false)} \n" +
+                "                        ; result: ${_5_IslandOfKnowledge.solution24(mutableListOf(
             mutableListOf(true, false, false),
             mutableListOf(false, true, false),
             mutableListOf(false, false, false)))}")
@@ -57,7 +66,6 @@ object _5_IslandOfKnowledge {
         }
         return max
     }
-
 
     /**
      * isIPv4Address
@@ -141,7 +149,6 @@ object _5_IslandOfKnowledge {
         }
         return blurImage
     }
-
 
     /**
      * Minesweeper
