@@ -5,10 +5,10 @@ import java.util.Stack
 object _7_ThroughtheFog {
 
     fun run() {
-        println("30) Circle of Numbers: ${_7_ThroughtheFog.solution30(10, 2)}")
-        println("31) DepositProfit: ${_7_ThroughtheFog.solution31(100, 20, 170)}")
-        println("32) AbsoluteValuesSumMinimization: ${_7_ThroughtheFog.solution32(mutableListOf(-1000000, -10000, -10000, -1000, -100, -10, -1, 0, 1, 10, 100, 1000, 10000, 100000, 1000000))}")
-        println("33) StringsRearrangement: ${_7_ThroughtheFog.solution33(mutableListOf("aba", "bbb", "bab"))}")
+        println("30) Circle of Numbers  --> n = 10, firstNumber = 2; result: ${_7_ThroughtheFog.solution30(10, 2)}")
+        println("31) DepositProfit  --> deposit = 100, rate = 20, threshold = 170; result: ${_7_ThroughtheFog.solution31(100, 20, 170)}")
+        println("32) AbsoluteValuesSumMinimization  --> a = [-1000000, -10000, -10000, -1000, -100, -10, -1, 0, 1, 10, 100, 1000, 10000, 100000, 1000000]; result: ${_7_ThroughtheFog.solution32(mutableListOf(-1000000, -10000, -10000, -1000, -100, -10, -1, 0, 1, 10, 100, 1000, 10000, 100000, 1000000))}")
+        println("33) StringsRearrangement  --> inputArray = [\"aba\", \"bbb\", \"bab\"]; result: ${_7_ThroughtheFog.solution33(mutableListOf("aba", "bbb", "bab"))}")
     }
 
     /**
@@ -84,8 +84,6 @@ object _7_ThroughtheFog {
     Because there is a tie, the smallest x between x = 2 and x = 3 is the answer.
      */
     fun solution32(a: MutableList<Int>): Int = a[(a.count() - 1)/2]
-
-
 
     /**
      * stringsRearrangement

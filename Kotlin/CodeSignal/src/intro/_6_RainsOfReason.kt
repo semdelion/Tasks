@@ -3,11 +3,11 @@ package intro
 object _6_RainsOfReason {
 
     fun run() {
-        println("25) AvoidObstacles: ${_6_RainsOfReason.solution25(mutableListOf(1, 2, 1), 1, 3)}")
-        println("26) EvenDigitsOnly: ${_6_RainsOfReason.solution26(2345246)}")
-        println("27) VariableName: ${_6_RainsOfReason.solution27("_fAAAfs23231___342")}")
-        println("28) AlphabeticShift: ${_6_RainsOfReason.solution28("aabbccddz")}")
-        println("29) ChessBoardCellColor: ${_6_RainsOfReason.solution29("A1","B1")}")
+        println("25) AvoidObstacles --> inputArray = ${mutableListOf(1, 2, 1)}, elemToReplace = 1, substitutionElem = 3; result: ${_6_RainsOfReason.solution25(mutableListOf(1, 2, 1), 1, 3)}")
+        println("26) EvenDigitsOnly --> n = 2345246; result: ${_6_RainsOfReason.solution26(2345246)}")
+        println("27) VariableName --> name = \"_fAAAfs23231___342\"; result: ${_6_RainsOfReason.solution27("_fAAAfs23231___342")}")
+        println("28) AlphabeticShift --> inputString = \"aabbccddz\"; result: ${_6_RainsOfReason.solution28("aabbccddz")}")
+        println("29) ChessBoardCellColor  --> cell1 = A1, cell2 = B1; result:  ${_6_RainsOfReason.solution29("A1","B1")}")
     }
 
     /**

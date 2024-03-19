@@ -2,10 +2,10 @@ package intro
 
 object _8_DivingDeeper {
     fun run() {
-        println("34) ExtractEachKth: ${_8_DivingDeeper.solution34(mutableListOf(1, 2, 3, 4, 5, 6, 7, 8, 9, 10), 2)}")
-        println("35) FirstDigit: ${_8_DivingDeeper.solution35("var_1__Int")}")
-        println("36) DifferentSymbolsNaive: ${_8_DivingDeeper.solution36("cabca")}")
-        println("37) ArrayMaxConsecutiveSum: ${_8_DivingDeeper.solution37(mutableListOf(2, 3, 5, 1, 6), 2)}")
+        println("34) ExtractEachKth  --> inputArray = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10], k = 2; result: ${_8_DivingDeeper.solution34(mutableListOf(1, 2, 3, 4, 5, 6, 7, 8, 9, 10), 2)}")
+        println("35) FirstDigit  --> inputString = \"var_1__Int\"; result: ${_8_DivingDeeper.solution35("var_1__Int")}")
+        println("36) DifferentSymbolsNaive  --> s = \"cabca\"; result: ${_8_DivingDeeper.solution36("cabca")}")
+        println("37) ArrayMaxConsecutiveSum  --> inputArray = [2, 3, 5, 1, 6], k = 2; result: ${_8_DivingDeeper.solution37(mutableListOf(2, 3, 5, 1, 6), 2)}")
     }
 
     /**
@@ -43,7 +43,6 @@ object _8_DivingDeeper {
     solution(inputString) = '0'.
      */
     fun solution35(inputString: String): Char = inputString.first { it.isDigit() }
-
 
     /**
      * differentSymbolsNaive
