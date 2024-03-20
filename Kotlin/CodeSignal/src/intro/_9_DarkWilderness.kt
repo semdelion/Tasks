@@ -2,11 +2,21 @@ package intro
 
 object _9_DarkWilderness {
     fun run() {
-        println("38) Circle of Numbers  --> upSpeed = 100,  downSpeed = 10, desiredHeight = 910; result: ${_9_DarkWilderness.solution38(100, 10, 910)}")
-        println("39) Knapsack Light  --> value1 = 10, weight1 = 5, value2 = 6, weight2 = 4, maxW = 8; result: ${_9_DarkWilderness.solution39(value1 = 10, weight1 = 5, value2 = 6, weight2 = 4,  maxW = 8)}")
-        println("40) LongestDigitsPrefix  --> inputString = \"123aa1fdsfs13145\"; result: ${_9_DarkWilderness.solution40("123aa1fdsfs13145")}")
-        println("41) DigitDegree  --> n = 1239; result: ${_9_DarkWilderness.solution41(1239)}")
-        println("42) Bishop and Pawn  --> bishop = a1, pawn = c3; result: ${_9_DarkWilderness.solution42(bishop = "a1", pawn = "c3")}")
+        println("38) Circle of Numbers\n" +
+                "      input: upSpeed = 100,  downSpeed = 10, desiredHeight = 910\n" +
+                "      result: ${_9_DarkWilderness.solution38(100, 10, 910)}\n")
+        println("39) Knapsack Light\n" +
+                "      input: value1 = 10, weight1 = 5, value2 = 6, weight2 = 4, maxW = 8\n" +
+                "      result: ${_9_DarkWilderness.solution39(value1 = 10, weight1 = 5, value2 = 6, weight2 = 4,  maxW = 8)}\n")
+        println("40) LongestDigitsPrefix\n" +
+                "      input: inputString = \"123aa1fdsfs13145\"\n" +
+                "      result: ${_9_DarkWilderness.solution40("123aa1fdsfs13145")}\n")
+        println("41) DigitDegree\n" +
+                "      input: n = 1239\n" +
+                "      result: ${_9_DarkWilderness.solution41(1239)}\n")
+        println("42) Bishop and Pawn\n" +
+                "      input: bishop = a1, pawn = c3\n" +
+                "      result: ${_9_DarkWilderness.solution42(bishop = "a1", pawn = "c3")}\n")
     }
 
      /**

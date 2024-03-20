@@ -3,11 +3,21 @@ package intro
 object _3_SmoothSailing {
 
     fun run() {
-        println("9) All Longest Strings  --> inputArray = [\"aba\", \"aa\", \"ad\", \"vcd\", \"aba\"]; result: ${_3_SmoothSailing.solution9(mutableListOf("aba", "aa", "ad", "vcd", "aba"))}")
-        println("10) CommonCharacterCounts  --> [\"aabcc\", \"adcaa\"]; result: ${_3_SmoothSailing.solution10("aabcc","adcaa")}")
-        println("11) IsLucky  --> n = 112301; result: ${_3_SmoothSailing.solution11(112301)}")
-        println("12) Sort by Height  --> a = [-1, 150, 190, 170, -1, -1, 160, 180]; result: ${_3_SmoothSailing.solution12(mutableListOf(-1, 150, 190, 170, -1, -1, 160, 180))}")
-        println("13) ReverseInParentheses  --> inputString = \"foo(bar(baz))blim\"; result: ${_3_SmoothSailing.solution13("foo(bar(baz))blim")}")
+        println("9) All Longest Strings\n" +
+                "      input: inputArray = [\"aba\", \"aa\", \"ad\", \"vcd\", \"aba\"]\n" +
+                "      result: ${_3_SmoothSailing.solution9(mutableListOf("aba", "aa", "ad", "vcd", "aba"))}\n")
+        println("10) CommonCharacterCounts\n" +
+                "      input: s1 = \"aabcc\", s2 = \"adcaa\"\n" +
+                "      result: ${_3_SmoothSailing.solution10("aabcc","adcaa")}\n")
+        println("11) IsLucky\n" +
+                "      input: n = 112301\n" +
+                "      result: ${_3_SmoothSailing.solution11(112301)}\n")
+        println("12) Sort by Height\n" +
+                "      input: a = [-1, 150, 190, 170, -1, -1, 160, 180]\n" +
+                "      result: ${_3_SmoothSailing.solution12(mutableListOf(-1, 150, 190, 170, -1, -1, 160, 180))}\n")
+        println("13) ReverseInParentheses\n" +
+                "      input: inputString = \"foo(bar(baz))blim\"\n" +
+                "      result: ${_3_SmoothSailing.solution13("foo(bar(baz))blim")}\n")
     }
 
     /**

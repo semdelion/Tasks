@@ -2,10 +2,18 @@ package intro
 
 object _8_DivingDeeper {
     fun run() {
-        println("34) ExtractEachKth  --> inputArray = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10], k = 2; result: ${_8_DivingDeeper.solution34(mutableListOf(1, 2, 3, 4, 5, 6, 7, 8, 9, 10), 2)}")
-        println("35) FirstDigit  --> inputString = \"var_1__Int\"; result: ${_8_DivingDeeper.solution35("var_1__Int")}")
-        println("36) DifferentSymbolsNaive  --> s = \"cabca\"; result: ${_8_DivingDeeper.solution36("cabca")}")
-        println("37) ArrayMaxConsecutiveSum  --> inputArray = [2, 3, 5, 1, 6], k = 2; result: ${_8_DivingDeeper.solution37(mutableListOf(2, 3, 5, 1, 6), 2)}")
+        println("34) ExtractEachKth\n" +
+                "      input: inputArray = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10], k = 2\n" +
+                "      result: ${_8_DivingDeeper.solution34(mutableListOf(1, 2, 3, 4, 5, 6, 7, 8, 9, 10), 2)}\n")
+        println("35) FirstDigit\n" +
+                "      input: inputString = \"var_1__Int\"\n" +
+                "      result: ${_8_DivingDeeper.solution35("var_1__Int")}\n")
+        println("36) DifferentSymbolsNaive\n" +
+                "      input: s = \"cabca\"\n" +
+                "      result: ${_8_DivingDeeper.solution36("cabca")}\n")
+        println("37) ArrayMaxConsecutiveSum\n" +
+                "      input: inputArray = [2, 3, 5, 1, 6], k = 2\n" +
+                "      result: ${_8_DivingDeeper.solution37(mutableListOf(2, 3, 5, 1, 6), 2)}\n")
     }
 
     /**

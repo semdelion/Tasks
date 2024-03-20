@@ -4,10 +4,18 @@ import kotlin.math.pow
 
 object _11_RainbowOfClarity {
     fun run() {
-        println("48) Circle of Numbers: ${_11_RainbowOfClarity.solution48('8')}")
-        println("49) LineEncoding: ${_11_RainbowOfClarity.solution49("aabbbc")}")
-        println("50) ChessKnight: ${_11_RainbowOfClarity.solution50("a1")}")
-        println("51) DeleteDigit: ${_11_RainbowOfClarity.solution51(152)}")
+        println("48) Circle of Numbers\n" +
+                "      input: symbol = '8'\n" +
+                "      result: ${_11_RainbowOfClarity.solution48('8')}\n")
+        println("49) LineEncoding\n" +
+                "      input: s = \"aabbbc\"\n" +
+                "      result: ${_11_RainbowOfClarity.solution49("aabbbc")}\n")
+        println("50) ChessKnight\n" +
+                "      input: cell = \"a1\"\n" +
+                "      result: ${_11_RainbowOfClarity.solution50("a1")}\n")
+        println("51) DeleteDigit\n" +
+                "      input: n = 152\n" +
+                "      result: ${_11_RainbowOfClarity.solution51(152)}\n")
     }
 
      /**
@@ -24,7 +32,6 @@ object _11_RainbowOfClarity {
      solution(symbol) = false.
       */
      fun solution48(symbol: Char): Boolean = symbol.isDigit()
-
 
     /**
         * lineEncoding
@@ -53,7 +60,6 @@ object _11_RainbowOfClarity {
         result += if(count > 0) (count + 1).toString() + s[s.length - 1] else s[s.length -1 ]
         return result
     }
-
 
     /**
      * chessKnight

@@ -3,9 +3,15 @@ package intro
 object _1_TheJourneyBegins {
 
     fun run() {
-        println("1) Sum  --> 2 + 2; result: ${_1_TheJourneyBegins.solution1(2,2)}")
-        println("2) CenturyFromYear  --> year 1082; result: ${_1_TheJourneyBegins.solution2(1082)}")
-        println("3) CheckPalindrome  --> \"aabaa\"; result: ${_1_TheJourneyBegins.solution3("aabaa")}")
+        println("1) Sum\n" +
+                "      input: 2 + 2\n" +
+                "      result: ${_1_TheJourneyBegins.solution1(2,2)}\n")
+        println("2) CenturyFromYear\n" +
+                "      input: year 1082\n" +
+                "      result: ${_1_TheJourneyBegins.solution2(1082)}\n")
+        println("3) CheckPalindrome\n" +
+                "      input: \"aabaa\"\n" +
+                "      result: ${_1_TheJourneyBegins.solution3("aabaa")}\n")
     }
 
     /**

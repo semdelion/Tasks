@@ -4,11 +4,23 @@ import kotlin.math.pow
 
 object _12_LandOfLogic {
     fun run() {
-        println("52) LongestWord: ${_12_LandOfLogic.solution52("Ready, steady, go!")}")
-        println("53) Valid Time: ${_12_LandOfLogic.solution53("25:51")}")
-        println("54) SumUpNumbers: ${_12_LandOfLogic.solution54("2 apples, 12 oranges")}")
-        println(
-            "55) Different Squares: ${
+        println("52) LongestWord\n" +
+                "      input: text = \"Ready, steady, go!\"\n" +
+                "      result: ${_12_LandOfLogic.solution52("Ready, steady, go!")}\n")
+        println("53) Valid Time\n" +
+                "      input: time = \"25:51\" \n" +
+                "      result: ${_12_LandOfLogic.solution53("25:51")}\n")
+        println("54) SumUpNumbers\n" +
+                "      input: inputString = \"2 apples, 12 oranges\"\n" +
+                "      result: ${_12_LandOfLogic.solution54("2 apples, 12 oranges")}\n")
+        println("55) Different Squares\n" +
+                "      input: matrix = \n" +
+                "             [1, 2, 1]\n" +
+                "             [2, 2, 2]\n" +
+                "             [2, 2, 2]\n" +
+                "             [1, 2, 3]\n" +
+                "             [2, 2, 1]\n" +
+                "      result: ${
                 _12_LandOfLogic.solution55(
                     mutableListOf(
                         mutableListOf(1, 2, 1),
@@ -18,11 +30,15 @@ object _12_LandOfLogic {
                         mutableListOf(2, 2, 1)
                     )
                 )
-            }"
+            }\n"
         )
-        println("56) DigitsProduct: ${_12_LandOfLogic.solution56(19)}")
+        println("56) DigitsProduct\n" +
+                "      input: product = 19\n" +
+                "      result: ${_12_LandOfLogic.solution56(19)}\n")
         println(
-            "57) File Naming: ${
+            "57) File Naming\n" +
+                    "      input: names = ${mutableListOf("doc", "doc", "image", "doc(1)","doc")}\n" +
+                    "      result: ${
                 _12_LandOfLogic.solution57(
                     mutableListOf(
                         "doc",
@@ -32,11 +48,29 @@ object _12_LandOfLogic {
                         "doc"
                     )
                 )
-            }"
+            }\n"
         )
-        println("58) MessageFromBinaryCode: ${_12_LandOfLogic.solution58("010010000110010101101100011011000110111100100001")}")
-        println("59) SpiralNumbers: ${_12_LandOfLogic.solution59(5)}")
-        println("60) Sudoku: ${
+        println("58) MessageFromBinaryCode\n" +
+                "      input: code = \"010010000110010101101100011011000110111100100001\"\n" +
+                "      result: ${_12_LandOfLogic.solution58("010010000110010101101100011011000110111100100001")}\n")
+        println("59) SpiralNumbers\n" +
+                "      input: n = 5\n" +
+                "      result:")
+        val result59 = _12_LandOfLogic.solution59(5)
+        result59.forEach { println("             $it") }
+        println()
+        println("60) Sudoku\n" +
+                "      input: grid = \n" +
+                "             [1,3,2,5,4,6,9,8,7]\n" +
+                "             [4,6,5,8,7,9,3,2,1]\n" +
+                "             [7,9,8,2,1,3,6,5,4]\n" +
+                "             [9,2,1,4,3,5,8,7,6]\n" +
+                "             [3,5,4,7,6,8,2,1,9]\n" +
+                "             [6,8,7,1,9,2,5,4,3]\n" +
+                "             [5,7,6,9,8,1,4,3,2]\n" +
+                "             [2,4,3,6,5,7,1,9,8]\n" +
+                "             [8,1,9,3,2,4,7,6,5]\n" +
+                "      result: ${
                 _12_LandOfLogic.solution60(
                     mutableListOf(
                         mutableListOf(1,3,2,5,4,6,9,8,7),
@@ -50,9 +84,8 @@ object _12_LandOfLogic {
                         mutableListOf(8,1,9,3,2,4,7,6,5),
                     )
                 )
-            }"
+            }\n"
         )
-
     }
 
     /**
@@ -105,7 +138,6 @@ object _12_LandOfLogic {
         return regex.findAll(time).count() == 1
     }
 
-
     /**
      * SumUpNumbers
      * @see "https://app.codesignal.com/arcade/intro/level-12/YqZwMJguZBY7Hz84T"
@@ -154,7 +186,6 @@ object _12_LandOfLogic {
     solution(matrix) = 6.
 
     Here are all 6 different 2 × 2 squares: */
-
     fun solution55(matrix: MutableList<MutableList<Int>>): Int {
         val set = mutableSetOf<String>()
         for (i in 0 until matrix.count() - 1) {
