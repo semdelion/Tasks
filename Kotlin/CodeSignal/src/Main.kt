@@ -10,7 +10,7 @@ fun main(args: Array<String>) {
 
 
 fun intro() {
-    println("Intro")
+    println("\nIntro")
     println("============================================================================")
     _1_TheJourneyBegins.run()
     _2_EdgeOfTheOcean.run()
@@ -24,11 +24,11 @@ fun intro() {
     _10_EruptionOfLight.run()
     _11_RainbowOfClarity.run()
     _12_LandOfLogic.run()
-    println("============================================================================")
+    println()
 }
 
 fun theCore() {
-    println("The Core")
+    println("\nThe Core")
     println("============================================================================")
     _1_IntroGates.run()
     _2_AtTheCrossroads.run()

@@ -2,16 +2,36 @@ package theCore
 
 object _4_LoopTunnel {
     fun run() {
-        println("25) Least Factorial: ${_4_LoopTunnel.solution25(29)}")
-        println("26) Count Sum of Two Representations 2: ${_4_LoopTunnel.solution26(n = 6, l = 2, r = 4)}")
-        println("27) Magical Well: ${_4_LoopTunnel.solution27(a = 1, b = 2, n = 2)}")
-        println("28) Lineup: ${_4_LoopTunnel.solution28("LLARL")}")
-        println("29) Addition Without Carrying: ${_4_LoopTunnel.solution29(456, 1734)}")
-        println("30) Apple Boxes: ${_4_LoopTunnel.solution30(5)}")
-        println("31) Increase Number Roundness: ${_4_LoopTunnel.solution31(902200100)}")
-        println("32) Rounders: ${_4_LoopTunnel.solution32(1445)}")
-        println("33) Candles: ${_4_LoopTunnel.solution33(5, 2)}")
-        println("34) Count Black Cells: ${_4_LoopTunnel.solution34(3, 4)}")
+        println("25) Least Factorial\n" +
+                "      input: n = 29\n" +
+                "      result: ${_4_LoopTunnel.solution25(29)}\n")
+        println("26) Count Sum of Two Representations 2\n" +
+                "      input: n = 6, l = 2, r = 4\n" +
+                "      result: ${_4_LoopTunnel.solution26(n = 6, l = 2, r = 4)}\n")
+        println("27) Magical Well\n" +
+                "      input: a = 1, b = 2, n = 2\n" +
+                "      result: ${_4_LoopTunnel.solution27(a = 1, b = 2, n = 2)}\n")
+        println("28) Lineup\n" +
+                "      input: commands = \"LLARL\"\n" +
+                "      result: ${_4_LoopTunnel.solution28("LLARL")}\n")
+        println("29) Addition Without Carrying\n" +
+                "      input: param1 = 456, param2 = 1734\n" +
+                "      result: ${_4_LoopTunnel.solution29(456, 1734)}\n")
+        println("30) Apple Boxes\n" +
+                "      input: k = 5\n" +
+                "      result: ${_4_LoopTunnel.solution30(5)}\n")
+        println("31) Increase Number Roundness\n" +
+                "      input: n = 902200100\n" +
+                "      result: ${_4_LoopTunnel.solution31(902200100)}\n")
+        println("32) Rounders\n" +
+                "      input: n = 1445\n" +
+                "      result: ${_4_LoopTunnel.solution32(1445)}\n")
+        println("33) Candles\n" +
+                "      input: candlesNumber = 5, makeNew = 2\n" +
+                "      result: ${_4_LoopTunnel.solution33(5, 2)}\n")
+        println("34) Count Black Cells:\n" +
+                "      input: n = 3, m = 4\n" +
+                "      result: ${_4_LoopTunnel.solution34(3, 4)}\n")
     }
 
     /**
@@ -145,7 +165,6 @@ object _4_LoopTunnel {
         return result
     }
 
-
     /**
      * Apple Boxes
      * @see "https://app.codesignal.com/arcade/code-arcade/loop-tunnel/scG8AFsPuqQGx8Qjf"
@@ -166,7 +185,6 @@ object _4_LoopTunnel {
         val result = (1..k).sum()
         return if (k % 2 == 1) result * -1 else result
     }
-
 
     /**
      * Increase Number Roundness

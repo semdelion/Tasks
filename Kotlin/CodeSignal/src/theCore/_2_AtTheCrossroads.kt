@@ -4,25 +4,35 @@ package theCore
 object _2_AtTheCrossroads {
 
     fun run() {
-        println("9) Reach Next Level: ${_2_AtTheCrossroads.solution9(experience = 10, threshold = 15, reward = 5)}")
-        println(
-            "10) Knapsack Light: ${
-                _2_AtTheCrossroads.solution10(
+        println("9) Reach Next Level\n" +
+                "      input: experience = 10, threshold = 15, reward = 5\n" +
+                "      result: ${_2_AtTheCrossroads.solution9(experience = 10, threshold = 15, reward = 5)}\n")
+        println("10) Knapsack Light\n" +
+                    "      input: value1 = 10, weight1 = 5, value2 = 6, weight2 = 4, maxW = 8\n" +
+                    "      result: ${ _2_AtTheCrossroads.solution10(
                     value1 = 10,
                     weight1 = 5,
                     value2 = 6,
                     weight2 = 4,
-                    maxW = 8
-                )
-            }"
-        )
-        println("11) Extra Number: ${_2_AtTheCrossroads.solution11(a = 2, b = 7, c = 2)}")
-        println("12) Is Infinite Process?: ${_2_AtTheCrossroads.solution12(a = 2, b = 6)}")
-        println("13) Arithmetic Expression: ${_2_AtTheCrossroads.solution13(2, 3, 5)}")
-        println("14) Tennis Set: ${_2_AtTheCrossroads.solution14(7, 5)}")
-        println("15) Will you?: ${_2_AtTheCrossroads.solution15( young = true, beautiful = true, loved = true)}")
-        println("16) Metro Card: ${_2_AtTheCrossroads.solution16( 31)}")
-
+                    maxW = 8 )}\n")
+        println("11) Extra Number\n" +
+                "      input: a = 2, b = 7, c = 2\n" +
+                "      result: ${_2_AtTheCrossroads.solution11(a = 2, b = 7, c = 2)}\n")
+        println("12) Is Infinite Process?\n" +
+                "      input: a = 2, b = 6\n" +
+                "      result: ${_2_AtTheCrossroads.solution12(a = 2, b = 6)}\n")
+        println("13) Arithmetic Expression\n" +
+                "      input: a = 2, b = 3, c = 5\n" +
+                "      result: ${_2_AtTheCrossroads.solution13(2, 3, 5)}\n")
+        println("14) Tennis Set\n" +
+                "      input: score1 = 7, score2 = 5\n" +
+                "      result: ${_2_AtTheCrossroads.solution14(7, 5)}\n")
+        println("15) Will you?\n" +
+                "      input: young = true, beautiful = true, loved = true\n" +
+                "      result: ${_2_AtTheCrossroads.solution15( young = true, beautiful = true, loved = true)}\n")
+        println("16) Metro Card\n" +
+                "      input: lastNumberOfDays = 31\n" +
+                "      result: ${_2_AtTheCrossroads.solution16( 31)}\n")
     }
 
     /**
@@ -40,7 +50,6 @@ object _2_AtTheCrossroads {
     For experience = 10, threshold = 15, and reward = 4, the output should be
     solution(experience, threshold, reward) = false.*/
     fun solution9(experience: Int, threshold: Int, reward: Int): Boolean = experience + reward >= threshold
-
 
     /**
      * Knapsack Light
@@ -79,7 +88,6 @@ object _2_AtTheCrossroads {
         return 0
     }
 
-
     /**
      * Extra Number
      * @see "https://app.codesignal.com/arcade/code-arcade/at-the-crossroads/sgDWKCFQHHi5D3Szj"
@@ -113,7 +121,7 @@ object _2_AtTheCrossroads {
     For a = 2 and b = 3, the output should be
     solution(a, b) = true
      */
-    fun solution12(a: Int, b: Int): Boolean = if (a > b || (b - a) % 2 == 1) true else false
+    fun solution12(a: Int, b: Int): Boolean = a > b || (b - a) % 2 == 1
 
     /**
      * Arithmetic Expression
@@ -149,7 +157,6 @@ object _2_AtTheCrossroads {
             return true
         return false
     }
-
 
     /**
      * Tennis Set
@@ -226,5 +233,4 @@ object _2_AtTheCrossroads {
     There are 30 days in April, June, September and November, so the next months to consider are May, July, October or December. All of them have exactly 31 days, which means that you will definitely get a 31-days pass the next time you extend your card.
      */
     fun solution16(lastNumberOfDays: Int): MutableList<Int> = if(lastNumberOfDays == 28 || lastNumberOfDays == 30) mutableListOf(31) else mutableListOf( 28, 30, 31 )
-
 }

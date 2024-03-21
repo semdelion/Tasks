@@ -3,15 +3,30 @@ package theCore
 
 object _1_IntroGates {
     fun run() {
-        println("1) Add Two Digits: ${_1_IntroGates.solution1(29)}")
-        println("2) Largest Number: ${_1_IntroGates.solution2(2)}")
-        println("3) Candies: ${_1_IntroGates.solution3(3,10)}")
-        println("4) Seats in Theater: ${_1_IntroGates.solution4(nCols = 16, nRows = 11, col = 5, row = 3)}")
-        println("5) Max Multiple: ${_1_IntroGates.solution5(3,10)}")
-        println("6) Circle of Numbers: ${_1_IntroGates.solution6(10, 2)}")
-        println("7) Late Ride: ${_1_IntroGates.solution7(808)}")
-        println("8) Phone Call: ${_1_IntroGates.solution8(min1 = 3, min2_10 = 1, min11 = 2, s = 20)}")
-
+        println("1) Add Two Digits\n" +
+                "      input: n = 29\n" +
+                "      result: ${_1_IntroGates.solution1(29)}\n")
+        println("2) Largest Number\n" +
+                "      input: n = 2\n" +
+                "      result: ${_1_IntroGates.solution2(2)}\n")
+        println("3) Candies\n" +
+                "      input: n = 3, m = 10\n" +
+                "      result: ${_1_IntroGates.solution3(3,10)}\n")
+        println("4) Seats in Theater\n" +
+                "      input: nCols = 16, nRows = 11, col = 5, row = 3\n" +
+                "      result: ${_1_IntroGates.solution4(nCols = 16, nRows = 11, col = 5, row = 3)}\n")
+        println("5) Max Multiple\n" +
+                "      input: divisor = 3, bound = 10\n" +
+                "      result: ${_1_IntroGates.solution5(3,10)}\n")
+        println("6) Circle of Numbers\n" +
+                "      input: n = 10, firstNumber = 2\n" +
+                "      result: ${_1_IntroGates.solution6(10, 2)}\n")
+        println("7) Late Ride\n" +
+                "      input: n = 808\n" +
+                "      result: ${_1_IntroGates.solution7(808)}\n")
+        println("8) Phone Call\n" +
+                "      input: min1 = 3, min2_10 = 1, min11 = 2, s = 20\n" +
+                "      result: ${_1_IntroGates.solution8(min1 = 3, min2_10 = 1, min11 = 2, s = 20)}\n")
     }
 
     /**
@@ -54,7 +69,6 @@ object _1_IntroGates {
     Each child will eat 3 pieces. So the answer is 9.*/
     fun solution3(n: Int, m: Int): Int = (m/n) * n
 
-
     /**
      * Seats in Theater
      * @see "https://app.codesignal.com/arcade/code-arcade/intro-gates/bszFiQAog96G9CXKg"
@@ -70,7 +84,6 @@ object _1_IntroGates {
     For nCols = 16, nRows = 11, col = 5, and row = 3, the output should be
     solution(nCols, nRows, col, row) = 96.*/
     fun solution4(nCols: Int, nRows: Int, col: Int, row: Int): Int = (nCols - col + 1) * (nRows - row)
-
 
     /**
      * Max Multiple
@@ -90,7 +103,6 @@ object _1_IntroGates {
 
     The largest integer divisible by 3 and not larger than 10 is 9.*/
     fun solution5(divisor: Int, bound: Int): Int = bound - (bound % divisor)
-
 
     /**
      * Circle of Numbers
@@ -151,7 +163,6 @@ object _1_IntroGates {
     each next minute costs 2 cents, which means that you can talk 8 / 2 = 4 more minutes.
     Thus, the longest call you can make is 1 + 9 + 4 = 14 minutes long.
      */
-
     fun solution8(min1: Int, min2_10: Int, min11: Int, s: Int): Int {
         if(s < min1)
             return 0
