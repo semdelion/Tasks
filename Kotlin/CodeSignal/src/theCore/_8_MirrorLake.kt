@@ -2,41 +2,35 @@ package theCore
 
 object _8_MirrorLake {
     fun run() {
-        println("59) Strings Construction: ${_8_MirrorLake.solution59(a = "abc", b = "abccbac")}")
-        println("60) Is Substitution Cipher?: ${_8_MirrorLake.solution60("aacb", "aabc")}")
-        println("61) Create Anagram: ${_8_MirrorLake.solution61("OVGHK", "RPGUC")}")
-        println("62) Construct Square: ${_8_MirrorLake.solution62("ab")}")
-        println(
-            "63) Numbers Grouping: ${
-                _8_MirrorLake.solution63(
-                    mutableListOf(
-                        20000,
-                        239,
-                        10001,
-                        999999,
-                        10000,
-                        20566,
-                        29999
-                    )
-                )
-            }"
-        )
-        println(
-            "64) Different Squares: ${
-                _8_MirrorLake.solution64(
-                    mutableListOf(
-                        mutableListOf(1, 2, 1),
-                        mutableListOf(2, 2, 2),
-                        mutableListOf(2, 2, 2),
-                        mutableListOf(1, 2, 3),
-                        mutableListOf(2, 2, 1),
-                    )
-                )
-            }"
-        )
-
-        println("65) Construct Square: ${_8_MirrorLake.solution65(88)}")
-        println("66) Number of Clans: ${_8_MirrorLake.solution66(mutableListOf(2,3), 6)}")
+        println("59) Strings Construction\n" +
+                "      input: a = \"abc\", b = \"abccbac\"\n" +
+                "      result: ${_8_MirrorLake.solution59(a = "abc", b = "abccbac")}\n")
+        println("60) Is Substitution Cipher?\n" +
+                "      input: a = \"aacb\", b = \"aabc\"\n" +
+                "      result: ${_8_MirrorLake.solution60("aacb", "aabc")}\n")
+        println("61) Create Anagram\n" +
+                "      input: s = \"OVGHK\", test = \"RPGUC\"\n" +
+                "      result: ${_8_MirrorLake.solution61("OVGHK", "RPGUC")}\n")
+        println("62) Construct Square\n" +
+                "      input: s = \"ab\"\n" +
+                "      result: ${_8_MirrorLake.solution62("ab")}\n")
+        println("63) Numbers Grouping\n" +
+                "      input: a = [20000, 239, 10001, 999999, 10000, 20566, 29999]\n" +
+                "      result: ${_8_MirrorLake.solution63(mutableListOf(20000, 239, 10001, 999999, 10000, 20566, 29999))}\n")
+        println("64) Different Squares\n" +
+                "      input:\n" +
+                "            [1, 2, 1]\n" +
+                "            [2, 2, 2]\n" +
+                "            [2, 2, 2]\n" +
+                "            [1, 2, 3]\n" +
+                "            [2, 2, 1]\n" +
+                "      result: ${_8_MirrorLake.solution64(mutableListOf(mutableListOf(1, 2, 1), mutableListOf(2, 2, 2), mutableListOf(2, 2, 2), mutableListOf(1, 2, 3), mutableListOf(2, 2, 1)))}\n")
+        println("65) Construct Square\n" +
+                "      input: n = 88\n" +
+                "      result: ${_8_MirrorLake.solution65(88)}\n")
+        println("66) Number of Clans\n" +
+                "      input: divisors = [2, 3], k = 6\n" +
+                "      result: ${_8_MirrorLake.solution66(mutableListOf(2,3), 6)}\n")
     }
 
     /**
@@ -52,7 +46,6 @@ object _8_MirrorLake {
     We can construct 2 strings a = "abc" using only letters from the string b.
 
     For a = "ab" and b = "abcbcb", the output should be solution(a, b) = 1.*/
-
     fun solution59(a: String, b: String): Int {
         val mapA = a.groupingBy { it }.eachCount()
         val mapB = b.groupingBy { it }.eachCount()
@@ -281,8 +274,6 @@ object _8_MirrorLake {
         return maxKeys.maxByOrNull { it.key }?.key ?:0
     }
 
-
-
     /**
      * Number of Clans
      * @see "https://app.codesignal.com/arcade/code-arcade/mirror-lake/BLbGNY3kEcvKjBCFC"
@@ -307,5 +298,4 @@ object _8_MirrorLake {
         }
         return clans.size
     }
-
 }

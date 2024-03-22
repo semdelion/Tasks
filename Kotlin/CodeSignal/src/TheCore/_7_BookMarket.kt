@@ -2,14 +2,30 @@ package theCore
 
 object _7_BookMarket {
     fun run() {
-        println("51) Enclose In Brackets: ${_7_BookMarket.solution51("abacaba")}")
-        println("52) Proper Noun Correction: ${_7_BookMarket.solution52("pARiS")}")
-        println("53) Is Tandem Repeat?: ${_7_BookMarket.solution53("tandemtandem")}")
-        println("54) Is Case-Insensitive Palindrome?: ${_7_BookMarket.solution54("AaBaa")}")
-        println("55) Find Email Domain: ${_7_BookMarket.solution55("fully-qualified-domain@codesignal.com")}")
-        println("56) HTML End Tag By Start Tag: ${_7_BookMarket.solution56("<button type='button' disabled>")}")
-        println("57) Is MAC48 Address?: ${_7_BookMarket.solution57("00-1B-63-84-45-E6")}")
-        println("58) Is Unstable Pair?: ${_7_BookMarket.solution58(filename1 = "aa", filename2 = "AAB")}")
+        println("51) Enclose In Brackets\n" +
+                "      input: inputString = \"abacaba\"\n" +
+                "      result: ${_7_BookMarket.solution51("abacaba")}\n")
+        println("52) Proper Noun Correction\n" +
+                "      input: noun = \"pARiS\"\n" +
+                "      result: ${_7_BookMarket.solution52("pARiS")}\n")
+        println("53) Is Tandem Repeat?\n" +
+                "      input: inputString = \"tandemtandem\"\n" +
+                "      result: ${_7_BookMarket.solution53("tandemtandem")}\n")
+        println("54) Is Case-Insensitive Palindrome?\n" +
+                "      input: inputString = \"AaBaa\"\n" +
+                "      result: ${_7_BookMarket.solution54("AaBaa")}\n")
+        println("55) Find Email Domain\n" +
+                "      input: address = \"fully-qualified-domain@codesignal.com\"\n" +
+                "      result: ${_7_BookMarket.solution55("fully-qualified-domain@codesignal.com")}\n")
+        println("56) HTML End Tag By Start Tag\n" +
+                "      input: startTag = \"<button type='button' disabled>\"\n" +
+                "      result: ${_7_BookMarket.solution56("<button type='button' disabled>")}\n")
+        println("57) Is MAC48 Address?\n" +
+                "      input: inputString = \"00-1B-63-84-45-E6\"\n" +
+                "      result: ${_7_BookMarket.solution57("00-1B-63-84-45-E6")}\n")
+        println("58) Is Unstable Pair?\n" +
+                "      input: filename1 = \"aa\", filename2 = \"AAB\"\n" +
+                "      result: ${_7_BookMarket.solution58(filename1 = "aa", filename2 = "AAB")}\n")
     }
 
     /**
@@ -23,7 +39,6 @@ object _7_BookMarket {
     For inputString = "abacaba", the output should be
     solution(inputString) = "(abacaba)".*/
     fun solution51(inputString: String): String = "($inputString)"
-
 
     /**
      * Proper Noun Correction
@@ -59,7 +74,6 @@ object _7_BookMarket {
         return inputString.substring(0, inputString.length / 2) == inputString.substring(inputString.length / 2)
     }
 
-
     /**
      * Is Case-Insensitive Palindrome?
      * @see "https://app.codesignal.com/arcade/code-arcade/book-market/G9wj2j6zaWwFWsise"
@@ -77,7 +91,6 @@ object _7_BookMarket {
     solution(inputString) = false.
 
     All the strings which can be obtained via changing case of some group of letters, i.e. "abac", "Abac", "aBAc" and 13 more, are not palindromes.*/
-
     fun solution54(inputString: String): Boolean {
         val str = inputString.lowercase()
         val length = str.length / 2
@@ -106,8 +119,6 @@ object _7_BookMarket {
     solution(address) = "codesignal.com".*/
     fun solution55(address: String): String = address.substring(address.lastIndexOf('@') + 1)
 
-
-
     /**
      * HTML End Tag By Start Tag
      * @see "https://app.codesignal.com/arcade/code-arcade/book-market/MX94DWTrwQw2gLrTi"
@@ -124,13 +135,10 @@ object _7_BookMarket {
     solution(startTag) = "</button>";
     For startTag = "<i>", the output should be
     solution(startTag) = "</i>".*/
-
     fun solution56(startTag: String): String {
         val index = startTag.indexOfFirst { x -> x == ' ' || x == '>' }
         return "</${startTag.substring(1, index)}>"
-
     }
-
 
     /**
      *  Is Unstable Pair?
@@ -201,5 +209,4 @@ object _7_BookMarket {
         }
         return (a.length < b.length) xor less
     }
-
 }

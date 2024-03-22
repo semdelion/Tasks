@@ -2,14 +2,30 @@ package theCore
 
 object _6_LabyrinthOfNestedLoops {
     fun run() {
-        println("43) Is Power?: ${_6_LabyrinthOfNestedLoops.solution43(29)}")
-        println("44) Is Sum of Consecutive 2: ${_6_LabyrinthOfNestedLoops.solution44(9)}")
-        println("45) Square Digits Sequence: ${_6_LabyrinthOfNestedLoops.solution45(16)}")
-        println("46) Pages Numbering With Ink: ${_6_LabyrinthOfNestedLoops.solution46(21, 5)}")
-        println("47) Comfortable Numbers: ${_6_LabyrinthOfNestedLoops.solution47(10, 12)}")
-        println("48) Weak Numbers: ${_6_LabyrinthOfNestedLoops.solution48(9)}")
-        println("49) Rectangle Rotation: ${_6_LabyrinthOfNestedLoops.solution49( 6, 4)}")
-        println("50) Crossword Formation: ${_6_LabyrinthOfNestedLoops.solution50(mutableListOf("crossword", "square", "formation", "something"))}")
+        println("43) Is Power?\n" +
+                "      input: n = 29\n" +
+                "      result: ${_6_LabyrinthOfNestedLoops.solution43(29)}\n")
+        println("44) Is Sum of Consecutive 2\n" +
+                "      input: n = 9\n" +
+                "      result: ${_6_LabyrinthOfNestedLoops.solution44(9)}\n")
+        println("45) Square Digits Sequence\n" +
+                "      input: a0 = 16\n" +
+                "      result: ${_6_LabyrinthOfNestedLoops.solution45(16)}\n")
+        println("46) Pages Numbering With Ink\n" +
+                "      input: current = 21, numberOfDigits = 5\n" +
+                "      result: ${_6_LabyrinthOfNestedLoops.solution46(21, 5)}\n")
+        println("47) Comfortable Numbers\n" +
+                "      input: l = 10, r = 12\n" +
+                "      result: ${_6_LabyrinthOfNestedLoops.solution47(10, 12)}\n")
+        println("48) Weak Numbers\n" +
+                "      input: n = 9\n" +
+                "      result: ${_6_LabyrinthOfNestedLoops.solution48(9)}\n")
+        println("49) Rectangle Rotation\n" +
+                "      input: a = 6, b = 4\n" +
+                "      result: ${_6_LabyrinthOfNestedLoops.solution49( 6, 4)}\n")
+        println("50) Crossword Formation\n" +
+                "      input: words = [\"crossword\", \"square\", \"formation\", \"something\"]\n" +
+                "      result: ${_6_LabyrinthOfNestedLoops.solution50(mutableListOf("crossword", "square", "formation", "something"))}\n")
     }
 
     /**
@@ -290,8 +306,4 @@ object _6_LabyrinthOfNestedLoops {
             }
         }
     }
-
-
-
-
 }

@@ -2,14 +2,30 @@ package theCore
 
 object _10_LabOfTransformations {
     fun run() {
-        println("80) Character Parity: ${_10_LabOfTransformations.solution80('5')}")
-        println("81) Reflect String: ${_10_LabOfTransformations.solution81("abcdefghijklmnopqrstuvwxyz")}")
-        println("82) New Numeral System: ${_10_LabOfTransformations.solution82('G')}")
-        println("83) Cipher 26: ${_10_LabOfTransformations.solution83("taiaiaertkixquxjnfxxdh")}")
-        println("84) Stolen Lunch: ${_10_LabOfTransformations.solution84("you'll n4v4r 6u4ss 8t: cdja")}")
-        println("85) Higher Version: ${_10_LabOfTransformations.solution85("1.2.2", "1.2.0")}")
-        println("86) Decipher: ${_10_LabOfTransformations.solution86("10197115121")}")
-        println("87) Alphanumeric Less: ${_10_LabOfTransformations.solution87("x11y012", "x011y13")}")
+        println("80) Character Parity\n" +
+                "      input: symbol = '5'\n" +
+                "      result: ${_10_LabOfTransformations.solution80('5')}\n")
+        println("81) Reflect String\n" +
+                "      input: inputString = \"abcdefghijklmnopqrstuvwxyz\"\n" +
+                "      result: ${_10_LabOfTransformations.solution81("abcdefghijklmnopqrstuvwxyz")}\n")
+        println("82) New Numeral System\n" +
+                "      input: number = 'G'\n" +
+                "      result: ${_10_LabOfTransformations.solution82('G')}\n")
+        println("83) Cipher 26\n" +
+                "      input: message = \"taiaiaertkixquxjnfxxdh\"\n" +
+                "      result: ${_10_LabOfTransformations.solution83("taiaiaertkixquxjnfxxdh")}\n")
+        println("84) Stolen Lunch\n" +
+                "      input: note = \"you'll n4v4r 6u4ss 8t: cdja\"\n" +
+                "      result: ${_10_LabOfTransformations.solution84("you'll n4v4r 6u4ss 8t: cdja")}\n")
+        println("85) Higher Version\n" +
+                "      input: ver1 = \"1.2.2\", ver2 = \"1.2.0\"\n" +
+                "      result: ${_10_LabOfTransformations.solution85("1.2.2", "1.2.0")}\n")
+        println("86) Decipher\n" +
+                "      input: cipher = \"10197115121\"\n" +
+                "      result: ${_10_LabOfTransformations.solution86("10197115121")}\n")
+        println("87) Alphanumeric Less\n" +
+                "      input: s1 = \"x11y012\", s2 = \"x011y13\"\n" +
+                "      result: ${_10_LabOfTransformations.solution87("x11y012", "x011y13")}\n")
     }
 
     /**
@@ -160,7 +176,6 @@ object _10_LabOfTransformations {
 
         return false
     }
-
 
     /**
      * Decipher
