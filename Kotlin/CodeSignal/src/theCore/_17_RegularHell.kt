@@ -2,9 +2,9 @@ package theCore
 
 object _17_RegularHell {
     fun run() {
-        println("138) Add Two Digits: ${_17_RegularHell.solution138(29)}")
-
-
+        /*println("138) Add Two Digits\n" +
+                "      input:\n" +
+                "      result: ${_17_RegularHell.solution138(29)}\n")*/
     }
 
     /**

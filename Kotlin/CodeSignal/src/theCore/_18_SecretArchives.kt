@@ -2,9 +2,9 @@ package theCore
 
 object _18_SecretArchives {
     fun run() {
-        println("147) Add Two Digits: ${_18_SecretArchives.solution147(29)}")
-
-
+        /*println("147) Add Two Digits\n" +
+                "      input:\n" +
+                "      result: ${_18_SecretArchives.solution147(29)}\n")*/
     }
 
     /**

@@ -2,16 +2,22 @@ package theCore
 
 object _11_SpringOfIntegration {
     fun run() {
-        println("88) Array Conversion: ${_11_SpringOfIntegration.solution88(mutableListOf(1, 2, 3, 4, 5, 6, 7, 8))}")
-        println("89) Array Previous Less: ${_11_SpringOfIntegration.solution89(mutableListOf(3, 5, 2, 4, 5))}")
-        println("90) Pair of Shoes: ${_11_SpringOfIntegration.solution90(mutableListOf(
-            mutableListOf(0, 21),
-            mutableListOf(1, 23),
-            mutableListOf(1, 21),
-            mutableListOf(0, 23)
-        ))}")
-        println("91) Combs: ${_11_SpringOfIntegration.solution91("*..*.*", "*.***")}")
-        println("92) Strings Crossover: ${_11_SpringOfIntegration.solution92(mutableListOf("abc", "aaa", "aba", "bab"),"bbb")}")
+        println("88) Array Conversion\n" +
+                "      input: inputArray = [1, 2, 3, 4, 5, 6, 7, 8]\n" +
+                "      result: ${_11_SpringOfIntegration.solution88(mutableListOf(1, 2, 3, 4, 5, 6, 7, 8))}\n")
+        println("89) Array Previous Less\n" +
+                "      input: items = [3, 5, 2, 4, 5]\n" +
+                "      result: ${_11_SpringOfIntegration.solution89(mutableListOf(3, 5, 2, 4, 5))}\n")
+        println("90) Pair of Shoes\n" +
+                "      input: shoes  = [0, 21], [1, 23], [1, 21], [0, 23]\n" +
+                "      result: ${_11_SpringOfIntegration.solution90(mutableListOf(
+                    mutableListOf(0, 21),mutableListOf(1, 23), mutableListOf(1, 21),mutableListOf(0, 23)))}\n")
+        println("91) Combs\n" +
+                "      input: comb1 = \"*..*.*\", comb2 = \"*.***\"\n" +
+                "      result: ${_11_SpringOfIntegration.solution91("*..*.*", "*.***")}\n")
+        println("92) Strings Crossover\n" +
+                "      input: inputArray = [\"abc\", \"aaa\", \"aba\", \"bab\"], result = \"bbb\"\n" +
+                "      result: ${_11_SpringOfIntegration.solution92(mutableListOf("abc", "aaa", "aba", "bab"),"bbb")}\n")
     }
 
     /**
@@ -189,5 +195,4 @@ object _11_SpringOfIntegration {
         }
         return true
     }
-
 }

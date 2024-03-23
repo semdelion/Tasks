@@ -2,7 +2,9 @@ package theCore
 
 object _19_CliffsOfPain {
     fun run() {
-        println("155) Add Two Digits: ${_19_CliffsOfPain.solution155(29)}")
+        /*println("155) Add Two Digits\n" +
+                "      input:\n" +
+                "      result: ${_19_CliffsOfPain.solution155(29)}\n")*/
     }
 
     /**
