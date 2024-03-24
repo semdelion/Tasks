@@ -18,6 +18,9 @@ object _11_SpringOfIntegration {
         println("92) Strings Crossover\n" +
                 "      input: inputArray = [\"abc\", \"aaa\", \"aba\", \"bab\"], result = \"bbb\"\n" +
                 "      result: ${_11_SpringOfIntegration.solution92(mutableListOf("abc", "aaa", "aba", "bab"),"bbb")}\n")
+        println("93) Cyclic String\n" +
+                "      input: s = \"caccacaccacacca\" \n" +
+                "      result: ${_11_SpringOfIntegration.solution93("caccacaccacacca")}\n")
     }
 
     /**
@@ -194,5 +197,50 @@ object _11_SpringOfIntegration {
             }
         }
         return true
+    }
+
+    /**
+     * Cyclic String
+     * @see "https://app.codesignal.com/arcade/code-arcade/spring-of-integration/tKwbrKAQhoCZFqg33"
+     * @return Cyclic String
+     * * @sample  You're given a substring s of some cyclic string. What's the length of the smallest possible string that can be concatenated to itself many times to obtain this cyclic string?
+
+    Example
+
+    For s = "cabca", the output should be
+    solution(s) = 3.
+
+    "cabca" is a substring of a cycle string "abcabcabcabc..." that can be obtained by concatenating "abc" to itself. Thus, the answer is 3.*/
+    fun solution93(s: String): Int {
+        var endIndex = 0
+        var i = 1
+        while (i < s.length) {
+            if(s[0]==s[i]) {
+                var j = 0
+                while ( i + j < s.length && j <= endIndex) {
+                    if (s[j] != s[i+j]) {
+                        endIndex = getIndex(endIndex + 2, s)
+                        i = endIndex
+                        break
+                    }
+                    j++
+                }
+                if(j > endIndex ||i + j >= s.length) {
+                    i += j - 1
+                }
+            } else {
+                endIndex = getIndex(endIndex + 2, s)
+                i = endIndex
+            }
+            i++
+        }
+        return ++endIndex
+    }
+
+    private fun getIndex(k : Int, s: String) : Int {
+        var i = k
+        while (i < s.length && s[i] != s[0])
+            i++
+        return i - 1
     }
 }
