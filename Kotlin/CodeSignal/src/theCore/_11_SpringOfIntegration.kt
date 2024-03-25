@@ -21,6 +21,9 @@ object _11_SpringOfIntegration {
         println("93) Cyclic String\n" +
                 "      input: s = \"caccacaccacacca\" \n" +
                 "      result: ${_11_SpringOfIntegration.solution93("caccacaccacacca")}\n")
+        println("94) Beautiful Text\n" +
+                "      input: s = inputString = \"Look at this example of a correct text\", l = 5, r = 15\n" +
+                "      result: ${_11_SpringOfIntegration.solution94("Look at this example of a correct text", 12, 15)}\n")
     }
 
     /**
@@ -242,5 +245,44 @@ object _11_SpringOfIntegration {
         while (i < s.length && s[i] != s[0])
             i++
         return i - 1
+    }
+
+    /**
+     * Beautiful Text
+     * @see "https://app.codesignal.com/arcade/code-arcade/spring-of-integration/PSeEALZTxd93zBHS7"
+     * @return Beautiful Text
+     * * @sample  Consider a string containing only letters and whitespaces. It is allowed to replace some (possibly, none) whitespaces with newline symbols to obtain a multiline text. Call a multiline text beautiful if and only if each of its lines (i.e. substrings delimited by a newline character) contains an equal number of characters (only letters and whitespaces should be taken into account when counting the total while newline characters shouldn't). Call the length of the line the text width.
+
+    Given a string and some integers l and r (l ≤ r), check if it's possible to obtain a beautiful text from the string with a text width that's within the range [l, r].
+
+    Example
+
+    For inputString = "Look at this example of a correct text", l = 5, and r = 15, the output should be
+    solution(inputString, l, r) = true.
+
+    We can replace 13th and 26th characters with '\n', and obtain the following multiline text of width 12:
+
+    Look at this
+    example of a
+    correct text
+    For inputString = "abc def ghi", l = 4, and r = 10, the output should be
+    solution(inputString, l, r) = false.
+
+    There are two ways to obtain a text with lines of equal length from this input, one has width = 3 and another has width = 11 (this is a one-liner). Both of these values are not within our bounds.*/
+    fun solution94(inputString: String, l: Int, r: Int): Boolean {
+        for (i in l..r) {
+            val count = inputString.length - inputString.length / (i + 1)
+            if (count % i == 0 && (count / i) == (inputString.length / (i + 1)) + 1) {
+                var all = true
+                for (j in 1 until count / i) {
+                    if (inputString[i * j + j - 1] != ' ') {
+                        all = false
+                        break
+                    }
+                }
+                if (all) return true
+            }
+        }
+        return false
     }
 }
