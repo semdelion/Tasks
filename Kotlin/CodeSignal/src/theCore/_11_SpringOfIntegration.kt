@@ -4,26 +4,29 @@ object _11_SpringOfIntegration {
     fun run() {
         println("88) Array Conversion\n" +
                 "      input: inputArray = [1, 2, 3, 4, 5, 6, 7, 8]\n" +
-                "      result: ${_11_SpringOfIntegration.solution88(mutableListOf(1, 2, 3, 4, 5, 6, 7, 8))}\n")
+                "      result: ${solution88(mutableListOf(1, 2, 3, 4, 5, 6, 7, 8))}\n")
         println("89) Array Previous Less\n" +
                 "      input: items = [3, 5, 2, 4, 5]\n" +
-                "      result: ${_11_SpringOfIntegration.solution89(mutableListOf(3, 5, 2, 4, 5))}\n")
+                "      result: ${solution89(mutableListOf(3, 5, 2, 4, 5))}\n")
         println("90) Pair of Shoes\n" +
                 "      input: shoes  = [0, 21], [1, 23], [1, 21], [0, 23]\n" +
-                "      result: ${_11_SpringOfIntegration.solution90(mutableListOf(
+                "      result: ${solution90(mutableListOf(
                     mutableListOf(0, 21),mutableListOf(1, 23), mutableListOf(1, 21),mutableListOf(0, 23)))}\n")
         println("91) Combs\n" +
                 "      input: comb1 = \"*..*.*\", comb2 = \"*.***\"\n" +
-                "      result: ${_11_SpringOfIntegration.solution91("*..*.*", "*.***")}\n")
+                "      result: ${solution91("*..*.*", "*.***")}\n")
         println("92) Strings Crossover\n" +
                 "      input: inputArray = [\"abc\", \"aaa\", \"aba\", \"bab\"], result = \"bbb\"\n" +
-                "      result: ${_11_SpringOfIntegration.solution92(mutableListOf("abc", "aaa", "aba", "bab"),"bbb")}\n")
+                "      result: ${solution92(mutableListOf("abc", "aaa", "aba", "bab"),"bbb")}\n")
         println("93) Cyclic String\n" +
                 "      input: s = \"caccacaccacacca\" \n" +
-                "      result: ${_11_SpringOfIntegration.solution93("caccacaccacacca")}\n")
+                "      result: ${solution93("caccacaccacacca")}\n")
         println("94) Beautiful Text\n" +
                 "      input: s = inputString = \"Look at this example of a correct text\", l = 5, r = 15\n" +
-                "      result: ${_11_SpringOfIntegration.solution94("Look at this example of a correct text", 12, 15)}\n")
+                "      result: ${solution94("Look at this example of a correct text", 12, 15)}\n")
+        println("95) Runners Meetings\n" +
+                "      input: s = startPosition = [1, 4, 2], speed = [27, 18, 24]\n" +
+                "      result: ${solution95(mutableListOf(1, 4, 2), mutableListOf(27, 18, 24) )}\n")
     }
 
     /**
@@ -284,5 +287,55 @@ object _11_SpringOfIntegration {
             }
         }
         return false
+    }
+
+    /**
+     * Runners Meetings
+     * @see "https://app.codesignal.com/arcade/code-arcade/spring-of-integration/Hb9Cppx4pCY4d8J5P"
+     * @return Runners Meetings
+     * * @sample Some people run along a straight line in the same direction. They start simultaneously at pairwise distinct positions and run with constant speed (which may differ from person to person).
+
+    If two or more people are at the same point at some moment we call that a meeting. The number of people gathered at the same point is called meeting cardinality.
+
+    For the given starting positions and speeds of runners find the maximum meeting cardinality assuming that people run infinitely long. If there will be no meetings, return -1 instead.
+
+    Example
+
+    For startPosition = [1, 4, 2] and speed = [27, 18, 24], the output should be
+    solution(startPosition, speed) = 3.
+
+    In 20 seconds after the runners start running, they end up at the same point. Check out the gif below for better understanding:*/
+    fun solution95(startPosition: MutableList<Int>, speed: MutableList<Int>): Int {
+        //Initial max meetings
+        var maxOfMeetingCardinality = -1
+
+        for (i in 0 until speed.size) {
+            for (j in i + 1 until speed.size) {
+                //Ignore if runners same speed but diff start position
+                if (speed[i] == speed[j] && startPosition[i] != startPosition[j]) continue
+
+                //Meeting point between 2 runners
+                val meetingPoint =
+                    (startPosition[i] - startPosition[j]).toDouble() / (speed[j] - speed[i])
+
+                //Check if meeting point not valid
+                if (meetingPoint < 0) continue
+
+                var currentMeetingCardinality = 2
+
+                //Check if any more runners join meeting
+                for (k in j + 1 until speed.size) {
+                    if (startPosition[j] + speed[j] * meetingPoint ==
+                        startPosition[k] + speed[k] * meetingPoint
+                    ) {
+                        currentMeetingCardinality++
+                    }
+                }
+                if (currentMeetingCardinality > maxOfMeetingCardinality) {
+                    maxOfMeetingCardinality = currentMeetingCardinality
+                }
+            }
+        }
+        return maxOfMeetingCardinality
     }
 }
