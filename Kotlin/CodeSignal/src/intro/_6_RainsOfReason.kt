@@ -5,19 +5,19 @@ object _6_RainsOfReason {
     fun run() {
         println("25) AvoidObstacles\n" +
                 "      input: inputArray = ${mutableListOf(1, 2, 1)}, elemToReplace = 1, substitutionElem = 3\n" +
-                "      result: ${_6_RainsOfReason.solution25(mutableListOf(1, 2, 1), 1, 3)}\n")
+                "      result: ${solution25(mutableListOf(1, 2, 1), 1, 3)}\n")
         println("26) EvenDigitsOnly\n" +
                 "      input: n = 2345246\n" +
-                "      result: ${_6_RainsOfReason.solution26(2345246)}\n")
+                "      result: ${solution26(2345246)}\n")
         println("27) VariableName\n" +
                 "      input: name = \"_fAAAfs23231___342\"\n" +
-                "      result: ${_6_RainsOfReason.solution27("_fAAAfs23231___342")}\n")
+                "      result: ${solution27("_fAAAfs23231___342")}\n")
         println("28) AlphabeticShift\n" +
                 "      input: inputString = \"aabbccddz\"\n" +
-                "      result: ${_6_RainsOfReason.solution28("aabbccddz")}\n")
+                "      result: ${solution28("aabbccddz")}\n")
         println("29) ChessBoardCellColor\n" +
                 "      input: cell1 = A1, cell2 = B1\n" +
-                "      result:  ${_6_RainsOfReason.solution29("A1","B1")}\n")
+                "      result:  ${solution29("A1","B1")}\n")
     }
 
     /**

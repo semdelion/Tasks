@@ -5,19 +5,19 @@ object _10_EruptionOfLight {
     fun run() {
         println("43) IsBeautifulString\n" +
                 "      input: inputString = \"bbbaacdafe\"\n" +
-                "      result: ${_10_EruptionOfLight.solution43("bbbaacdafe")}\n")
+                "      result: ${solution43("bbbaacdafe")}\n")
         println("44) Find Email Domain\n" +
                 "      input: address = \"prettyandsimple@example.com\"\n" +
-                "      result: ${_10_EruptionOfLight.solution44("prettyandsimple@example.com")}\n")
+                "      result: ${solution44("prettyandsimple@example.com")}\n")
         println("45) BuildPalindrome\n" +
                 "      input: st = \"abcdc\"\n" +
-                "      result: ${_10_EruptionOfLight.solution45("abcdc")}\n")
+                "      result: ${solution45("abcdc")}\n")
         println("46) Elections Winners\n" +
                 "      input: votes = [2, 3, 5, 2], k = 3\n" +
-                "      result: ${_10_EruptionOfLight.solution46(mutableListOf(2, 3, 5, 2), 3)}\n")
+                "      result: ${solution46(mutableListOf(2, 3, 5, 2), 3)}\n")
         println("47) Is MAC48 Address?\n" +
                 "      input: inputString = \"00-1B-63-84-45-E6\"\n" +
-                "      result: ${_10_EruptionOfLight.solution47("00-1B-63-84-45-E6")}\n")
+                "      result: ${solution47("00-1B-63-84-45-E6")}\n")
     }
 
     /**
@@ -148,5 +148,4 @@ object _10_EruptionOfLight {
         val matches = regex.findAll(inputString)
         return matches.count() == 1
     }
-
 }

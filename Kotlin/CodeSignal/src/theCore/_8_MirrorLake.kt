@@ -4,19 +4,19 @@ object _8_MirrorLake {
     fun run() {
         println("59) Strings Construction\n" +
                 "      input: a = \"abc\", b = \"abccbac\"\n" +
-                "      result: ${_8_MirrorLake.solution59(a = "abc", b = "abccbac")}\n")
+                "      result: ${solution59(a = "abc", b = "abccbac")}\n")
         println("60) Is Substitution Cipher?\n" +
                 "      input: a = \"aacb\", b = \"aabc\"\n" +
-                "      result: ${_8_MirrorLake.solution60("aacb", "aabc")}\n")
+                "      result: ${solution60(a = "aacb", b = "aabc")}\n")
         println("61) Create Anagram\n" +
                 "      input: s = \"OVGHK\", test = \"RPGUC\"\n" +
-                "      result: ${_8_MirrorLake.solution61("OVGHK", "RPGUC")}\n")
+                "      result: ${solution61(s = "OVGHK", test = "RPGUC")}\n")
         println("62) Construct Square\n" +
                 "      input: s = \"ab\"\n" +
-                "      result: ${_8_MirrorLake.solution62("ab")}\n")
+                "      result: ${solution62(s = "ab")}\n")
         println("63) Numbers Grouping\n" +
                 "      input: a = [20000, 239, 10001, 999999, 10000, 20566, 29999]\n" +
-                "      result: ${_8_MirrorLake.solution63(mutableListOf(20000, 239, 10001, 999999, 10000, 20566, 29999))}\n")
+                "      result: ${solution63(mutableListOf(20000, 239, 10001, 999999, 10000, 20566, 29999))}\n")
         println("64) Different Squares\n" +
                 "      input:\n" +
                 "            [1, 2, 1]\n" +
@@ -24,13 +24,13 @@ object _8_MirrorLake {
                 "            [2, 2, 2]\n" +
                 "            [1, 2, 3]\n" +
                 "            [2, 2, 1]\n" +
-                "      result: ${_8_MirrorLake.solution64(mutableListOf(mutableListOf(1, 2, 1), mutableListOf(2, 2, 2), mutableListOf(2, 2, 2), mutableListOf(1, 2, 3), mutableListOf(2, 2, 1)))}\n")
+                "      result: ${solution64(mutableListOf(mutableListOf(1, 2, 1), mutableListOf(2, 2, 2), mutableListOf(2, 2, 2), mutableListOf(1, 2, 3), mutableListOf(2, 2, 1)))}\n")
         println("65) Construct Square\n" +
                 "      input: n = 88\n" +
-                "      result: ${_8_MirrorLake.solution65(88)}\n")
+                "      result: ${solution65(n = 88)}\n")
         println("66) Number of Clans\n" +
                 "      input: divisors = [2, 3], k = 6\n" +
-                "      result: ${_8_MirrorLake.solution66(mutableListOf(2,3), 6)}\n")
+                "      result: ${solution66(mutableListOf(2,3), k = 6)}\n")
     }
 
     /**

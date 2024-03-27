@@ -5,13 +5,13 @@ object _3_CornerOf0sAnd1s {
         println("17) Not support kotlin, solved by C#\n")
         println("18) Array Packing\n" +
                 "      input: a = [24, 85, 0]\n" +
-                "      result: ${_3_CornerOf0sAnd1s.solution18(mutableListOf(24, 85, 0))}\n")
+                "      result: ${solution18(mutableListOf(24, 85, 0))}\n")
         println("19) Range Bit Count\n" +
                 "      input: a = 2, b = 7\n" +
-                "      result: ${_3_CornerOf0sAnd1s.solution19(2,7)}\n")
+                "      result: ${solution19(2,7)}\n")
         println("20) Mirror Bits\n" +
                 "      input: a = 97\n" +
-                "      result: ${_3_CornerOf0sAnd1s.solution20(97)}\n")
+                "      result: ${solution20(97)}\n")
         println("21) Not support kotlin, solved by C#\n")
         println("22) Not support kotlin, solved by C#\n")
         println("23) Not support kotlin, solved by C#\n")

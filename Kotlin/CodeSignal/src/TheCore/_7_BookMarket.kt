@@ -4,28 +4,28 @@ object _7_BookMarket {
     fun run() {
         println("51) Enclose In Brackets\n" +
                 "      input: inputString = \"abacaba\"\n" +
-                "      result: ${_7_BookMarket.solution51("abacaba")}\n")
+                "      result: ${solution51(inputString = "abacaba")}\n")
         println("52) Proper Noun Correction\n" +
                 "      input: noun = \"pARiS\"\n" +
-                "      result: ${_7_BookMarket.solution52("pARiS")}\n")
+                "      result: ${solution52(noun = "pARiS")}\n")
         println("53) Is Tandem Repeat?\n" +
                 "      input: inputString = \"tandemtandem\"\n" +
-                "      result: ${_7_BookMarket.solution53("tandemtandem")}\n")
+                "      result: ${solution53(inputString = "tandemtandem")}\n")
         println("54) Is Case-Insensitive Palindrome?\n" +
                 "      input: inputString = \"AaBaa\"\n" +
-                "      result: ${_7_BookMarket.solution54("AaBaa")}\n")
+                "      result: ${solution54(inputString = "AaBaa")}\n")
         println("55) Find Email Domain\n" +
                 "      input: address = \"fully-qualified-domain@codesignal.com\"\n" +
-                "      result: ${_7_BookMarket.solution55("fully-qualified-domain@codesignal.com")}\n")
+                "      result: ${solution55(address = "fully-qualified-domain@codesignal.com")}\n")
         println("56) HTML End Tag By Start Tag\n" +
                 "      input: startTag = \"<button type='button' disabled>\"\n" +
-                "      result: ${_7_BookMarket.solution56("<button type='button' disabled>")}\n")
+                "      result: ${solution56(startTag = "<button type='button' disabled>")}\n")
         println("57) Is MAC48 Address?\n" +
                 "      input: inputString = \"00-1B-63-84-45-E6\"\n" +
-                "      result: ${_7_BookMarket.solution57("00-1B-63-84-45-E6")}\n")
+                "      result: ${solution57(inputString = "00-1B-63-84-45-E6")}\n")
         println("58) Is Unstable Pair?\n" +
                 "      input: filename1 = \"aa\", filename2 = \"AAB\"\n" +
-                "      result: ${_7_BookMarket.solution58(filename1 = "aa", filename2 = "AAB")}\n")
+                "      result: ${solution58(filename1 = "aa", filename2 = "AAB")}\n")
     }
 
     /**

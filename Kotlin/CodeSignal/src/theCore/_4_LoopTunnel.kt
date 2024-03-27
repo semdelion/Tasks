@@ -4,34 +4,34 @@ object _4_LoopTunnel {
     fun run() {
         println("25) Least Factorial\n" +
                 "      input: n = 29\n" +
-                "      result: ${_4_LoopTunnel.solution25(29)}\n")
+                "      result: ${solution25(29)}\n")
         println("26) Count Sum of Two Representations 2\n" +
                 "      input: n = 6, l = 2, r = 4\n" +
-                "      result: ${_4_LoopTunnel.solution26(n = 6, l = 2, r = 4)}\n")
+                "      result: ${solution26(n = 6, l = 2, r = 4)}\n")
         println("27) Magical Well\n" +
                 "      input: a = 1, b = 2, n = 2\n" +
-                "      result: ${_4_LoopTunnel.solution27(a = 1, b = 2, n = 2)}\n")
+                "      result: ${solution27(a = 1, b = 2, n = 2)}\n")
         println("28) Lineup\n" +
                 "      input: commands = \"LLARL\"\n" +
-                "      result: ${_4_LoopTunnel.solution28("LLARL")}\n")
+                "      result: ${solution28("LLARL")}\n")
         println("29) Addition Without Carrying\n" +
                 "      input: param1 = 456, param2 = 1734\n" +
-                "      result: ${_4_LoopTunnel.solution29(456, 1734)}\n")
+                "      result: ${solution29(456, 1734)}\n")
         println("30) Apple Boxes\n" +
                 "      input: k = 5\n" +
-                "      result: ${_4_LoopTunnel.solution30(5)}\n")
+                "      result: ${solution30(5)}\n")
         println("31) Increase Number Roundness\n" +
                 "      input: n = 902200100\n" +
-                "      result: ${_4_LoopTunnel.solution31(902200100)}\n")
+                "      result: ${solution31(902200100)}\n")
         println("32) Rounders\n" +
                 "      input: n = 1445\n" +
-                "      result: ${_4_LoopTunnel.solution32(1445)}\n")
+                "      result: ${solution32(1445)}\n")
         println("33) Candles\n" +
                 "      input: candlesNumber = 5, makeNew = 2\n" +
-                "      result: ${_4_LoopTunnel.solution33(5, 2)}\n")
+                "      result: ${solution33(5, 2)}\n")
         println("34) Count Black Cells:\n" +
                 "      input: n = 3, m = 4\n" +
-                "      result: ${_4_LoopTunnel.solution34(3, 4)}\n")
+                "      result: ${solution34(3, 4)}\n")
     }
 
     /**

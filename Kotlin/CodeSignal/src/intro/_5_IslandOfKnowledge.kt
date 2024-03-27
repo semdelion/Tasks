@@ -7,16 +7,16 @@ object _5_IslandOfKnowledge {
     fun run() {
         println("19) AreEquallyStrong\n" +
                 "      input: yourLeft=10, yourRight=15, friendsLeft=15, friendsRight=10\n" +
-                "      result: ${_5_IslandOfKnowledge.solution19(10, 15,15, 10)}\n")
+                "      result: ${solution19(10, 15,15, 10)}\n")
         println("20) ArrayMaximalAdjacentDifference\n" +
                 "      input: inputArray = [2, 4, 1, 0]\n" +
-                "      result: ${_5_IslandOfKnowledge.solution20(mutableListOf(2, 4, 1, 0))}\n")
+                "      result: ${solution20(mutableListOf(2, 4, 1, 0))}\n")
         println("21) IsIPv4Address\n" +
                 "      input: inputString = \"121.121.321.01\"\n" +
-                "      result: ${_5_IslandOfKnowledge.solution21("121.121.321.01")}\n")
+                "      result: ${solution21("121.121.321.01")}\n")
         println("22) AvoidObstacles\n" +
                 "      input: inputArray = [5, 3, 6, 7, 9]\n" +
-                "      result: ${_5_IslandOfKnowledge.solution22(mutableListOf(5, 3, 6, 7, 9))}\n")
+                "      result: ${solution22(mutableListOf(5, 3, 6, 7, 9))}\n")
         println("23) Box Blur\n" +
                 "      input: image = \n" +
                 "             ${mutableListOf(7, 4, 0, 1)} \n" +
@@ -24,24 +24,23 @@ object _5_IslandOfKnowledge {
                 "             ${mutableListOf(6, 10, 7, 8)} \n" +
                 "             ${mutableListOf(1, 4, 2, 0)} \n" +
                 "      result:")
-        val result23 = _5_IslandOfKnowledge.solution23(mutableListOf(
-                        mutableListOf(7, 4, 0, 1),
-                        mutableListOf(5, 6, 2, 2),
-                        mutableListOf(6, 10, 7, 8),
-                        mutableListOf(1, 4, 2, 0)))
-        result23.forEach { println("             $it") }
+        solution23(mutableListOf(
+            mutableListOf(7, 4, 0, 1),
+            mutableListOf(5, 6, 2, 2),
+            mutableListOf(6, 10, 7, 8),
+            mutableListOf(1, 4, 2, 0))).forEach { println("             $it") }
         println()
+
         println("24) Minesweeper\n" +
                 "      input: matrix = \n" +
                 "             ${mutableListOf(true, false, false)} \n" +
                 "             ${mutableListOf(false, true, false)} \n" +
                 "             ${mutableListOf(false, false, false)} \n" +
                 "      result: ")
-        val result24 =_5_IslandOfKnowledge.solution24(mutableListOf(
+        solution24(mutableListOf(
             mutableListOf(true, false, false),
             mutableListOf(false, true, false),
-            mutableListOf(false, false, false)))
-        result24.forEach { println("             $it") }
+            mutableListOf(false, false, false))).forEach { println("             $it") }
         println()
     }
 

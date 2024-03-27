@@ -4,28 +4,28 @@ object _5_ListForestEdge {
     fun run() {
         println("35) Add Two Digits\n" +
                 "      input: size = 9\n" +
-                "      result: ${_5_ListForestEdge.solution35(9)}\n")
+                "      result: ${solution35(size = 9)}\n")
         println("36) AvoidObstacles\n" +
                 "      input: inputArray = [1, 2, 1], elemToReplace = 1, substitutionElem = 3\n" +
-                "      result: ${_5_ListForestEdge.solution36(mutableListOf(1, 2, 1), 1, 3)}\n")
+                "      result: ${solution36(mutableListOf(1, 2, 1), 1, 3)}\n")
         println("37) First Reverse Try\n" +
                 "      input: arr = [1, 2, 3, 4, 5]\n" +
-                "      result: ${_5_ListForestEdge.solution37(mutableListOf(1, 2, 3, 4, 5))}\n")
+                "      result: ${solution37(mutableListOf(1, 2, 3, 4, 5))}\n")
         println("38) Concatenate Arrays\n" +
                 "      input: a = [2, 2, 1], b = [10, 11]\n" +
-                "      result: ${_5_ListForestEdge.solution38(mutableListOf(2, 2, 1), mutableListOf(10, 11))}\n")
+                "      result: ${solution38(mutableListOf(2, 2, 1), mutableListOf(10, 11))}\n")
         println("39) Remove Array Part\n" +
                 "      input: inputArray = [2, 3, 2, 3, 4, 5], l = 2, r = 4\n" +
-                "      result:  ${_5_ListForestEdge.solution39(inputArray = mutableListOf(2, 3, 2, 3, 4, 5), l = 2, r = 4) }\n")
+                "      result:  ${solution39(inputArray = mutableListOf(2, 3, 2, 3, 4, 5), l = 2, r = 4) }\n")
         println("40) Is Smooth?\n" +
                 "      input: arr = [-12, 34, 40, -5, -12, 4, 0, 0, -12]\n" +
-                "      result: ${_5_ListForestEdge.solution40(mutableListOf(-12, 34, 40, -5, -12, 4, 0, 0, -12))}\n")
+                "      result: ${solution40(mutableListOf(-12, 34, 40, -5, -12, 4, 0, 0, -12))}\n")
         println("41) Replace Middle\n" +
                 "      input: arr = [7, 2, 2, 5, 10, 7]\n" +
-                "      result: ${_5_ListForestEdge.solution41(mutableListOf(7, 2, 2, 5, 10, 7))}\n")
+                "      result: ${solution41(mutableListOf(7, 2, 2, 5, 10, 7))}\n")
         println("42) Make Array Consecutive 2\n" +
                 "      input: statues = [6, 2, 3, 8]\n" +
-                "      result: ${_5_ListForestEdge.solution42(mutableListOf(6, 2, 3, 8))}\n")
+                "      result: ${solution42(mutableListOf(6, 2, 3, 8))}\n")
     }
 
     /**

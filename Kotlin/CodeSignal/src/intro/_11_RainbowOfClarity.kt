@@ -6,32 +6,32 @@ object _11_RainbowOfClarity {
     fun run() {
         println("48) Circle of Numbers\n" +
                 "      input: symbol = '8'\n" +
-                "      result: ${_11_RainbowOfClarity.solution48('8')}\n")
+                "      result: ${solution48('8')}\n")
         println("49) LineEncoding\n" +
                 "      input: s = \"aabbbc\"\n" +
-                "      result: ${_11_RainbowOfClarity.solution49("aabbbc")}\n")
+                "      result: ${solution49("aabbbc")}\n")
         println("50) ChessKnight\n" +
                 "      input: cell = \"a1\"\n" +
-                "      result: ${_11_RainbowOfClarity.solution50("a1")}\n")
+                "      result: ${solution50("a1")}\n")
         println("51) DeleteDigit\n" +
                 "      input: n = 152\n" +
-                "      result: ${_11_RainbowOfClarity.solution51(152)}\n")
+                "      result: ${solution51(152)}\n")
     }
 
-     /**
-        * IsDigit
-        * @see "https://app.codesignal.com/arcade/intro/level-11/Zr2XXEpkBPtYWqPJu"
-        * @return IsDigit
-        * * @sample Determine if the given character is a digit or not.
+    /**
+    * IsDigit
+    * @see "https://app.codesignal.com/arcade/intro/level-11/Zr2XXEpkBPtYWqPJu"
+    * @return IsDigit
+    * * @sample Determine if the given character is a digit or not.
 
-     Example
+    Example
 
-     For symbol = '0', the output should be
-     solution(symbol) = true;
-     For symbol = '-', the output should be
-     solution(symbol) = false.
-      */
-     fun solution48(symbol: Char): Boolean = symbol.isDigit()
+    For symbol = '0', the output should be
+    solution(symbol) = true;
+    For symbol = '-', the output should be
+    solution(symbol) = false.
+    */
+    fun solution48(symbol: Char): Boolean = symbol.isDigit()
 
     /**
         * lineEncoding

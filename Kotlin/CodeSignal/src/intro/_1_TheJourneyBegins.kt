@@ -5,13 +5,13 @@ object _1_TheJourneyBegins {
     fun run() {
         println("1) Sum\n" +
                 "      input: 2 + 2\n" +
-                "      result: ${_1_TheJourneyBegins.solution1(2,2)}\n")
+                "      result: ${solution1(param1 = 2, param2 = 2)}\n")
         println("2) CenturyFromYear\n" +
                 "      input: year 1082\n" +
-                "      result: ${_1_TheJourneyBegins.solution2(1082)}\n")
+                "      result: ${solution2(year = 1082)}\n")
         println("3) CheckPalindrome\n" +
                 "      input: \"aabaa\"\n" +
-                "      result: ${_1_TheJourneyBegins.solution3("aabaa")}\n")
+                "      result: ${solution3(inputString = "aabaa")}\n")
     }
 
     /**

@@ -6,19 +6,19 @@ object _9_WellOfIntegration {
     fun run() {
         println("67) House Numbers Sum\n" +
                 "      input: inputArray = [5, 1, 2, 3, 0, 1, 5, 0, 2]\n" +
-                "      result: ${_9_WellOfIntegration.solution67(mutableListOf(5, 1, 2, 3, 0, 1, 5, 0, 2))}\n")
+                "      result: ${solution67(mutableListOf(5, 1, 2, 3, 0, 1, 5, 0, 2))}\n")
         println("68) All Longest Strings\n" +
                 "      input: inputArray = [\"aba\", \"aa\", \"ad\", \"vcd\", \"aba\"]\n" +
-                "      result: ${_9_WellOfIntegration.solution68(mutableListOf("aba", "aa", "ad", "vcd", "aba"))}\n")
+                "      result: ${solution68(mutableListOf("aba", "aa", "ad", "vcd", "aba"))}\n")
         println("69) House of Cats\n" +
                 "      input: legs = 6\n" +
-                "      result: ${_9_WellOfIntegration.solution69(6)}\n")
+                "      result: ${solution69(legs = 6)}\n")
         println("70) Alphabet Subsequence\n" +
                 "      input: s = \"bxz\"\n" +
-                "      result: ${_9_WellOfIntegration.solution70("bxz")}\n")
+                "      result: ${solution70(s = "bxz")}\n")
         println("71) Minimal Number of Coins\n" +
                 "      input: coins = [1, 2, 10], price = 20\n" +
-                "      result: ${_9_WellOfIntegration.solution71(mutableListOf(1, 2, 10), 28)}\n")
+                "      result: ${solution71(mutableListOf(1, 2, 10), price = 28)}\n")
         println("72) Add Border\n" +
                 "      input: picture = \n" +
                 "            abc\n" +
@@ -28,25 +28,25 @@ object _9_WellOfIntegration {
         println()
         println("73) Switch Lights\n" +
                 "      input: a = [1, 1, 1, 1, 1]\n" +
-                "      result: ${_9_WellOfIntegration.solution73(mutableListOf(1, 1, 1, 1, 1))}\n")
+                "      result: ${solution73(mutableListOf(1, 1, 1, 1, 1))}\n")
         println("74) Timed Reading\n" +
                 "      input: maxLength = 4, text = \"The Fox asked the stork, 'How is the soup?'\"\n" +
-                "      result: ${_9_WellOfIntegration.solution74(4,"The Fox asked the stork, 'How is the soup?'")}\n")
+                "      result: ${solution74(maxLength = 4, text = "The Fox asked the stork, 'How is the soup?'")}\n")
         println("75) Elections Winners\n" +
                 "      input: votes = [2, 3, 5, 2], k = 3\n" +
-                "      result: ${_9_WellOfIntegration.solution75(mutableListOf(2, 3, 5, 2), 3)}\n")
+                "      result: ${solution75(mutableListOf(2, 3, 5, 2), k = 3)}\n")
         println("76) Add Two Digits\n" +
                 "      input: number = 1234, width = 2\n" +
-                "      result: ${_9_WellOfIntegration.solution76(1234, 2)}\n")
+                "      result: ${solution76(number = 1234, width = 2)}\n")
         println("77) Are Similar?\n" +
                 "      input: a = [1, 2, 3], b = [2, 1, 3]\n" +
-                "      result: ${_9_WellOfIntegration.solution77(mutableListOf(1, 2, 3), mutableListOf(2, 1, 3))}\n")
+                "      result: ${solution77(mutableListOf(1, 2, 3), mutableListOf(2, 1, 3))}\n")
         println("78) Ada Number\n" +
                 "      input: line = \"123_456_789\"\n" +
-                "      result: ${_9_WellOfIntegration.solution78("123_456_789")}\n")
+                "      result: ${solution78(line = "123_456_789")}\n")
         println("79) Three Split\n" +
                 "      input: a = [0, -1, 0, -1, 0, -1]\n" +
-                "      result: ${_9_WellOfIntegration.solution79(mutableListOf(0, -1, 0, -1, 0, -1))}\n")
+                "      result: ${solution79(mutableListOf(0, -1, 0, -1, 0, -1))}\n")
     }
 
     /**

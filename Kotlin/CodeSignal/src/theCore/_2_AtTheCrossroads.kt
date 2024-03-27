@@ -6,10 +6,10 @@ object _2_AtTheCrossroads {
     fun run() {
         println("9) Reach Next Level\n" +
                 "      input: experience = 10, threshold = 15, reward = 5\n" +
-                "      result: ${_2_AtTheCrossroads.solution9(experience = 10, threshold = 15, reward = 5)}\n")
+                "      result: ${solution9(experience = 10, threshold = 15, reward = 5)}\n")
         println("10) Knapsack Light\n" +
                     "      input: value1 = 10, weight1 = 5, value2 = 6, weight2 = 4, maxW = 8\n" +
-                    "      result: ${ _2_AtTheCrossroads.solution10(
+                    "      result: ${solution10(
                     value1 = 10,
                     weight1 = 5,
                     value2 = 6,
@@ -17,22 +17,22 @@ object _2_AtTheCrossroads {
                     maxW = 8 )}\n")
         println("11) Extra Number\n" +
                 "      input: a = 2, b = 7, c = 2\n" +
-                "      result: ${_2_AtTheCrossroads.solution11(a = 2, b = 7, c = 2)}\n")
+                "      result: ${solution11(a = 2, b = 7, c = 2)}\n")
         println("12) Is Infinite Process?\n" +
                 "      input: a = 2, b = 6\n" +
-                "      result: ${_2_AtTheCrossroads.solution12(a = 2, b = 6)}\n")
+                "      result: ${solution12(a = 2, b = 6)}\n")
         println("13) Arithmetic Expression\n" +
                 "      input: a = 2, b = 3, c = 5\n" +
-                "      result: ${_2_AtTheCrossroads.solution13(2, 3, 5)}\n")
+                "      result: ${solution13(2, 3, 5)}\n")
         println("14) Tennis Set\n" +
                 "      input: score1 = 7, score2 = 5\n" +
-                "      result: ${_2_AtTheCrossroads.solution14(7, 5)}\n")
+                "      result: ${solution14(7, 5)}\n")
         println("15) Will you?\n" +
                 "      input: young = true, beautiful = true, loved = true\n" +
-                "      result: ${_2_AtTheCrossroads.solution15( young = true, beautiful = true, loved = true)}\n")
+                "      result: ${solution15( young = true, beautiful = true, loved = true)}\n")
         println("16) Metro Card\n" +
                 "      input: lastNumberOfDays = 31\n" +
-                "      result: ${_2_AtTheCrossroads.solution16( 31)}\n")
+                "      result: ${solution16( 31)}\n")
     }
 
     /**

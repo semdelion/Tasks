@@ -1,18 +1,16 @@
 package intro
 
-import kotlin.math.pow
-
 object _12_LandOfLogic {
     fun run() {
         println("52) LongestWord\n" +
                 "      input: text = \"Ready, steady, go!\"\n" +
-                "      result: ${_12_LandOfLogic.solution52("Ready, steady, go!")}\n")
+                "      result: ${solution52("Ready, steady, go!")}\n")
         println("53) Valid Time\n" +
                 "      input: time = \"25:51\" \n" +
-                "      result: ${_12_LandOfLogic.solution53("25:51")}\n")
+                "      result: ${solution53("25:51")}\n")
         println("54) SumUpNumbers\n" +
                 "      input: inputString = \"2 apples, 12 oranges\"\n" +
-                "      result: ${_12_LandOfLogic.solution54("2 apples, 12 oranges")}\n")
+                "      result: ${solution54("2 apples, 12 oranges")}\n")
         println("55) Different Squares\n" +
                 "      input: matrix = \n" +
                 "             [1, 2, 1]\n" +
@@ -21,7 +19,7 @@ object _12_LandOfLogic {
                 "             [1, 2, 3]\n" +
                 "             [2, 2, 1]\n" +
                 "      result: ${
-                _12_LandOfLogic.solution55(
+                solution55(
                     mutableListOf(
                         mutableListOf(1, 2, 1),
                         mutableListOf(2, 2, 2),
@@ -34,12 +32,12 @@ object _12_LandOfLogic {
         )
         println("56) DigitsProduct\n" +
                 "      input: product = 19\n" +
-                "      result: ${_12_LandOfLogic.solution56(19)}\n")
+                "      result: ${solution56(19)}\n")
         println(
             "57) File Naming\n" +
                     "      input: names = ${mutableListOf("doc", "doc", "image", "doc(1)","doc")}\n" +
                     "      result: ${
-                _12_LandOfLogic.solution57(
+                solution57(
                     mutableListOf(
                         "doc",
                         "doc",
@@ -52,13 +50,13 @@ object _12_LandOfLogic {
         )
         println("58) MessageFromBinaryCode\n" +
                 "      input: code = \"010010000110010101101100011011000110111100100001\"\n" +
-                "      result: ${_12_LandOfLogic.solution58("010010000110010101101100011011000110111100100001")}\n")
+                "      result: ${solution58("010010000110010101101100011011000110111100100001")}\n")
         println("59) SpiralNumbers\n" +
                 "      input: n = 5\n" +
                 "      result:")
-        val result59 = _12_LandOfLogic.solution59(5)
-        result59.forEach { println("             $it") }
+        solution59(5).forEach { println("             $it") }
         println()
+
         println("60) Sudoku\n" +
                 "      input: grid = \n" +
                 "             [1,3,2,5,4,6,9,8,7]\n" +
@@ -70,9 +68,7 @@ object _12_LandOfLogic {
                 "             [5,7,6,9,8,1,4,3,2]\n" +
                 "             [2,4,3,6,5,7,1,9,8]\n" +
                 "             [8,1,9,3,2,4,7,6,5]\n" +
-                "      result: ${
-                _12_LandOfLogic.solution60(
-                    mutableListOf(
+                "      result: ${solution60(mutableListOf(
                         mutableListOf(1,3,2,5,4,6,9,8,7),
                         mutableListOf(4,6,5,8,7,9,3,2,1),
                         mutableListOf(7,9,8,2,1,3,6,5,4),

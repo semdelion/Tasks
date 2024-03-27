@@ -5,24 +5,23 @@ object _4_ExploringTheWaters {
     fun run() {
         println("14) AlternatingSums\n" +
                 "      input: a = [50, 60, 60, 45, 70]\n" +
-                "      result: ${_4_ExploringTheWaters.solution14(mutableListOf(50, 60, 60, 45, 70))}\n")
+                "      result: ${solution14(mutableListOf(50, 60, 60, 45, 70))}\n")
         println("15) Add Border\n" +
                 "      input: picture = \n" +
                 "            abc\n" +
                 "            ded\n" +
                 "      result:")
-        val result15 = _4_ExploringTheWaters.solution15(mutableListOf("abc", "ded"))
-        result15.forEach { println("            $it") }
+        solution15(mutableListOf("abc", "ded")).forEach { println("            $it") }
         println()
         println("16) Are Similar\n" +
                 "      input: a = [1, 2, 3], b = [2, 1, 3]\n" +
-                "      result: ${_4_ExploringTheWaters.solution16(mutableListOf(1, 2, 3), mutableListOf(2, 1, 3))}\n")
+                "      result: ${solution16(mutableListOf(1, 2, 3), mutableListOf(2, 1, 3))}\n")
         println("17) ArrayChange\n" +
                 "      input: inputArray = [1, 1, 1]\n" +
-                "      result: ${_4_ExploringTheWaters.solution17(mutableListOf(1, 1, 1))}\n")
+                "      result: ${solution17(mutableListOf(1, 1, 1))}\n")
         println("18) PalindromeRearranging\n" +
                 "      input: inputString = \"abbaaaca\"\n" +
-                "      result: ${_4_ExploringTheWaters.solution18("abbaaaca")}\n")
+                "      result: ${solution18("abbaaaca")}\n")
     }
 
     /**
