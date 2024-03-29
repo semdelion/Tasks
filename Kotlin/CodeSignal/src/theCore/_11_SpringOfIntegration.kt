@@ -32,6 +32,10 @@ object _11_SpringOfIntegration {
                 "      result: \n")
         solution96(2, 3).forEach { println("            $it") }
         println()
+
+        println("97) File Naming\n" +
+                    "      input: names = ${mutableListOf("doc", "doc", "image", "doc(1)","doc")}\n" +
+                    "      result: ${solution97(mutableListOf("doc","doc","image","doc(1)","doc"))}\n" )
     }
 
     /**
@@ -444,5 +448,36 @@ object _11_SpringOfIntegration {
             christmasTree.add(" ".repeat(levelHeight + levelNum - levelHeight / 2) + "*".repeat(levelHeight + (levelHeight + 1) % 2))
         }
         return christmasTree
+    }
+
+    /**
+     * File Naming
+     * @see "https://app.codesignal.com/arcade/intro/level-12/sqZ9qDTFHXBNrQeLC"
+     * @return File Naming
+     * * @sample You are given an array of strings names representing filenames. The array is sorted in order of file creation, such that names[i] represents the name of a file created before names[i+1] and after names[i-1] (assume 0-based indexing). Because all files must have unique names, files created later with the same name as a file created earlier should have an additional (k) suffix in their names, where k is the smallest positive integer (starting from 1) that does not appear in previous file names.
+
+    Your task is to iterate through all elements of names (from left to right) and update all filenames based on the above. Return an array of proper filenames.
+
+    Example
+
+    For names = ["doc", "doc", "image", "doc(1)", "doc"], the output should be solution(names) = ["doc", "doc(1)", "image", "doc(1)(1)", "doc(2)"].
+
+    Since names[0] = "doc" and names[1] = "doc", update names[1] = "doc(1)"
+    Since names[1] = "doc(1)" and names[3] = "doc(1)", update names[3] = "doc(1)(1)"
+    Since names[0] = "doc", names[1] = "doc(1)", and names[4] = "doc", update names[4] = "doc(2)" */
+    fun solution97(names: MutableList<String>): MutableList<String> {
+        val files = mutableListOf<String>()
+        for (name in names)
+            files.add(safeAdd(name, files))
+        return files
+    }
+
+    private fun safeAdd(str: String, files: MutableList<String>): String {
+        var purStr = str;
+        var index = 1
+        while (files.contains(purStr)) {
+            purStr = "${str}(${index++})";
+        }
+        return purStr;
     }
 }
