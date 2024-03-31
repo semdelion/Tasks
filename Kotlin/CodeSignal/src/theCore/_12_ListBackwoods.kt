@@ -12,7 +12,17 @@ object _12_ListBackwoods {
                             mutableListOf(0, 5, 0, 4),
                             mutableListOf(2, 1, 3, 6)
                         ),column = 2)}\n")
-
+        println("99) Are Isomorphic?\n" +
+                "      input: array1 = \n" +
+                "             [1, 1, 1]\n" +
+                "             [0, 0]\n" +
+                "             array2 = \n" +
+                "             [2, 1, 1]\n" +
+                "             [2, 1]\n" +
+                "      result: ${solution99(
+                        mutableListOf(mutableListOf(1, 1, 1), mutableListOf(0, 0)),
+                        mutableListOf(mutableListOf(2, 1, 1), mutableListOf(2, 1))
+                    )}\n" )
     }
 
     /**
@@ -36,5 +46,46 @@ object _12_ListBackwoods {
             result.add(matrix[i][column])
         }
         return result
+    }
+
+    /**
+     * Are Isomorphic?
+     * @see "https://app.codesignal.com/arcade/code-arcade/list-backwoods/xKYm98etd9JRsTcZY"
+     * @return Are Isomorphic?
+     * * @sample Two two-dimensional arrays are isomorphic if they have the same number of rows and each pair of respective rows contains the same number of elements.
+
+    Given two two-dimensional arrays, check if they are isomorphic.
+
+    Example
+
+    For
+
+    array1 = [[1, 1, 1],
+    [0, 0]]
+    and
+
+    array2 = [[2, 1, 1],
+    [2, 1]]
+    the output should be
+    solution(array1, array2) = true;
+
+    For
+
+    array1 = [[2],
+    []]
+    and
+
+    array2 = [[2]]
+    the output should be
+    solution(array1, array2) = false. */
+    fun solution99(array1: MutableList<MutableList<Int>>, array2: MutableList<MutableList<Int>>): Boolean {
+        if(array1.size != array2.size)
+            return false
+
+        for (i in 0 until array1.size) {
+            if(array1[i].size != array2[i].size)
+                return false
+        }
+        return true
     }
 }
