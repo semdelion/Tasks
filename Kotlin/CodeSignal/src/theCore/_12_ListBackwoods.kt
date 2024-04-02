@@ -39,6 +39,20 @@ object _12_ListBackwoods {
             )
         ).forEach { println("             $it") }
         println()
+        println("101) Swap Diagonals\n" +
+                "      input: matrix = \n" +
+                "             ${mutableListOf(43,45,32,10)} \n" +
+                "             ${mutableListOf(10,98,28,98)} \n" +
+                "             ${mutableListOf(30,21,53,64)} \n" +
+                "             ${mutableListOf(21,22,35,71)} \n" +
+                "      result:")
+        solution101(mutableListOf(
+            mutableListOf(43,45,32,10),
+            mutableListOf(10,98,28,98),
+            mutableListOf(30,21,53,64),
+            mutableListOf(21,22,35,71)
+        )).forEach { println("             $it") }
+        println()
     }
 
     /**
@@ -136,6 +150,38 @@ object _12_ListBackwoods {
 
             tmp = matrix[size - i][i]
             matrix[size - i][i] = matrix[i][size - i]
+            matrix[i][size - i] = tmp
+        }
+        return matrix
+    }
+
+    /**
+     * Swap Diagonals
+     * @see "https://app.codesignal.com/arcade/code-arcade/list-backwoods/kfwTN8pdx9uP8bcHS"
+     * @return Swap Diagonals
+     * * @sample The longest diagonals of a square matrix are defined as follows:
+
+    the first longest diagonal goes from the top left corner to the bottom right one;
+    the second longest diagonal goes from the top right corner to the bottom left one.
+    Given a square matrix, your task is to swap its longest diagonals by exchanging their elements at the corresponding positions.
+
+    Example
+
+    For
+
+    matrix = [[1, 2, 3],
+    [4, 5, 6],
+    [7, 8, 9]]
+    the output should be
+
+    solution(matrix) = [[3, 2, 1],
+    [4, 5, 6],
+    [9, 8, 7]] */
+    fun solution101(matrix: MutableList<MutableList<Int>>): MutableList<MutableList<Int>> {
+        val size = matrix.size - 1
+        for(i in 0 until matrix.size) {
+            val tmp = matrix[i][i]
+            matrix[i][i] = matrix[i][size - i]
             matrix[i][size - i] = tmp
         }
         return matrix
