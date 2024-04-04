@@ -68,6 +68,25 @@ object _12_ListBackwoods {
                         ), 1, 3
                     )
                 }")
+        println("103) Draw Rectangle\n" +
+                "      input: canvas = \n" +
+                "             [a, a, a, a, a, a, a, a]\n" +
+                "             [a, a, a, a, a, a, a, a]\n" +
+                "             [a, a, a, a, a, a, a, a]\n" +
+                "             [b, b, b, b, b, b, b, b]\n" +
+                "             [b, b, b, b, b, b, b, b]\n" +
+                "             rectangle = [1, 1, 4, 3] \n" +
+                "      result:")
+        solution103(
+            mutableListOf(
+                mutableListOf('a', 'a', 'a', 'a', 'a', 'a', 'a', 'a'),
+                mutableListOf('a', 'a', 'a', 'a', 'a', 'a', 'a', 'a'),
+                mutableListOf('a', 'a', 'a', 'a', 'a', 'a', 'a', 'a'),
+                mutableListOf('b', 'b', 'b', 'b', 'b', 'b', 'b', 'b'),
+                mutableListOf('b', 'b', 'b', 'b', 'b', 'b', 'b', 'b')
+            ), mutableListOf(1, 1, 4, 3)
+        ).forEach { println("             $it") }
+        println()
     }
 
     /**
@@ -226,5 +245,61 @@ object _12_ListBackwoods {
             result += matrix[i][b]
 
         return result
+    }
+
+    /**
+     * Draw Rectangle
+     * @see "https://app.codesignal.com/arcade/code-arcade/list-backwoods/uFQEiM4trARdm2z46"
+     * @return Draw Rectangle
+     * * @sample You are implementing a command-line version of the Paint app. Since the command line doesn't support colors, you are using different characters to represent pixels. Your current goal is to support rectangle x1 y1 x2 y2 operation, which draws a rectangle that has an upper left corner at (x1, y1) and a lower right corner at (x2, y2). Here the x-axis points from left to right, and the y-axis points from top to bottom.
+
+    Given the initial canvas state and the array that represents the coordinates of the two corners, return the canvas state after the operation is applied. For the details about how rectangles are painted, see the example.
+
+    Example
+
+    For
+
+    canvas =
+    [['a', 'a', 'a', 'a', 'a', 'a', 'a', 'a'],
+    ['a', 'a', 'a', 'a', 'a', 'a', 'a', 'a'],
+    ['a', 'a', 'a', 'a', 'a', 'a', 'a', 'a'],
+    ['b', 'b', 'b', 'b', 'b', 'b', 'b', 'b'],
+    ['b', 'b', 'b', 'b', 'b', 'b', 'b', 'b']]
+    and rectangle = [1, 1, 4, 3], the output should be
+
+    solution(canvas, rectangle) =
+    [['a', 'a', 'a', 'a', 'a', 'a', 'a', 'a'],
+    ['a', '*', '-', '-', '*', 'a', 'a', 'a'],
+    ['a', '|', 'a', 'a', '|', 'a', 'a', 'a'],
+    ['b', '*', '-', '-', '*', 'b', 'b', 'b'],
+    ['b', 'b', 'b', 'b', 'b', 'b', 'b', 'b']]
+    Here is the rectangle, colored for illustration:
+
+
+    [['a', 'a', 'a', 'a', 'a', 'a', 'a', 'a'],
+    ['a', '*', '-', '-', '*', 'a', 'a', 'a'],
+    ['a', '|', 'a', 'a', '|', 'a', 'a', 'a'],
+    ['b', '*', '-', '-', '*', 'b', 'b', 'b'],
+    ['b', 'b', 'b', 'b', 'b', 'b', 'b', 'b']]
+    Note that rectangle sides are depicted as -s and |s, asterisks (*) stand for its corners and all of the other "pixels" remain the same.*/
+    fun solution103(canvas: MutableList<MutableList<Char>>, rectangle: MutableList<Int>): MutableList<MutableList<Char>> {
+        val x1 = rectangle[0]
+        val y1 = rectangle[1]
+        val x2 = rectangle[2]
+        val y2 = rectangle[3]
+        for (i in x1 + 1 until x2) {
+            canvas[y1][i] = '-'
+            canvas[y2][i] = '-'
+        }
+        for (i in y1 + 1 until y2) {
+            canvas[i][x1] = '|'
+            canvas[i][x2] = '|'
+        }
+        canvas[y1][x1] = '*'
+        canvas[y2][x2] = '*'
+        canvas[y1][x2] = '*'
+        canvas[y2][x1] = '*'
+
+        return canvas
     }
 }
