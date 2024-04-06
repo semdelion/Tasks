@@ -104,6 +104,29 @@ object _12_ListBackwoods {
             ), k = 3
         ).forEach { println("             $it") }
         println()
+        println("105) Star Rotation\n" +
+                "      input: formation = \n" +
+                "             [1, 0, 0, 2, 0, 0, 3]\n" +
+                "             [0, 1, 0, 2, 0, 3, 0]\n" +
+                "             [0, 0, 1, 2, 3, 0, 0]\n" +
+                "             [8, 8, 8, 9, 4, 4, 4]\n" +
+                "             [0, 0, 7, 6, 5, 0, 0]\n" +
+                "             [0, 7, 0, 6, 0, 5, 0]\n" +
+                "             [7, 0, 0, 6, 0, 0, 5]\n" +
+                "             width = 3, center = [3, 3], t = 1\n" +
+                "      result:")
+        solution105(
+            mutableListOf(
+                mutableListOf(1, 0, 0, 2, 0, 0, 3),
+                mutableListOf(0, 1, 0, 2, 0, 3, 0),
+                mutableListOf(0, 0, 1, 2, 3, 0, 0),
+                mutableListOf(8, 8, 8, 9, 4, 4, 4),
+                mutableListOf(0, 0, 7, 6, 5, 0, 0),
+                mutableListOf(0, 7, 0, 6, 0, 5, 0),
+                mutableListOf(7, 0, 0, 6, 0, 0, 5),
+            ), width = 7, mutableListOf(3, 3), t = 7
+        ).forEach { println("             $it") }
+        println()
     }
 
     /**
@@ -386,5 +409,71 @@ object _12_ListBackwoods {
         formation[2][1] = players[(11 - k1) % 6]
 
         return formation
+    }
+
+    /**
+     * Star Rotation
+     * @see "https://app.codesignal.com/arcade/code-arcade/list-backwoods/A5meC5REAcDfHeuFf"
+     * @return Star Rotation
+     * * @sample Consider a (2k+1) × (2k+1) square subarray of an integer integers matrix. Let's call the union of the square's two longest diagonals, middle column and middle row a star. Given the coordinates of the star's center in the matrix and its width, rotate it 45 · t degrees clockwise preserving position of all matrix elements that do not belong to the star.
+
+    Example
+
+    For
+
+    matrix =
+    [[1, 0, 0, 2, 0, 0, 3],
+    [0, 1, 0, 2, 0, 3, 0],
+    [0, 0, 1, 2, 3, 0, 0],
+    [8, 8, 8, 9, 4, 4, 4],
+    [0, 0, 7, 6, 5, 0, 0],
+    [0, 7, 0, 6, 0, 5, 0],
+    [7, 0, 0, 6, 0, 0, 5]]
+    width = 7, center = [3, 3], and t = 1, the output should be
+
+    solution(matrix, width, center, t) =
+    [[8, 0, 0, 1, 0, 0, 2],
+    [0, 8, 0, 1, 0, 2, 0],
+    [0, 0, 8, 1, 2, 0, 0],
+    [7, 7, 7, 9, 3, 3, 3],
+    [0, 0, 6, 5, 4, 0, 0],
+    [0, 6, 0, 5, 0, 4, 0],
+    [6, 0, 0, 5, 0, 0, 4]]
+    For
+
+    matrix =
+    [[1, 0, 0, 2, 0, 0, 3],
+    [0, 1, 0, 2, 0, 3, 0],
+    [0, 0, 1, 2, 3, 0, 0],
+    [8, 8, 8, 9, 4, 4, 4],
+    [0, 0, 7, 6, 5, 0, 0]]
+    width = 3, center = [1, 5], and t = 81, the output should be
+
+    solution(matrix, width, center, t) =
+    [[1, 0, 0, 2, 0, 0, 0],
+    [0, 1, 0, 2, 3, 3, 3],
+    [0, 0, 1, 2, 0, 0, 0],
+    [8, 8, 8, 9, 4, 4, 4],
+    [0, 0, 7, 6, 5, 0, 0]]*/
+    fun solution105(matrix: MutableList<MutableList<Int>>, width: Int, center: MutableList<Int>, t: Int): MutableList<MutableList<Int>> {
+        val x = center[0]
+        val y = center[1]
+        val w = width / 2
+
+        for (j in 0 until t % 360) {
+            for (i in 0 until w) {
+                val temp = matrix[x - w + i][y - w + i]
+                matrix[x - w + i][y - w + i] = matrix[x][y - w + i]
+                matrix[x][y - w + i] = matrix[x + w - i][y - w + i]
+                matrix[x + w - i][y - w + i] = matrix[x + w - i][y]
+                matrix[x + w - i][y] = matrix[x + w - i][y + w - i]
+                matrix[x + w - i][y + w - i] = matrix[x][y + w - i]
+                matrix[x][y + w - i] = matrix[x - w + i][y + w - i]
+                matrix[x - w + i][y + w - i] = matrix[x - w + i][y]
+                matrix[x - w + i][y] = temp
+            }
+        }
+
+        return matrix
     }
 }
