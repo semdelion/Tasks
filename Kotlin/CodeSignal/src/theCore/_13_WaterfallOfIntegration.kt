@@ -78,6 +78,20 @@ object _13_WaterfallOfIntegration {
             )
         ).forEach { println("             $it") }
         println()
+        println("110) Polygon Perimeter\n" +
+                "      input: matrix = \n" +
+                "             ${mutableListOf(false, true,  true)} \n" +
+                "             ${mutableListOf(true,  true,  false)} \n" +
+                "             ${mutableListOf(true,  false, false)} \n" +
+                "      result: ${
+                    solution110(
+                        mutableListOf(
+                            mutableListOf(false, true, true),
+                            mutableListOf(true, true, false),
+                            mutableListOf(true, false, false)
+                        )
+                    )
+                }")
     }
 
     /**
@@ -304,5 +318,55 @@ object _13_WaterfallOfIntegration {
         return contour.indices.map {
             contour[it].first to contour[(it + contour.size + d) % contour.size].second
         }.toMutableList()
+    }
+
+    /**
+     * Polygon Perimeter
+     * @see "https://app.codesignal.com/arcade/code-arcade/waterfall-of-integration/L7KWEYbPoornGyf7K"
+     * @return Polygon Perimeter
+     * * @sample You have a rectangular white board with some black cells. The black cells create a connected black figure, i.e. it is possible to get from any black cell to any other one through connected adjacent (sharing a common side) black cells.
+
+    Find the perimeter of the black figure assuming that a single cell has unit length.
+
+    It's guaranteed that there is at least one black cell on the table.
+
+    Example
+
+    For
+
+    matrix = [[false, true,  true ],
+    [true,  true,  false],
+    [true,  false, false]]
+    the output should be
+    solution(matrix) = 12.
+
+
+
+    For
+
+    matrix = [[true, true,  true],
+    [true, false, true],
+    [true, true,  true]]
+    the output should be
+    solution(matrix) = 16.
+
+     */
+    fun solution110(matrix: MutableList<MutableList<Boolean>>): Int {
+        var count = 0
+        for (i in 0 until matrix.size) {
+            for (j in 0 until matrix[0].size) {
+                if (matrix[i][j]) {
+                    if (i - 1 < 0 || !matrix[i - 1][j])
+                        count++
+                    if (j - 1 < 0 || !matrix[i][j - 1])
+                        count++
+                    if (i + 1 == matrix.size || !matrix[i + 1][j])
+                        count++
+                    if (j + 1 == matrix[0].size || !matrix[i][j + 1])
+                        count++
+                }
+            }
+        }
+        return count
     }
 }
