@@ -1,9 +1,11 @@
+import graphs.*
 import theCore.*
 import intro.*
 
 fun main(args: Array<String>) {
     intro()
     theCore()
+    graphs()
     TMP.run()
 }
 
@@ -49,5 +51,12 @@ fun theCore() {
     _17_RegularHell.run()
     _18_SecretArchives.run()
     _19_CliffsOfPain.run()
+    println("============================================================================")
+}
+
+fun graphs() {
+    println("\nGraphs")
+    println("============================================================================")
+    _1_KingdomRoads.run()
     println("============================================================================")
 }
