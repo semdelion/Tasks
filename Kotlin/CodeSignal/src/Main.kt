@@ -1,3 +1,4 @@
+import algorithms.*
 import graphs.*
 import theCore.*
 import intro.*
@@ -6,6 +7,7 @@ fun main(args: Array<String>) {
     intro()
     theCore()
     graphs()
+    algorithms()
     TMP.run()
 }
 
@@ -58,5 +60,12 @@ fun graphs() {
     println("\nGraphs")
     println("============================================================================")
     _1_KingdomRoads.run()
+    println("============================================================================")
+}
+
+fun algorithms() {
+    println("\nAlgorithms")
+    println("============================================================================")
+    _1_SortAlgorithms.run()
     println("============================================================================")
 }
