@@ -13,6 +13,11 @@ object _1_SortAlgorithms {
         BubbleSort(arrayBubbleSort)
         println("      result: $arrayBubbleSort")
 
+        val arrayQuickSort =  mutableListOf(6,77,5,8,11,2,22,4,23,21,28,32,263,96,4,8,50)
+        println("3) Quick Sort\n" +
+                "      input: array = ${arrayQuickSort}\n")
+        QuickSort(arrayQuickSort, 0 , arrayQuickSort.size - 1)
+        println("      result: $arrayQuickSort")
 
     }
     /**
@@ -44,6 +49,47 @@ object _1_SortAlgorithms {
                 }
             }
         }
+    }
+
+    /**
+     * Quick Sort
+     */
+    fun QuickSort(array: MutableList<Int>, startIndex: Int , endIndex: Int) {
+        if(startIndex < endIndex) {
+            val pivot = PartitionStart(array, startIndex, endIndex)
+            //val pivot = PartitionEnd(array, startIndex, endIndex)
+            QuickSort(array, startIndex, pivot - 1 )
+            QuickSort(array, pivot + 1, endIndex)
+        }
+    }
+
+    //pivot Start
+    private fun PartitionStart(array: MutableList<Int>, startIndex: Int , endIndex: Int) : Int {
+        var pivot = endIndex + 1
+        for (i in endIndex downTo startIndex) {
+            if (array[i] > array[startIndex]) {
+                pivot--
+                Swap(array, i, pivot)
+            }
+        }
+        pivot--
+        Swap(array, startIndex, pivot)
+        return pivot
+    }
+
+    //pivot End
+    private fun PartitionEnd(array: MutableList<Int>, l: Int, r: Int): Int {
+        var pivot = l  - 1
+        for (i in l..r) {
+            if (array[i] < array[r])
+            {
+                pivot++
+                Swap(array, pivot, i)
+            }
+        }
+        pivot++
+        Swap(array, pivot, r)
+        return pivot
     }
 
     private fun Swap(array: MutableList<Int>, i: Int, j: Int ) {
