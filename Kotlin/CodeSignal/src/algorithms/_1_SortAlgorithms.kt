@@ -19,6 +19,15 @@ object _1_SortAlgorithms {
         QuickSort(arrayQuickSort, 0 , arrayQuickSort.size - 1)
         println("      result: $arrayQuickSort")
 
+        val arrayInsertion =  mutableListOf(6,77,5,8,11,2,22,4,23,21,28,32,263,96,4,8,50)
+        println("4) Insertion\n" +
+                "      input: array = ${arrayInsertion}")
+        insertionSort(arrayInsertion)
+        println("      result: $arrayInsertion")
+
+        println("5) Count Unique\n" +
+                "      input: array = mutableListOf(1,2,3,3,4,5,5,6,7,8,8,9,10,10,11,11,12)\n" +
+                "      result: ${countUnique(mutableListOf(1,2,3,3,4,5,5,6,7,8,8,9,10,10,11,11,12))}")
     }
     /**
      * Binary Search
@@ -99,4 +108,27 @@ object _1_SortAlgorithms {
         array[i] = array[j]
         array[j] = temp
     }
+
+    /**
+     * Insertion Sort
+     */
+    fun insertionSort(array: MutableList<Int>) {
+
+        for (i in 1 until array.size) {
+            var key = array[i]
+            var j = i - 1
+            while (j >= 0 && array[j] > key) {
+                array[j + 1] = array[j]
+                j--
+            }
+            if(j != i - 1) {
+                array[j + 1] = key
+            }
+        }
+    }
+
+    /**
+     * Count Unique
+     */
+    fun countUnique(array: MutableList<Int>) : Int = array.toSet().size
 }
