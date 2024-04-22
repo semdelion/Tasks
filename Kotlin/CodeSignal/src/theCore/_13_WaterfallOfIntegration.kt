@@ -99,6 +99,16 @@ object _13_WaterfallOfIntegration {
                 "             \".#.##\",\n" +
                 "             \".....\",\n" +
                 "      result: ${solution111(mutableListOf("#..##", ".##.#", ".#.##", "....."))}")
+
+        println("112)  Is Information Consistent?\n" +
+                "      input: evidences = \n" +
+                "             [ 0, 1, 0, 1]\n" +
+                "             [-1, 1, 0, 0]\n" +
+                "             [-1, 0, 0, 1]\n" +
+                "      result: ${solution112(mutableListOf(
+                                            mutableListOf(  0, 1, 0, 1),
+                                            mutableListOf( -1, 1, 0, 0),
+                                            mutableListOf( -1, 0, 0, 1)))}")
     }
 
     /**
@@ -415,4 +425,52 @@ object _13_WaterfallOfIntegration {
         }
         return result
     }
+
+    /**
+     * Is Information Consistent?
+     * @see "https://app.codesignal.com/arcade/code-arcade/waterfall-of-integration/jkuhbNn7AdeCC7z7R"
+     * @return Is Information Consistent?
+     * * @sample Court is in session. We got a group of witnesses who have all taken an oath to tell the truth. The prosecutor is pointing at the defendants one by one and asking each witnesses a simple question - "guilty or not?". The witnesses are allowed to respond in one of the following three ways:
+
+    I am sure he/she is guilty.
+    I am sure he/she is innocent.
+    I have no idea.
+    The prosecutor has a hunch that one of the witnesses might not be telling the truth so she decides to cross-check all of their testimonies and see if the information gathered is consistent, i.e. there are no two witnesses A and B and a defendant C such that A says C is guilty while B says C is innocent.
+
+    Example
+
+    For
+
+    evidences =
+    [ 0, 1, 0, 1],
+    [-1, 1, 0, 0],
+    [-1, 0, 0, 1]
+    the output should be
+    solution(evidences) = true;
+
+    For
+
+    evidences =
+    [ 1, 0],
+    [-1, 0],
+    [ 1, 1],
+    [ 1, 1]
+    the output should be
+    solution(evidences) = false. */
+    fun solution112(evidences: MutableList<MutableList<Int>>): Boolean {
+        for (i in 0 until evidences[0].size) {
+            var flag = 0
+            for(j in 0 until evidences.size) {
+                if (evidences[j][i] != 0) {
+                    if (flag == 0) {
+                        flag = evidences[j][i]
+                    } else if(flag != evidences[j][i]) {
+                        return false
+                    }
+                }
+            }
+        }
+        return true
+    }
+
 }
