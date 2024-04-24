@@ -28,7 +28,19 @@ object _1_SortAlgorithms {
         println("5) Count Unique\n" +
                 "      input: array = mutableListOf(1,2,3,3,4,5,5,6,7,8,8,9,10,10,11,11,12)\n" +
                 "      result: ${countUnique(mutableListOf(1,2,3,3,4,5,5,6,7,8,8,9,10,10,11,11,12))}")
+
+
+        println("7) transpose\n" +
+                "      input: matrix = [1, 2, 3, 4]\n" +
+                "                      [1, 2, 3, 4]\n" +
+                "                      [1, 2, 3, 4]\n" +
+                "                      [1, 2, 3, 4]\n" +
+                "                      [1, 2, 3, 4]\n" +
+                "      result: ")
+        val result = transpose(arrayOf( intArrayOf(1, 2, 3, 4), intArrayOf(1, 2, 3, 4), intArrayOf(1, 2, 3, 4), intArrayOf(1, 2, 3, 4),intArrayOf(1, 2, 3, 4)))
+        result.forEach { println("                      ${it.toList()}") }
     }
+
     /**
      * Binary Search
      */
@@ -131,4 +143,19 @@ object _1_SortAlgorithms {
      * Count Unique
      */
     fun countUnique(array: MutableList<Int>) : Int = array.toSet().size
+
+
+    /**
+     * transpose
+     */
+    fun transpose(matrix: Array<IntArray>): Array<IntArray> {
+        val result = Array(matrix[0].size) { IntArray(matrix.size) }
+        for (i in matrix.indices) {
+            for(j in matrix[0].indices) {
+                result[j][i] = matrix[i][j]
+            }
+        }
+        return result
+    }
+
 }
