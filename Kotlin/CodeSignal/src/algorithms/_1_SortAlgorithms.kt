@@ -62,7 +62,6 @@ object _1_SortAlgorithms {
      * Quick Sort
      */
     fun BubbleSort(array: MutableList<Int>) {
-
         for (i in 1 until  array.size){
             for (j in 0 until array.size - i) {
                 if (array[j]>array[j + 1]) {
@@ -77,8 +76,8 @@ object _1_SortAlgorithms {
      */
     fun QuickSort(array: MutableList<Int>, startIndex: Int , endIndex: Int) {
         if(startIndex < endIndex) {
-            val pivot = PartitionStart(array, startIndex, endIndex)
-            //val pivot = PartitionEnd(array, startIndex, endIndex)
+            //val pivot = PartitionStart(array, startIndex, endIndex)
+            val pivot = PartitionEnd(array, startIndex, endIndex)
             QuickSort(array, startIndex, pivot - 1 )
             QuickSort(array, pivot + 1, endIndex)
         }
@@ -102,8 +101,7 @@ object _1_SortAlgorithms {
     private fun PartitionEnd(array: MutableList<Int>, l: Int, r: Int): Int {
         var pivot = l  - 1
         for (i in l..r) {
-            if (array[i] < array[r])
-            {
+            if (array[i] < array[r]) {
                 pivot++
                 Swap(array, pivot, i)
             }
