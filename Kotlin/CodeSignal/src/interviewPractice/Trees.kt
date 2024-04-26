@@ -1,6 +1,12 @@
 package interviewPractice
 
 object Trees {
+
+    data class Tree<T>(var value: T) {
+        var left: Tree<T>? = null;
+        var right: Tree<T>? = null;
+    }
+
     /**
      * hasPathWithGivenSum
      * @see "https://app.codesignal.com/interview-practice/question/TG4tEMPnAc3PnzRCs/description"
@@ -115,12 +121,7 @@ object Trees {
            3  -4 -3
     There is no path from root to leaf with the given sum 7.
      */
-    data class Tree<T>(var value: T) {
-        var left: Tree<T>? = null;
-        var right: Tree<T>? = null;
-    }
-
-    fun solution(t: Tree<Int>?, s: Int): Boolean {
+    fun solution1(t: Tree<Int>?, s: Int): Boolean {
         if (t == null)
             return false
 
@@ -138,5 +139,113 @@ object Trees {
             return true
 
         return false
+    }
+
+    /**
+     * isTreeSymmetric
+     * @see "https://app.codesignal.com/interview-practice/question/tXN6wQsTknDT6bNrf/description"
+     * @return Given a binary tree t, determine whether it is symmetric around its center, i.e. each side mirrors the other.
+
+    Example
+
+    For
+
+    t = {
+            "value": 1,
+            "left": {
+                        "value": 2,
+                        "left": {
+                                    "value": 3,
+                                    "left": null,
+                                    "right": null
+                                 },
+                        "right": {
+                                    "value": 4,
+                                    "left": null,
+                                    "right": null
+                                  }
+                     },
+            "right": {
+                        "value": 2,
+                        "left": {
+                                    "value": 4,
+                                    "left": null,
+                                    "right": null
+                                },
+                        "right": {
+                                    "value": 3,
+                                    "left": null,
+                                    "right": null
+                                 }
+                     }
+        }
+
+    the output should be solution(t) = true.
+
+    Here's what the tree in this example looks like:
+
+             1
+            / \
+           2   2
+          / \ / \
+         3  4 4  3
+    As you can see, it is symmetric.
+
+    For
+
+    t = {
+            "value": 1,
+            "left": {
+                        "value": 2,
+                        "left": null,
+                        "right": {
+                                    "value": 3,
+                                    "left": null,
+                                    "right": null
+                                 }
+                     },
+            "right": {
+                        "value": 2,
+                        "left": null,
+                        "right": {
+                                    "value": 3,
+                                    "left": null,
+                                    "right": null
+                                 }
+                    }
+        }
+    the output should be solution(t) = false.
+
+    Here's what the tree in this example looks like:
+
+            1
+           / \
+          2   2
+           \   \
+            3    3
+    As you can see, it is not symmetric.*/
+    fun solution2(t: Tree<Int>?): Boolean {
+        if (t == null)
+            return true
+
+        if(t.left == null && t.right == null)
+            return true
+
+        if(t.left == null || t.right == null)
+            return false
+
+        return isTreeSymmetric(t.left!!, t.right!!)
+    }
+
+    fun isTreeSymmetric(t1: Tree<Int>, t2: Tree<Int>): Boolean {
+        if (t1.value != t2.value) return false
+
+        val leftSymmetric = (t1.left == null && t2.right == null) ||
+                (t1.left != null && t2.right != null && isTreeSymmetric(t1.left!!, t2.right!!))
+
+        val rightSymmetric = (t1.right == null && t2.left == null) ||
+                (t1.right != null && t2.left != null && isTreeSymmetric(t1.right!!, t2.left!!))
+
+        return leftSymmetric && rightSymmetric
     }
 }
