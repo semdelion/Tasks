@@ -121,23 +121,19 @@ object _3_SmoothSailing {
     solution(a) = [-1, 150, 160, 170, -1, -1, 180, 190].
      */
     fun solution12(a: MutableList<Int>): MutableList<Int> {
-        for (i in 0 until a.count())
-        {
-            if (a[i] != -1)
-            {
-                var min = a[i];
-                var index = i;
-                for (j in i + 1 until a.count())
-                {
-                    if (min > a[j] && a[j] != -1)
-                    {
-                        min = a[j];
-                        index = j;
+        for (i in 0 until a.count()) {
+            if (a[i] != -1) {
+                var min = a[i]
+                var index = i
+                for (j in i + 1 until a.count()) {
+                    if (min > a[j] && a[j] != -1){
+                        min = a[j]
+                        index = j
                     }
                 }
-                val tmp = a[i];
-                a[i] = min;
-                a[index] = tmp;
+                val tmp = a[i]
+                a[i] = min
+                a[index] = tmp
             }
         }
         return a;
