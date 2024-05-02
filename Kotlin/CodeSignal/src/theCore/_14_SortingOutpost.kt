@@ -5,6 +5,9 @@ object _14_SortingOutpost {
         println("114) Shuffled Array\n" +
                 "      input: [1, -3, -5, 7, 2]\n" +
                 "      result: ${_14_SortingOutpost.solution114(mutableListOf(1, -3, -5, 7, 2))}\n")
+        println("115) Sort by Height\n" +
+                "      input: [-1, 150, 190, 170, -1, -1, 160, 180]\n" +
+                "      result: ${_14_SortingOutpost.solution115(mutableListOf(-1, 150, 190, 170, -1, -1, 160, 180))}\n")
     }
 
     /**
@@ -29,5 +32,35 @@ object _14_SortingOutpost {
         shuffled.removeAt(shuffled.indexOf(shuffled.sumOf { it } / 2))
         shuffled.sort()
         return shuffled
+    }
+
+    /**
+     * Sort by Height
+     * @see "https://app.codesignal.com/arcade/code-arcade/sorting-outpost/D6qmdBL2NYz49XHwM"
+     * @return Sort by Height
+     * * @sample Some people are standing in a row in a park. There are trees between them which cannot be moved. Your task is to rearrange the people by their heights in a non-descending order without moving the trees. People can be very tall!
+
+    Example
+
+    For a = [-1, 150, 190, 170, -1, -1, 160, 180], the output should be
+    solution(a) = [-1, 150, 160, 170, -1, -1, 180, 190].
+     */
+    fun solution115(a: MutableList<Int>): MutableList<Int> {
+        for (i in 0 until a.count()) {
+            if (a[i] != -1) {
+                var min = a[i]
+                var index = i
+                for (j in i + 1 until a.count()) {
+                    if (min > a[j] && a[j] != -1) {
+                        min = a[j]
+                        index = j
+                    }
+                }
+                val tmp = a[i]
+                a[i] = min
+                a[index] = tmp
+            }
+        }
+        return a
     }
 }
