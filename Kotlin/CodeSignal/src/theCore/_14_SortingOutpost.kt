@@ -8,6 +8,9 @@ object _14_SortingOutpost {
         println("115) Sort by Height\n" +
                 "      input: [-1, 150, 190, 170, -1, -1, 160, 180]\n" +
                 "      result: ${_14_SortingOutpost.solution115(mutableListOf(-1, 150, 190, 170, -1, -1, 160, 180))}\n")
+        println("116) Sort by Height\n" +
+                "      input: [\"abc\",\"\", \"aaa\",\"a\",\"zz\"]\n" +
+                "      result: ${_14_SortingOutpost.solution116(mutableListOf("abc","", "aaa","a","zz"))}\n")
     }
 
     /**
@@ -62,5 +65,25 @@ object _14_SortingOutpost {
             }
         }
         return a
+    }
+
+    /**
+     * Sort By Length
+     * @see "https://app.codesignal.com/arcade/code-arcade/sorting-outpost/QQB7f8ouAqY6jf7xi"
+     * @return Sort By Length
+     * * @sample Given an array of strings, sort them in the order of increasing lengths. If two strings have the same length, their relative order must be the same as in the initial array.
+
+    Example
+
+    For
+
+    inputArray = ["abc","", "aaa","a","zz"]
+    the output should be
+
+    solution(inputArray) = ["","a","zz","abc","aaa"]
+     */
+    fun solution116(inputArray: MutableList<String>): MutableList<String> {
+        inputArray.sortBy{it.length}
+        return inputArray
     }
 }
