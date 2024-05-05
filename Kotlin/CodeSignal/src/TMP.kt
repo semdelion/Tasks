@@ -14,7 +14,7 @@ object TMP {
 
         // println("Перевернутый массив: ${byteArray.contentToString()}")
 
-        println("4) Count Of Max Unique\n" +
+        /*println("4) Count Of Max Unique\n" +
                 "      input: array = mutableListOf(1,2,3,3,3,4,5,5,6,7,8,8,9,10,10,11,11,11,12)\n" +
                 "      result:${numberOfUniqueSequence(mutableListOf(1,2,3,3,4,5,5,6,7,8,8,9,10,10,11,11,11,12), k = 100)}")
 
@@ -59,12 +59,12 @@ object TMP {
         var matrix = List(10){MutableList<Int>(8){0}}
     var tttttttttt = queue1.poll()
     var tttttttttt2 = queue1.poll()
-    var tttttttttt3 = queue1.poll()
+    var tttttttttt3 = queue1.poll()*/
     }
-    class Tree<T>(var valueTree: T) {
+    /*class Tree<T>(var valueTree: T) {
         var left: Tree<T>? = null
         var right: Tree<T>?= null
-    }
+    }*/
 
     fun revertByteArray(array: ByteArray): ByteArray {
         var t = "fdf"
