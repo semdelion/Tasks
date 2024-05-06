@@ -1,5 +1,7 @@
 package theCore
 
+import kotlin.math.min
+
 object _14_SortingOutpost {
     fun run() {
         println("114) Shuffled Array\n" +
@@ -11,6 +13,9 @@ object _14_SortingOutpost {
         println("116) Sort by Height\n" +
                 "      input: [\"abc\",\"\", \"aaa\",\"a\",\"zz\"]\n" +
                 "      result: ${_14_SortingOutpost.solution116(mutableListOf("abc","", "aaa","a","zz"))}\n")
+        println("117) Boxes Packing\n" +
+                "      input: length = [1, 3, 2], width = [1, 3, 2], and height = [1, 3, 2]\n" +
+                "      result: ${_14_SortingOutpost.solution117(mutableListOf(1, 3, 2), mutableListOf(1, 3, 2), mutableListOf(1, 3, 2))}\n")
     }
 
     /**
@@ -86,4 +91,41 @@ object _14_SortingOutpost {
         inputArray.sortBy{it.length}
         return inputArray
     }
+
+    /**
+     * Boxes Packing
+     * @see "https://app.codesignal.com/arcade/code-arcade/sorting-outpost/9y4wLpcqnNozn92tG"
+     * @return Boxes Packing
+     * * @sample You are given n rectangular boxes, the ith box has the length lengthi, the width widthi and the height heighti. Your task is to check if it is possible to pack all boxes into one so that inside each box there is no more than one another box (which, in turn, can contain at most one another box, and so on). More formally, your task is to check whether there is such sequence of n different numbers pi (1 ≤ pi ≤ n) that for each 1 ≤ i < n the box number pi can be put into the box number pi+1.
+    A box can be put into another box if all sides of the first one are less than the respective ones of the second one. You can rotate each box as you wish, i.e. you can swap its length, width and height if necessary.
+
+    Example
+
+    For length = [1, 3, 2], width = [1, 3, 2], and height = [1, 3, 2], the output should be
+    solution(length, width, height) = true;
+    For length = [1, 1], width = [1, 1], and height = [1, 1], the output should be
+    solution(length, width, height) = false;
+    For length = [3, 1, 2], width = [3, 1, 2], and height = [3, 2, 1], the output should be
+    solution(length, width, height) = false.
+     */
+    fun solution117(length: MutableList<Int>, width: MutableList<Int>, height: MutableList<Int>): Boolean {
+        val boxesLWH = mutableListOf<Triple<Int,Int,Int>>()
+        val box = MutableList<Int>(3){ 0 }
+        for (i in 0 until length.size) {
+            box[0] = length[i]
+            box[1] = width[i]
+            box[2] = height[i]
+            box.sort()
+            boxesLWH.add(Triple(box[0], box[1], box[2]))
+        }
+        boxesLWH.sortBy{it.first}
+        for (i in 1 until boxesLWH.size) {
+            if (boxesLWH[i - 1].first >= boxesLWH[i].first ||
+                boxesLWH[i - 1].second >= boxesLWH[i].second ||
+                boxesLWH[i - 1].third >= boxesLWH[i].third)
+                return false
+        }
+        return true
+    }
+
 }
