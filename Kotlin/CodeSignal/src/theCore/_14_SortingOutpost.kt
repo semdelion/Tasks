@@ -22,6 +22,15 @@ object _14_SortingOutpost {
                         mutableListOf(1, 4),
                         mutableListOf(0, 2)
                 ))}\n")
+        println("119) Rows Rearranging\n" +
+                "      input: matrix = \n" +
+                "             [2, 7, 1]\n" +
+                "             [0, 2, 0]\n" +
+                "             [1, 3, 1]\n" +
+                "      result: ${solution119(mutableListOf(
+                        mutableListOf(2, 7, 1),
+                        mutableListOf(0, 2, 0),
+                        mutableListOf(1, 3, 1)))}\n")
     }
 
     /**
@@ -167,4 +176,43 @@ object _14_SortingOutpost {
         return result
     }
 
+    /**
+     * Rows Rearranging
+     * @see "https://app.codesignal.com/arcade/code-arcade/sorting-outpost/vuXQuYFReJPe6hHAf"
+     * @return Rows Rearranging
+     * * @sample Given a rectangular matrix of integers, check if it is possible to rearrange its rows in such a way that all its columns become strictly increasing sequences (read from top to bottom).
+
+    Example
+
+    For
+
+    matrix =
+    [2, 7, 1],
+    [0, 2, 0],
+    [1, 3, 1]
+    the output should be
+    solution(matrix) = false;
+
+    For
+
+    matrix =
+    [6, 4],
+    [2, 2],
+    [4, 3]
+    the output should be
+    solution(matrix) = true.*/
+    fun solution119(matrix: MutableList<MutableList<Int>>): Boolean {
+        var isPossible = true
+        for (i in matrix.indices) {
+            for (j in matrix.indices) {
+                if (i != j) {
+                    isPossible = isPossible && (
+                            matrix[i].all { it > matrix[j][matrix[i].indexOf(it)] } ||
+                                    matrix[i].all { it < matrix[j][matrix[i].indexOf(it)] }
+                            )
+                }
+            }
+        }
+        return isPossible
+    }
 }
