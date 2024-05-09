@@ -31,6 +31,10 @@ object _14_SortingOutpost {
                         mutableListOf(2, 7, 1),
                         mutableListOf(0, 2, 0),
                         mutableListOf(1, 3, 1)))}\n")
+
+        println("120) Digit Difference Sort\n" +
+                "      input: a = [152, 23, 7, 887, 243]\n" +
+                "      result: ${solution120(mutableListOf(152, 23, 7, 887, 243))}\n")
     }
 
     /**
@@ -214,5 +218,46 @@ object _14_SortingOutpost {
             }
         }
         return isPossible
+    }
+
+    /**
+     * Digit Difference Sort
+     * @see "https://app.codesignal.com/arcade/code-arcade/sorting-outpost/2SFFWqkhkqC7mMBse"
+     * @return Digit Difference Sort
+     * * @sample Given an array of integers, sort its elements by the difference of their largest and smallest digits. In the case of a tie, that with the larger index in the array should come first.
+
+    Example
+
+    For a = [152, 23, 7, 887, 243], the output should be
+    solution(a) = [7, 887, 23, 243, 152].
+
+    Here are the differences of all the numbers:
+
+    152: difference = 5 - 1 = 4;
+    23: difference = 3 - 2 = 1;
+    7: difference = 7 - 7 = 0;
+    887: difference = 8 - 7 = 1;
+    243: difference = 4 - 2 = 2.
+    23 and 887 have the same difference, but 887 goes after 23 in a, so in the sorted array it comes first.*/
+    fun solution120(a: MutableList<Int>): MutableList<Int> {
+        val dif = mutableListOf<Int>()
+        a.forEach { dif.add(getMaxMinDif(it)) }
+        val result = mutableListOf<Int>()
+        while (dif.isNotEmpty()) {
+            var minIndex = dif.size - 1
+            for (i in dif.size - 2 downTo 0) {
+                if(dif[i] < dif[minIndex])
+                    minIndex = i
+            }
+            result.add(a[minIndex])
+            dif.removeAt(minIndex)
+            a.removeAt(minIndex)
+        }
+        return result
+    }
+
+    private fun getMaxMinDif(number: Int): Int {
+        val digits = number.toString().map { it.digitToInt() }
+        return digits.maxOrNull()!! - digits.minOrNull()!!
     }
 }
