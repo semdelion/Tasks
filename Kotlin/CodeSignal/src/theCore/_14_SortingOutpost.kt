@@ -35,6 +35,10 @@ object _14_SortingOutpost {
         println("120) Digit Difference Sort\n" +
                 "      input: a = [152, 23, 7, 887, 243]\n" +
                 "      result: ${solution120(mutableListOf(152, 23, 7, 887, 243))}\n")
+
+        println("121) Unique Digit Products\n" +
+                "      input: a = [2, 8, 121, 42, 222, 23]\n" +
+                "      result: ${solution121(mutableListOf(2, 8, 121, 42, 222, 23))}\n")
     }
 
     /**
@@ -259,5 +263,40 @@ object _14_SortingOutpost {
     private fun getMaxMinDif(number: Int): Int {
         val digits = number.toString().map { it.digitToInt() }
         return digits.maxOrNull()!! - digits.minOrNull()!!
+    }
+
+    /**
+     * Unique Digit Products
+     * @see "https://app.codesignal.com/arcade/code-arcade/sorting-outpost/oY6FASrCMEqkxwcAC"
+     * @return Unique Digit Products
+     * * @sample Let's call product(x) the product of x's digits. Given an array of integers a, calculate product(x) for each x in a, and return the number of distinct results you get.
+
+    Example
+
+    For a = [2, 8, 121, 42, 222, 23], the output should be
+    solution(a) = 3.
+
+    Here are the products of the array's elements:
+
+    2: product(2) = 2;
+    8: product(8) = 8;
+    121: product(121) = 1 * 2 * 1 = 2;
+    42: product(42) = 4 * 2 = 8;
+    222: product(222) = 2 * 2 * 2 = 8;
+    23: product(23) = 2 * 3 = 6.
+    As you can see, there are only 3 different products: 2, 6 and 8.*/
+    fun solution121(a: MutableList<Int>): Int {
+        val map = mutableSetOf<Int>()
+        for (item in a) {
+            map.add(getMultiplyOfDigits(item))
+        }
+        return map.size
+    }
+
+    private fun getMultiplyOfDigits(number: Int): Int {
+        var result = 1
+        val digits = number.toString().map { it.digitToInt() }
+        digits.forEach{ result *= it }
+        return result
     }
 }
