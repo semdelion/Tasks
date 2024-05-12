@@ -10,6 +10,9 @@ object _15_ChessTavern {
         println("123) Chess Knight Moves\n" +
                 "      input: cell = \"a1\"\n" +
                 "      result: ${_15_ChessTavern.solution123("a1")}\n")
+        println("124) Bishop Diagonal\n" +
+                "      input: bishop1 = \"d7\" and bishop2 = \"f5\"\n" +
+                "      result: ${_15_ChessTavern.solution124("d7", "f5")}\n")
     }
 
     /**
@@ -68,5 +71,37 @@ object _15_ChessTavern {
         return symbol in 'a'.code..'h'.code && digit in 1..8
     }
 
+    /**
+     * Bishop Diagonal
+     * @see "https://app.codesignal.com/arcade/code-arcade/chess-tavern/zqDuSLMHhAknqnLtA"
+     * @return Bishop Diagonal
+     * * @sample In the Land Of Chess, bishops don't really like each other. In fact, when two bishops happen to stand on the same diagonal, they immediately rush towards the opposite ends of that same diagonal.
 
+    Given the initial positions (in chess notation) of two bishops, bishop1 and bishop2, calculate their future positions. Keep in mind that bishops won't move unless they see each other along the same diagonal.
+
+    Example
+
+    For bishop1 = "d7" and bishop2 = "f5", the output should be
+    solution(bishop1, bishop2) = ["c8", "h3"].
+
+
+
+    For bishop1 = "d8" and bishop2 = "b5", the output should be
+    solution(bishop1, bishop2) = ["b5", "d8"].
+
+    The bishops don't belong to the same diagonal, so they don't move.
+
+     */
+    fun solution124(bishop1: String, bishop2: String): MutableList<String> {
+        val result = mutableListOf(bishop1, bishop2)
+        result.sort()
+        if(Math.abs(result[0][0].code - result[1][0].code) == Math.abs(result[0][1].code - result[1][1].code)) {
+            val sign = if(result[0][1].code < result[1][1].code) 1 else -1
+            val min1 = Math.min(result[0][0].code - 'a'.code, if(result[0][1].code < result[1][1].code) result[0][1].digitToInt() - 1 else 8 - result[0][1].digitToInt())
+            val min2 = Math.min('h'.code - result[1][0].code, if(result[0][1].code < result[1][1].code) 8 - result[1][1].digitToInt() else result[1][1].digitToInt() - 1)
+            result[0] = ((result[0][0].code - min1).toChar().toString() + (result[0][1].digitToInt() - (min1 * sign)))
+            result[1] = ((result[1][0].code + min2).toChar().toString() + (result[1][1].digitToInt() + (min2 * sign)))
+        }
+        return result
+    }
 }
