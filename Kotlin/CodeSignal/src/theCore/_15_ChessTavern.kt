@@ -13,6 +13,9 @@ object _15_ChessTavern {
         println("124) Bishop Diagonal\n" +
                 "      input: bishop1 = \"d7\" and bishop2 = \"f5\"\n" +
                 "      result: ${_15_ChessTavern.solution124("d7", "f5")}\n")
+        println("125) Whose Turn?\n" +
+                "      input: p = \"b1;g1;b8;g8\"\n" +
+                "      result: ${_15_ChessTavern.solution125("b1;g1;b8;g8")}\n")
     }
 
     /**
@@ -103,5 +106,27 @@ object _15_ChessTavern {
             result[1] = ((result[1][0].code + min2).toChar().toString() + (result[1][1].digitToInt() + (min2 * sign)))
         }
         return result
+    }
+
+    /**
+     * Whose Turn?
+     * @see "https://app.codesignal.com/arcade/code-arcade/chess-tavern/SJRNgqggTaktuCJGj"
+     * @return Whose Turn?
+     * * @sample Imagine a standard chess board with only two white and two black knights placed in their standard starting positions: the white knights on b1 and g1; the black knights on b8 and g8.
+
+    There are two players: one plays for white, the other for black. During each move, the player picks one of his knights and moves it to an unoccupied square according to standard chess rules. Thus, a knight on d5 can move to any of the following squares: b6, c7, e7, f6, f4, e3, c3, and b4, as long as it is not occupied by either a friendly or an enemy knight.
+
+    The players take turns in making moves, starting with the white player. Given the configuration p of the knights after an unspecified number of moves, determine whose turn it is.
+
+    Example
+
+    For p = "b1;g1;b8;g8", the output should be
+    solution(p) = true.
+
+    The configuration corresponds to the initial state of the game. Thus, it's white's turn.*/
+    fun solution125(p: String): Boolean {
+        //0 1 2 3 4 5 6 7 8 9 10
+        //b 1 ; g 1 ; b 8 ; g 8
+        return (p[0].code + p[1].code + p[3].code + p[4].code + p[6].code + p[7].code + p[9].code + p[10].code) % 2 == 0
     }
 }
