@@ -16,6 +16,9 @@ object _15_ChessTavern {
         println("125) Whose Turn?\n" +
                 "      input: p = \"b1;g1;b8;g8\"\n" +
                 "      result: ${_15_ChessTavern.solution125("b1;g1;b8;g8")}\n")
+        println("126) Chess Bishop Dream\n" +
+                "      input: boardSize = [3, 7], initPosition = [1, 2], initDirection = [-1, 1], k = 13\n" +
+                "      result: ${_15_ChessTavern.solution126(mutableListOf(3, 7), mutableListOf(1, 2), mutableListOf(-1, 1), 13)}\n")
     }
 
     /**
@@ -128,5 +131,49 @@ object _15_ChessTavern {
         //0 1 2 3 4 5 6 7 8 9 10
         //b 1 ; g 1 ; b 8 ; g 8
         return (p[0].code + p[1].code + p[3].code + p[4].code + p[6].code + p[7].code + p[9].code + p[10].code) % 2 == 0
+    }
+
+    /**
+     * Chess Bishop Dream
+     * @see "https://app.codesignal.com/arcade/code-arcade/chess-tavern/FfjPkYvo9ah6wgXem"
+     * @return Chess Bishop Dream
+     * * @sample In ChessLand there is a small but proud chess bishop with a recurring dream. In the dream the bishop finds itself on an n × m chessboard with mirrors along each edge, and it is not a bishop but a ray of light. This ray of light moves only along diagonals (the bishop can't imagine any other types of moves even in its dreams), it never stops, and once it reaches an edge or a corner of the chessboard it reflects from it and moves on.
+
+    Given the initial position and the direction of the ray, find its position after k steps where a step means either moving from one cell to the neighboring one or reflecting from a corner of the board.
+
+    Example
+
+    For boardSize = [3, 7], initPosition = [1, 2],
+    initDirection = [-1, 1], and k = 13, the output should be
+    solution(boardSize, initPosition, initDirection, k) = [0, 1].
+
+    Here is the bishop's path:
+
+    [1, 2] -> [0, 3] -(reflection from the top edge)-> [0, 4] ->
+    [1, 5] -> [2, 6] -(reflection from the bottom right corner)-> [2, 6] ->
+    [1, 5] -> [0, 4] -(reflection from the top edge)-> [0, 3] ->
+    [1, 2] -> [2, 1] -(reflection from the bottom edge)-> [2, 0] -(reflection from the left edge)->
+    [1, 0] -> [0, 1]
+     */
+    fun solution126(boardSize: MutableList<Int>, initPosition: MutableList<Int>, initDirection: MutableList<Int>, k: Int): MutableList<Int> {
+        val verticalSteps = (if (initDirection[0] == 1) initPosition[0] else boardSize[0] - initPosition[0] - 1) + k
+        val horizontalSteps = (if (initDirection[1] == 1) initPosition[1] else boardSize[1] - initPosition[1] - 1) + k
+
+        var verticalReflections = verticalSteps / boardSize[0] % 2
+        var horizontalReflections = horizontalSteps / boardSize[1] % 2
+
+        verticalReflections = (verticalReflections + if (initDirection[0] == -1) 1 else 0) % 2
+        horizontalReflections = (horizontalReflections + if (initDirection[1] == -1) 1 else 0) % 2
+
+        val finalPosition = mutableListOf(verticalSteps % boardSize[0], horizontalSteps % boardSize[1])
+
+        if (verticalReflections == 1) {
+            finalPosition[0] = boardSize[0] - finalPosition[0] - 1
+        }
+        if (horizontalReflections == 1) {
+            finalPosition[1] = boardSize[1] - finalPosition[1] - 1
+        }
+
+        return finalPosition
     }
 }
