@@ -19,6 +19,10 @@ object _15_ChessTavern {
         println("126) Chess Bishop Dream\n" +
                 "      input: boardSize = [3, 7], initPosition = [1, 2], initDirection = [-1, 1], k = 13\n" +
                 "      result: ${_15_ChessTavern.solution126(mutableListOf(3, 7), mutableListOf(1, 2), mutableListOf(-1, 1), 13)}\n")
+        println("127) Chess Chess Triangle\n" +
+                "      input: n = 2 and m = 3\n" +
+                "      result: ${_15_ChessTavern.solution127(2,3)}\n")
+
     }
 
     /**
@@ -175,5 +179,28 @@ object _15_ChessTavern {
         }
 
         return finalPosition
+    }
+
+    /**
+     * Chess Triangle
+     * @see "https://app.codesignal.com/arcade/code-arcade/chess-tavern/NhRZQrrMqeWYL9L9Z"
+     * @return Chess Triangle
+     * * @sample Consider a bishop, a knight and a rook on an n × m chessboard. They are said to form a triangle if each piece attacks exactly one other piece and is attacked by exactly one piece. Calculate the number of ways to choose positions of the pieces to form a triangle.
+
+    Note that the bishop attacks pieces sharing the common diagonal with it; the rook attacks in horizontal and vertical directions; and, finally, the knight attacks squares which are two squares horizontally and one square vertically, or two squares vertically and one square horizontally away from its position.
+
+    Example
+
+    For n = 2 and m = 3, the output should be
+    solution(n, m) = 8.
+
+     */
+    fun solution127(n: Int, m: Int): Int  = (ways(n, m, 2, 3) + ways(n, m, 3, 3) + ways(n, m, 2, 4) + ways(n, m, 3, 4)) * 8
+
+    private fun ways(n: Int, m: Int, x: Int, y: Int): Int {
+        var result = 0
+        if (n >= x && m >= y) result += (n - x + 1) * (m - y + 1)
+        if (m >= x && n >= y) result += (m - x + 1) * (n - y + 1)
+        return result
     }
 }
