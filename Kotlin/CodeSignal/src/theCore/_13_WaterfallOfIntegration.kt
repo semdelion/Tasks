@@ -91,14 +91,14 @@ object _13_WaterfallOfIntegration {
                             mutableListOf(true, false, false)
                         )
                     )
-                }")
+                }\n")
         println("111) Gravitation\n" +
                 "      input: rows = \n" +
                 "             \"#..##\",\n" +
                 "             \".##.#\",\n" +
                 "             \".#.##\",\n" +
                 "             \".....\",\n" +
-                "      result: ${solution111(mutableListOf("#..##", ".##.#", ".#.##", "....."))}")
+                "      result: ${solution111(mutableListOf("#..##", ".##.#", ".#.##", "....."))}\n")
 
         println("112)  Is Information Consistent?\n" +
                 "      input: evidences = \n" +
@@ -108,7 +108,7 @@ object _13_WaterfallOfIntegration {
                 "      result: ${solution112(mutableListOf(
                                             mutableListOf(  0, 1, 0, 1),
                                             mutableListOf( -1, 1, 0, 0),
-                                            mutableListOf( -1, 0, 0, 1)))}")
+                                            mutableListOf( -1, 0, 0, 1)))}\n")
         println("113)  Is Information Consistent?\n" +
         "      input: nonogramField = \n" +
         "             [\"-\",\"-\",\"-\",\"-\",\"-\",\"-\",\"-\",\"-\",\"-\",\"-\",\"-\",\"-\",\"-\",\"-\"]\n" +
@@ -140,7 +140,7 @@ object _13_WaterfallOfIntegration {
                                                     mutableListOf("-","-","-","-","1",".",".",".",".","#",".",".",".","."),
                                                     mutableListOf("-","-","-","-","1",".",".",".",".","#",".",".",".","."),
                                                     mutableListOf("-","-","-","1","1",".",".","#",".","#",".",".",".","."),
-                                                    mutableListOf("-","-","-","-","3",".",".","#","#","#",".",".",".",".")))}")
+                                                    mutableListOf("-","-","-","-","3",".",".","#","#","#",".",".",".",".")))}\n")
     }
 
     /**

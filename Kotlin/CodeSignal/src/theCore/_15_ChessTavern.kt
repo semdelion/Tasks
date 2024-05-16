@@ -22,7 +22,9 @@ object _15_ChessTavern {
         println("127) Chess Chess Triangle\n" +
                 "      input: n = 2 and m = 3\n" +
                 "      result: ${_15_ChessTavern.solution127(2,3)}\n")
-
+        println("128) Amazon Checkmate\n" +
+                "      input: king = \"a3\" and amazon = \"e4\"\n" +
+                "      result: ${_15_ChessTavern.solution128(king = "a3", amazon = "e4")}\n")
     }
 
     /**
@@ -203,4 +205,116 @@ object _15_ChessTavern {
         if (m >= x && n >= y) result += (m - x + 1) * (n - y + 1)
         return result
     }
+
+    /**
+     * Amazon Checkmate
+     * @see "https://app.codesignal.com/arcade/code-arcade/chess-tavern/3hvEEqS7wuoEMZJJC"
+     * @return Amazon Checkmate
+     * * @sample An amazon (also known as a queen + knight compound) is an imaginary chess piece that can move like a queen or a knight (or, equivalently, like a rook, bishop, or knight). The diagram below shows all squares which the amazon can attack from e4 (circles represent knight-like moves while crosses correspond to queen-like moves).
+
+
+
+    Recently, you've come across a diagram with only three pieces left on the board: a white amazon, the white king, and the black king. It's black's move. You don't have time to determine whether the game is over or not, but you'd like to figure it out in your head. Unfortunately, the diagram is smudged and you can't see the position of the black king, so you'll need to consider all possible positions.
+
+    Given the positions of the white pieces on a standard chessboard (using algebraic notation), your task is to determine the number of possible black king's positions such that:
+
+    it's checkmate (i.e. black's king is under the amazon's attack and it cannot make a valid move);
+    it's check (i.e. black's king is under the amazon's attack but it can reach a safe square in one move);
+    it's stalemate (i.e. black's king is on a safe square but it cannot make a valid move);
+    black's king is on a safe square and it can make a valid move.
+    Note that two kings cannot be placed on two adjacent squares (including two diagonally adjacent ones).
+
+    Example
+
+    For king = "d3" and amazon = "e4", the output should be
+    solution(king, amazon) = [5, 21, 0, 29].
+
+    Red crosses correspond to the checkmate positions, orange pluses refer to check positions, and green circles denote safe squares.
+
+    For king = "a1" and amazon = "g5", the output should be
+    solution(king, amazon) = [0, 29, 1, 29].
+
+    The stalemate position is marked by a blue square.*/
+    fun solution128(king: String, amazon: String): MutableList<Int> {
+        val chessBoard = List(8){ MutableList(8){'o'} }
+        val pointKing =  Pair(7 - (king[1].code - '1'.code), king[0].code - 'a'.code)
+        val pointAmazon = Pair(7 - (amazon[1].code - '1'.code), amazon[0].code - 'a'.code)
+        area(chessBoard,pointAmazon,2,'+')
+        for (direction in listOf(Pair(-1, 0), Pair(0, -1), Pair(1, 0), Pair(0, 1), Pair(1, 1), Pair(1, -1), Pair(-1, 1), Pair(-1, -1))) {
+            var i = 0
+            while (pointAmazon.first + i * direction.first in 0..7 && pointAmazon.second + i * direction.second in 0..7) {
+                if (pointAmazon.first + i * direction.first == pointKing.first && pointAmazon.second + i * direction.second == pointKing.second)
+                    break
+                chessBoard[pointAmazon.first + i * direction.first][pointAmazon.second + i * direction.second] = '+'
+                i++
+            }
+        }
+
+        if (Math.abs(pointAmazon.first - pointKing.first) <= 1 && Math.abs(pointAmazon.second - pointKing.second) <= 1)
+            area(chessBoard,pointAmazon,1,'x')
+
+        area(chessBoard,pointKing,1,' ')
+
+        chessBoard[pointKing.first][pointKing.second] = 'К'
+        chessBoard[pointAmazon.first][pointAmazon.second] = 'F'
+
+        for (i in 0 .. 7) {
+            for (j in 0 .. 7) {
+                if (chessBoard[i][j] == '+')
+                    checkmate(chessBoard, i, j)
+            }
+        }
+
+        for (i in 1 .. 7) {
+            if (chessBoard[0][i] == 'o')
+                checkStalemate(chessBoard,0,i)
+            if (chessBoard[7][i - 1] == 'o')
+                checkStalemate(chessBoard,7, i - 1)
+            if (chessBoard[i - 1][0] == 'o')
+                checkStalemate(chessBoard,i - 1, 0)
+            if (chessBoard[i][7] == 'o')
+                checkStalemate(chessBoard,i,7)
+        }
+
+        printBoard(chessBoard)
+        val result = mutableListOf(0,0,0,0)
+        chessBoard.forEach { it.forEach{ item ->
+                when(item){
+                    'x' -> result[0]++
+                    '+' -> result[1]++
+                    'p' -> result[2]++
+                    'o' -> result[3]++
+                }
+            }
+        }
+        return result
+    }
+
+    private fun area(board: List<MutableList<Char>>,figure: Pair<Int,Int>, size: Int, char: Char) {
+        for (i in figure.first - size .. figure.first + size)
+            for (j in figure.second - size .. figure.second + size)
+                if (i in 0..7 && j in 0..7)
+                    board[i][j] = char
+    }
+
+    private fun checkStalemate(board: List<MutableList<Char>>, y:Int, x:Int) {
+        for (i in y - 1 .. y + 1)
+            for (j in x - 1 .. x + 1)
+                if (i in 0..7 && j in 0..7 && board[i][j] == 'o' && !(i == y && j == x))
+                    return
+        board[y][x] = 'p'
+    }
+
+    private fun checkmate(board: List<MutableList<Char>>, y:Int, x:Int) {
+        for (i in y - 1 .. y + 1)
+            for (j in x - 1 .. x + 1)
+                if (i in 0..7 && j in 0..7 && (board[i][j] == 'o' || board[i][j] == 'F'))
+                    return
+        board[y][x] = 'x'
+    }
+
+    private fun printBoard(board: List<List<Char>>) {
+        board.forEach { println("             $it") }
+    }
+
 }
