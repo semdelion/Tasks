@@ -25,6 +25,9 @@ object _15_ChessTavern {
         println("128) Amazon Checkmate\n" +
                 "      input: king = \"a3\" and amazon = \"e4\"\n" +
                 "      result: ${_15_ChessTavern.solution128(king = "a3", amazon = "e4")}\n")
+        println("129) Pawn Race\n" +
+                "      input: king = \"a3\" and amazon = \"e4\"\n" +
+                "      result: ${_15_ChessTavern.solution128(king = "a3", amazon = "e4")}\n")
     }
 
     /**
@@ -315,6 +318,61 @@ object _15_ChessTavern {
 
     private fun printBoard(board: List<List<Char>>) {
         board.forEach { println("             $it") }
+    }
+
+
+    /**
+     * Pawn Race
+     * @see "https://app.codesignal.com/arcade/code-arcade/chess-tavern/ybkbv7e6qMaucZWig"
+     * @return Pawn Race
+     * * @sample Pawn race is a game for two people, played on an ordinary 8 × 8 chessboard. The first player has a white pawn, the second one - a black pawn. Initially the pawns are placed somewhere on the board so that the 1st and the 8th rows are not occupied. Players take turns to make a move.
+
+    White pawn moves upwards, black one moves downwards. The following moves are allowed:
+
+    one-cell move on the same vertical in the allowed direction;
+    two-cell move on the same vertical in the allowed direction, if the pawn is standing on the 2nd (for the white pawn) or the 7th (for the black pawn) row. Note that even with the two-cell move a pawn can't jump over the opponent's pawn;
+    capture move one cell forward in the allowed direction and one cell to the left or to the right.
+
+
+    The purpose of the game is to reach the the 1st row (for the black pawn) or the 8th row (for the white one), or to capture the opponent's pawn.
+
+    Given the initial positions and whose turn it is, determine who will win or declare it a draw (i.e. it is impossible for any player to win). Assume that the players play optimally.
+
+    Example
+
+    For white = "e2", black = "e7", and toMove = 'w', the output should be
+    solution(white, black, toMove) = "draw";
+    For white = "e3", black = "d7", and toMove = 'b', the output should be
+    solution(white, black, toMove) = "black";
+    For white = "a7", black = "h2", and toMove = 'w', the output should be
+    solution(white, black, toMove) = "white".
+     */
+    fun solution129(white: String, black: String, toMove: Char): String {
+        val wRow = 8 - white[1].digitToInt() - (if (white[1] == '2') 1 else 0)
+        val bRow = black[1].digitToInt() - 1 - (if (black[1] == '7') 1 else 0)
+
+        //  Пешки на разных вертикалях или на одной горизонтали
+        if (white[1].digitToInt() >= black[1].digitToInt() || Math.abs(white[0].code - black[0].code) > 1) {
+            return if (wRow == bRow) { // Если на одном расстоянии от края
+                if (toMove == 'w') "white" else "black"
+            } else if (wRow < bRow) "white" else "black" // Ближе к краю побеждает
+        }
+
+        // Пешки на одной вертикали
+        if (white[0] == black[0]) return "draw"
+
+        // Специальные случаи:
+        if (white[1] == '2' && black[1] == '7') return if (toMove == 'b') "white" else "black"
+        if (white[1] == '3' && black[1] == '7') return "black"
+        if (white[1] == '2' && black[1] == '6') return "white"
+
+        //  Определение победителя по четности расстояния и очереди хода
+        val distanceParity = (black[1].digitToInt() - white[1].digitToInt()) and 1
+        return if (distanceParity == 0) {  // Четное расстояние
+            if (toMove == 'b') "white" else "black"
+        } else {
+            if (toMove == 'w') "white" else "black"
+        }
     }
 
 }
